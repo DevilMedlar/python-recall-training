@@ -1,39 +1,27 @@
 # Stage 01: `print()` and Exact Output
 
-## Unlocked tools
+## Status
 
-For this stage, use only:
+All seven Stage 01 drills are complete.
 
-- `print()`
-- Text inside quotation marks
+The next step is **Recall Check 01**, but it must happen on a later calendar day so this tests memory instead of immediate repetition.
 
-Do not use variables, `input()`, loops, imports, or copied solutions yet.
+## Until the recall check
 
-## How to work
+- Do not copy or study the completed code in `work.py`.
+- Do not redo the seven drills tonight.
+- Leave `work.py` unchanged.
+- Return on a later day and ask for the next recall check.
 
-Use [`work.py`](work.py) for the current challenge. Replace its contents for each new attempt. Commit the attempt before asking for review.
+## Skills being retained
 
-Only complete **one challenge at a time**. Later challenges remain hidden until earlier work is reviewed.
+- Writing `print()` from memory
+- Printing exact text
+- Producing multiple output lines
+- Creating a blank output line
+- Handling apostrophes and quotation marks inside strings
+- Matching capitalization, punctuation, symbols, and spacing
 
-## Challenge 07: Final mixed-output drill
+## Advancement rule
 
-Replace the previous attempt with a Python program that produces exactly this output:
-
-```text
-[PYTHON PRACTICE]
-She said, "Don't quit."
-
-One line at a time.
-```
-
-### Requirements
-
-- Use exactly four `print()` calls.
-- Each `print()` call must produce one line, including the blank third line.
-- Match brackets, capitalization, quotation marks, apostrophe, punctuation, and spacing exactly.
-- You may surround Python text with either single or double quotation marks.
-- Type the code from memory.
-
-### Submission
-
-Save your attempt in `work.py`, run it if you have Python available, then commit it on GitHub. Ask for a review after the commit is visible.
+Two recall checks must be passed on different days before variables and `input()` unlock.
