@@ -15,23 +15,22 @@ Use [`work.py`](work.py) for the current challenge. Replace its contents for eac
 
 Only complete **one challenge at a time**. Later challenges remain hidden until earlier work is reviewed.
 
-## Challenge 04: A blank line
+## Challenge 05: Quotes inside text
 
 Replace the previous attempt with a Python program that produces exactly this output:
 
 ```text
-First line.
-
-Third line.
+She said, "Keep going."
+Python won't scare me.
 ```
 
 ### Requirements
 
-- Use exactly three `print()` calls.
-- The second `print()` call must produce the blank line.
-- Match capitalization, punctuation, and spacing exactly.
+- Use exactly two `print()` calls.
+- Each `print()` call must produce one line.
+- Match capitalization, quotation marks, apostrophe, punctuation, and spacing exactly.
+- You may surround Python text with either single or double quotation marks.
 - Type the code from memory.
-- Do not paste an earlier solution.
 
 ### Submission
 
