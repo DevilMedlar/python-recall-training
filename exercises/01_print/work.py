@@ -1,3 +1,4 @@
 # Write only your current challenge attempt below this line.
-print("Python is real code.")
-print("I typed this myself.")
+print("I'm learning Python.")
+print("Errors are clues.")
+print("Keep typing!")
