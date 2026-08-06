@@ -3,8 +3,8 @@
 ## Current status
 
 - Current stage: **01 - `print()` and exact output**
-- Current challenge: **01**
-- Hints used: **0**
+- Current challenge: **02**
+- Hints used: **1**
 - Full solutions requested: **0**
 
 ## Mastery requirements for Stage 01
@@ -15,7 +15,8 @@ Before advancing, complete all Stage 01 challenges and then pass two recall chec
 
 | Date | Stage | Challenge | Result | Hint level | Notes |
 |---|---:|---:|---|---:|---|
-| | 01 | 01 | Not attempted | 0 | |
+| 2026-08-05 | 01 | 01 | Passed after correction | 1 | Correct `print()` syntax; added missing final exclamation mark. |
+| | 01 | 02 | Not attempted | 0 | |
 
 ## Concepts unlocked
 
