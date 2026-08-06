@@ -15,20 +15,21 @@ Use [`work.py`](work.py) for the current challenge. Replace its contents for eac
 
 Only complete **one challenge at a time**. Later challenges remain hidden until earlier work is reviewed.
 
-## Challenge 05: Quotes inside text
+## Challenge 06: Mixed punctuation
 
 Replace the previous attempt with a Python program that produces exactly this output:
 
 ```text
-She said, "Keep going."
-Python won't scare me.
+=== TRAINING LOG ===
+Status: "active"
+Mistakes aren't failure.
 ```
 
 ### Requirements
 
-- Use exactly two `print()` calls.
+- Use exactly three `print()` calls.
 - Each `print()` call must produce one line.
-- Match capitalization, quotation marks, apostrophe, punctuation, and spacing exactly.
+- Match capitalization, quotation marks, apostrophe, punctuation, symbols, and spacing exactly.
 - You may surround Python text with either single or double quotation marks.
 - Type the code from memory.
 
