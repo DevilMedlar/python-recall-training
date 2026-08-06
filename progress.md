@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **01 - `print()` and exact output**
-- Current challenge: **02**
+- Current challenge: **03**
 - Hints used: **1**
 - Full solutions requested: **0**
 
@@ -16,7 +16,8 @@ Before advancing, complete all Stage 01 challenges and then pass two recall chec
 | Date | Stage | Challenge | Result | Hint level | Notes |
 |---|---:|---:|---|---:|---|
 | 2026-08-05 | 01 | 01 | Passed after correction | 1 | Correct `print()` syntax; added missing final exclamation mark. |
-| | 01 | 02 | Not attempted | 0 | |
+| 2026-08-05 | 01 | 02 | Passed | 0 | Two exact lines using two `print()` calls. |
+| | 01 | 03 | Not attempted | 0 | |
 
 ## Concepts unlocked
 
