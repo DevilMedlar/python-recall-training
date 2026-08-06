@@ -1,4 +1,5 @@
 # Write only your current challenge attempt below this line.
-print("=== TRAINING LOG ===")
-print("Status: \"active\"")
-print("Mistakes aren't failure.")
+print('[PYTHON PRACTICE]')
+print("She said, \"Don't quit.\"")
+print('')
+print("One line at a time.")
