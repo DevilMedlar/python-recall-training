@@ -13,25 +13,25 @@ Do not use variables, `input()`, loops, imports, or copied solutions yet.
 
 Use [`work.py`](work.py) for the current challenge. Replace its contents for each new attempt. Commit the attempt before asking for review.
 
-Only complete **one challenge at a time**. Later challenges remain hidden until earlier work is reviewed, so the campaign cannot be inhaled in one sitting and forgotten by breakfast.
+Only complete **one challenge at a time**. Later challenges remain hidden until earlier work is reviewed.
 
-## Challenge 03: Three lines with punctuation
+## Challenge 04: A blank line
 
 Replace the previous attempt with a Python program that produces exactly this output:
 
 ```text
-I'm learning Python.
-Errors are clues.
-Keep typing!
+First line.
+
+Third line.
 ```
 
 ### Requirements
 
 - Use exactly three `print()` calls.
-- Each `print()` call must produce one line.
-- Match capitalization, apostrophes, punctuation, and spacing exactly.
+- The second `print()` call must produce the blank line.
+- Match capitalization, punctuation, and spacing exactly.
 - Type the code from memory.
-- Do not paste the earlier solution.
+- Do not paste an earlier solution.
 
 ### Submission
 
