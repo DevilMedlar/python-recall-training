@@ -15,20 +15,21 @@ Use [`work.py`](work.py) for the current challenge. Replace its contents for eac
 
 Only complete **one challenge at a time**. Later challenges remain hidden until earlier work is reviewed, so the campaign cannot be inhaled in one sitting and forgotten by breakfast.
 
-## Challenge 02: Two exact lines
+## Challenge 03: Three lines with punctuation
 
 Replace the previous attempt with a Python program that produces exactly this output:
 
 ```text
-Python is real code.
-I typed this myself.
+I'm learning Python.
+Errors are clues.
+Keep typing!
 ```
 
 ### Requirements
 
-- Use exactly two `print()` calls.
+- Use exactly three `print()` calls.
 - Each `print()` call must produce one line.
-- Match capitalization, punctuation, and spacing exactly.
+- Match capitalization, apostrophes, punctuation, and spacing exactly.
 - Type the code from memory.
 - Do not paste the earlier solution.
 
