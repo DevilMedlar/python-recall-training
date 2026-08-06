@@ -15,21 +15,22 @@ Use [`work.py`](work.py) for the current challenge. Replace its contents for eac
 
 Only complete **one challenge at a time**. Later challenges remain hidden until earlier work is reviewed.
 
-## Challenge 06: Mixed punctuation
+## Challenge 07: Final mixed-output drill
 
 Replace the previous attempt with a Python program that produces exactly this output:
 
 ```text
-=== TRAINING LOG ===
-Status: "active"
-Mistakes aren't failure.
+[PYTHON PRACTICE]
+She said, "Don't quit."
+
+One line at a time.
 ```
 
 ### Requirements
 
-- Use exactly three `print()` calls.
-- Each `print()` call must produce one line.
-- Match capitalization, quotation marks, apostrophe, punctuation, symbols, and spacing exactly.
+- Use exactly four `print()` calls.
+- Each `print()` call must produce one line, including the blank third line.
+- Match brackets, capitalization, quotation marks, apostrophe, punctuation, and spacing exactly.
 - You may surround Python text with either single or double quotation marks.
 - Type the code from memory.
 
