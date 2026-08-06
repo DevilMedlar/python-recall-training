@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **01 - `print()` and exact output**
-- Current challenge: **06**
+- Current challenge: **07**
 - Hints used: **1**
 - Full solutions requested: **0**
 
@@ -20,7 +20,8 @@ Before advancing, complete all Stage 01 challenges and then pass two recall chec
 | 2026-08-05 | 01 | 03 | Passed | 0 | Three exact lines; apostrophe and punctuation handled correctly. |
 | 2026-08-05 | 01 | 04 | Passed | 0 | Created an exact blank line with the second `print()` call. |
 | 2026-08-05 | 01 | 05 | Passed | 0 | Printed embedded quotation marks and an apostrophe correctly. |
-| | 01 | 06 | Not attempted | 0 | |
+| 2026-08-05 | 01 | 06 | Passed | 0 | Mixed symbols, embedded quotes, apostrophe, and exact spacing. |
+| | 01 | 07 | Not attempted | 0 | Final mixed-output drill before recall checks. |
 
 ## Concepts unlocked
 
@@ -28,6 +29,7 @@ Before advancing, complete all Stage 01 challenges and then pass two recall chec
 - String literals using single or double quotation marks
 - Exact multi-line output
 - Escaping quotation marks inside strings
+- Blank output lines
 
 ## Concepts not yet unlocked
 
