@@ -2,16 +2,17 @@
 
 ## Current status
 
-- Current stage: **01 - `print()` and exact output**
-- Drill set: **Complete**
+- Current stage: **02 - Variables that store text**
+- Current challenge: **01**
+- Stage 01: **Complete**
 - Recall Check 01: **Passed**
-- Recall Check 02: **Unlocked**
-- Hints used: **1**
+- Recall Check 02: **Passed after corrections**
+- Hints used: **5**
 - Full solutions requested: **0**
 
-## Mastery requirements for Stage 01
+## Stage 01 result
 
-Before advancing, complete all Stage 01 challenges and pass two recall checks on different days without copying earlier code.
+Stage 01 was completed after seven drills and two delayed recall checks on different calendar days.
 
 ## Attempt log
 
@@ -25,7 +26,8 @@ Before advancing, complete all Stage 01 challenges and pass two recall checks on
 | 2026-08-05 | 01 | 06 | Passed | 0 | Mixed symbols, embedded quotes, apostrophe, and exact spacing. |
 | 2026-08-05 | 01 | 07 | Passed | 0 | Combined brackets, nested quotation marks, apostrophe, and a blank line. |
 | 2026-08-06 | 01 | Recall 01 | Passed | 0 | Recalled four exact `print()` calls after a delayed gap. |
-| 2026-08-07 | 01 | Recall 02 | Unlocked | 0 | Final delayed recall check before Stage 02 unlocks. |
+| 2026-08-07 | 01 | Recall 02 | Passed after corrections | 3 | Corrected function spelling, case sensitivity, and quotation/closing syntax across attempts. |
+| 2026-08-07 | 02 | 01 | Unlocked | 0 | Introduces one text variable while continuing `print()` recall. |
 
 ## Concepts unlocked
 
@@ -34,10 +36,11 @@ Before advancing, complete all Stage 01 challenges and pass two recall checks on
 - Exact multi-line output
 - Escaping quotation marks inside strings
 - Blank output lines
+- Variables that store text
+- Assignment with `=`
 
 ## Concepts not yet unlocked
 
-- Variables
 - `input()`
 - Number conversion
 - Arithmetic
