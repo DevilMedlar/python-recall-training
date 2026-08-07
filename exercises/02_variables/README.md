@@ -1,44 +1,30 @@
 # Stage 02: Variables That Store Text
 
-Stage 01 is complete. `print()` remains active knowledge and will keep appearing while you learn variables.
+Stage 01 is complete. `print()` remains active knowledge and continues appearing while variables are trained.
 
-## Current concept
+## Drill-set status
 
-Variables can be assigned, reused, printed in any order, and reassigned later. Each `print()` call uses the value a variable stores at that exact point in the program.
+**Complete.** All ten normal Stage 02 variable drills have been passed.
 
-Challenge 10 combines the Stage 02 skills without introducing new syntax.
+The next step is **Delayed Recall Check 01**, but it is locked until a later calendar day. Do not review earlier solutions, commits, or examples before attempting it when it unlocks.
 
-## Challenge 10: Variable capstone
+Passing the normal drill set does not complete Stage 02 mastery. Delayed recall checks are required before another major Python feature is introduced.
 
-Write a Python program that produces exactly this output:
+## Skills trained in this stage
 
-```text
-She said, "Keep the name."
-[VARIABLE CAPSTONE]
-Waiting.
+- Assigning text to a variable with `=`.
+- Printing a stored variable value.
+- Reusing a variable more than once.
+- Tracking multiple variables at the same time.
+- Printing variables in an order different from their assignment order.
+- Reassigning a variable to a new value.
+- Keeping one variable unchanged while another variable changes.
+- Combining variables with exact punctuation, embedded quotation marks, and blank output lines.
 
-[VARIABLE CAPSTONE]
-Running.
-She said, "Keep the name."
-```
+## Completed capstone
 
-### Requirements
+Challenge 10 required exact output using three variables named `header`, `message`, and `state`, including reuse, reassignment, quotation marks, chosen print order, and a blank output line.
 
-- Create exactly three variables named `header`, `message`, and `state`.
-- Assign `[VARIABLE CAPSTONE]` to `header` exactly once.
-- Assign `She said, "Keep the name."` to `message` exactly once.
-- First assign `Waiting.` to `state`.
-- Reassign `Running.` to the same `state` variable only after the first `Waiting.` output has been printed.
-- Use exactly seven `print()` calls, including the call that produces the blank fourth output line.
-- Every non-blank `print()` call must print a variable, not a repeated string literal.
-- Print the variables in whatever order is necessary to match the required output exactly.
-- Do not reassign `header` or `message`.
-- Do not create any additional variables.
-- Use only variables, string literals, assignment with `=`, and `print()`.
-- Type the code yourself.
+## Next step
 
-### Submission
-
-Write your attempt in [`work.py`](work.py), commit it even if it is broken, then ask for review.
-
-This is the final normal drill in Stage 02. Passing it completes the drill set, but delayed recall checks will still be required before Stage 02 is mastered and another major Python feature is introduced.
+Wait until a later calendar day for Stage 02 Recall Check 01. The recall check will be written from memory using only already learned Stage 01 and Stage 02 skills.
