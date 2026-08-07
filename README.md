@@ -25,8 +25,10 @@ This repository is not designed to race through topics. Each skill is repeated, 
 
 ## Current stage
 
-**Stage 01: `print()` and exact output**
+**Stage 02: Variables that store text**
 
-See [`exercises/01_print/README.md`](exercises/01_print/README.md).
+See [`exercises/02_variables/README.md`](exercises/02_variables/README.md).
+
+Stage 01 (`print()` and exact output) is complete.
 
 Progress is tracked in [`progress.md`](progress.md), and the tutoring contract is recorded in [`rules.md`](rules.md).
