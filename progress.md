@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **02 - Variables that store text**
-- Current challenge: **07**
+- Current challenge: **08**
 - Stage 01: **Complete**
 - Recall Check 01: **Passed**
 - Recall Check 02: **Passed after corrections**
@@ -33,7 +33,8 @@ Stage 01 was completed after seven drills and two delayed recall checks on diffe
 | 2026-08-07 | 02 | 04 | Passed | 0 | Printed two stored values in a required order different from their assignment order. |
 | 2026-08-07 | 02 | 05 | Passed | 0 | Combined variables with embedded quotation marks, reuse, exact output, and a blank line. |
 | 2026-08-07 | 02 | 06 | Passed | 0 | Tracked three named values and printed them in a deliberately scrambled order. |
-| 2026-08-07 | 02 | 07 | Unlocked | 0 | Introduces reassignment using the same `=` syntax already learned. |
+| 2026-08-07 | 02 | 07 | Passed | 0 | Reassigned `status` from `Loading...` to `Ready.` and printed the value before and after the change. |
+| 2026-08-07 | 02 | 08 | Unlocked | 0 | Repeats reassignment across three successive values using one variable. |
 
 ## Concepts unlocked
 
