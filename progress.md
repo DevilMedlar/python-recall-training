@@ -5,7 +5,7 @@
 - Current stage: **01 - `print()` and exact output**
 - Drill set: **Complete**
 - Recall Check 01: **Passed**
-- Next step: **Recall Check 02 on another calendar day**
+- Recall Check 02: **Unlocked**
 - Hints used: **1**
 - Full solutions requested: **0**
 
@@ -25,7 +25,7 @@ Before advancing, complete all Stage 01 challenges and pass two recall checks on
 | 2026-08-05 | 01 | 06 | Passed | 0 | Mixed symbols, embedded quotes, apostrophe, and exact spacing. |
 | 2026-08-05 | 01 | 07 | Passed | 0 | Combined brackets, nested quotation marks, apostrophe, and a blank line. |
 | 2026-08-06 | 01 | Recall 01 | Passed | 0 | Recalled four exact `print()` calls after a delayed gap. |
-| Later day | 01 | Recall 02 | Locked | 0 | Required before Stage 02 unlocks. |
+| 2026-08-07 | 01 | Recall 02 | Unlocked | 0 | Final delayed recall check before Stage 02 unlocks. |
 
 ## Concepts unlocked
 
