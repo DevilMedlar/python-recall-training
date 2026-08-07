@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **02 - Variables that store text**
-- Current challenge: **06**
+- Current challenge: **07**
 - Stage 01: **Complete**
 - Recall Check 01: **Passed**
 - Recall Check 02: **Passed after corrections**
@@ -32,7 +32,8 @@ Stage 01 was completed after seven drills and two delayed recall checks on diffe
 | 2026-08-07 | 02 | 03 | Passed | 0 | Stored one value once and reused the same variable across two `print()` calls. |
 | 2026-08-07 | 02 | 04 | Passed | 0 | Printed two stored values in a required order different from their assignment order. |
 | 2026-08-07 | 02 | 05 | Passed | 0 | Combined variables with embedded quotation marks, reuse, exact output, and a blank line. |
-| 2026-08-07 | 02 | 06 | Unlocked | 0 | Uses three named text values and a deliberately scrambled print order. |
+| 2026-08-07 | 02 | 06 | Passed | 0 | Tracked three named values and printed them in a deliberately scrambled order. |
+| 2026-08-07 | 02 | 07 | Unlocked | 0 | Introduces reassignment using the same `=` syntax already learned. |
 
 ## Concepts unlocked
 
@@ -47,6 +48,7 @@ Stage 01 was completed after seven drills and two delayed recall checks on diffe
 - Printing stored values in a chosen order
 - Mixing stored variables with earlier exact-output skills
 - Tracking several stored values at once
+- Reassigning a variable to a new text value
 
 ## Concepts not yet unlocked
 
