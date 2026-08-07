@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **02 - Variables that store text**
-- Current challenge: **09**
+- Current challenge: **10**
 - Stage 01: **Complete**
 - Recall Check 01: **Passed**
 - Recall Check 02: **Passed after corrections**
@@ -35,7 +35,8 @@ Stage 01 was completed after seven drills and two delayed recall checks on diffe
 | 2026-08-07 | 02 | 06 | Passed | 0 | Tracked three named values and printed them in a deliberately scrambled order. |
 | 2026-08-07 | 02 | 07 | Passed | 0 | Reassigned `status` from `Loading...` to `Ready.` and printed the value before and after the change. |
 | 2026-08-07 | 02 | 08 | Passed | 0 | Reassigned one `phase` variable through three successive text values and printed each value at the correct moment. |
-| 2026-08-07 | 02 | 09 | Unlocked | 0 | Mixes one stable variable with a second variable that is reassigned. |
+| 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` unchanged while reassigning `state`, then printed both values at the correct moments. |
+| 2026-08-07 | 02 | 10 | Unlocked | 0 | Capstone mixing assignment, reuse, reassignment, chosen print order, embedded quotes, and a blank line. |
 
 ## Concepts unlocked
 
