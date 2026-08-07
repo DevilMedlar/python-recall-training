@@ -1,27 +1,29 @@
-# Stage 01: `print()` and Exact Output
+# Stage 01 Recall Check 01
 
-## Status
+This is a delayed memory test. Do not open earlier commits, copy previous solutions, or search for `print()` syntax before attempting it.
 
-All seven Stage 01 drills are complete.
+## Required output
 
-The next step is **Recall Check 01**, but it must happen on a later calendar day so this tests memory instead of immediate repetition.
+Write a Python program that produces exactly this output:
 
-## Until the recall check
+```text
+[RECALL CHECK 01]
+She said, "Type it again."
 
-- Do not copy or study the completed code in `work.py`.
-- Do not redo the seven drills tonight.
-- Leave `work.py` unchanged.
-- Return on a later day and ask for the next recall check.
+I didn't copy this.
+```
 
-## Skills being retained
+## Requirements
 
-- Writing `print()` from memory
-- Printing exact text
-- Producing multiple output lines
-- Creating a blank output line
-- Handling apostrophes and quotation marks inside strings
-- Matching capitalization, punctuation, symbols, and spacing
+- Use exactly four `print()` calls.
+- Each call must produce one output line, including the blank third line.
+- Match brackets, capitalization, quotation marks, apostrophe, punctuation, and spacing exactly.
+- Use only the Python skills already learned in Stage 01.
+- Type everything from memory.
+- Commit the attempt even if it is broken.
 
-## Advancement rule
+## Submission
 
-Two recall checks must be passed on different days before variables and `input()` unlock.
+Write the attempt in [`work.py`](work.py), commit it, then ask for review.
+
+Passing this completes Recall Check 01. Recall Check 02 must happen on another later calendar day before variables and `input()` unlock.
