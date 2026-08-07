@@ -4,46 +4,28 @@ Stage 01 is complete. `print()` remains active knowledge and will keep appearing
 
 ## Current concept
 
-A variable gives a value a name so you can use that value later.
+A variable can keep the same name even when the value stored under that name changes.
 
-You already know that a variable can be reused and printed in any order. Now add one more behavior: **a variable can be assigned a new value later**.
+Reassignment still uses `=`. Python runs from top to bottom, so each `print()` call uses the value the variable has at that moment.
 
-Example:
-
-```python
-mode = "Day"
-print(mode)
-mode = "Night"
-print(mode)
-```
-
-After the second assignment, `mode` no longer stores `Day`. It now stores `Night`.
-
-Important details:
-
-- Reassignment uses the same `=` you already know.
-- You do not need a new variable just because the value changes.
-- A `print()` call uses whatever value the variable stores at that moment.
-- Python still runs the file from top to bottom.
-
-## Challenge 07: Change what one variable stores
+## Challenge 08: Same name, three values
 
 Write a Python program that produces exactly this output:
 
 ```text
-Loading...
-Ready.
+Start.
+Middle.
+Finish!
 ```
 
 ### Requirements
 
-- Create exactly one variable named `status`.
-- First assign `Loading...` to `status`.
-- Print `status`.
-- Then assign `Ready.` to that same `status` variable.
-- Print `status` again.
-- Use exactly two `print()` calls.
-- Both `print()` calls must print the variable, not string literals directly.
+- Create exactly one variable named `phase`.
+- First assign `Start.` to `phase`, then print `phase`.
+- Reassign `Middle.` to the same `phase` variable, then print `phase`.
+- Reassign `Finish!` to the same `phase` variable, then print `phase`.
+- Use exactly three `print()` calls.
+- Every `print()` call must print the variable, not a string literal directly.
 - Do not create a second variable.
 - Use only variables, string literals, assignment with `=`, and `print()`.
 - Type the code yourself.
@@ -52,4 +34,4 @@ Ready.
 
 Write your attempt in [`work.py`](work.py), commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. Variables will keep repeating before another major Python feature is introduced.
+Only one challenge is unlocked at a time. Reassignment will be mixed with earlier variable skills before Stage 02 recall checks begin.
