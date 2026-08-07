@@ -4,7 +4,7 @@
 
 - Current stage: **01 - `print()` and exact output**
 - Drill set: **Complete**
-- Next step: **Recall Check 01 on a later calendar day**
+- Current step: **Recall Check 01 unlocked**
 - Hints used: **1**
 - Full solutions requested: **0**
 
@@ -23,8 +23,8 @@ Before advancing, complete all Stage 01 challenges and then pass two recall chec
 | 2026-08-05 | 01 | 05 | Passed | 0 | Printed embedded quotation marks and an apostrophe correctly. |
 | 2026-08-05 | 01 | 06 | Passed | 0 | Mixed symbols, embedded quotes, apostrophe, and exact spacing. |
 | 2026-08-05 | 01 | 07 | Passed | 0 | Combined brackets, nested quotation marks, apostrophe, and a blank line. |
-| Later day | 01 | Recall 01 | Locked | 0 | Must be attempted without viewing earlier code. |
-| Another day | 01 | Recall 02 | Locked | 0 | Required before variables unlock. |
+| 2026-08-06 | 01 | Recall 01 | Unlocked | 0 | Must be attempted without viewing earlier code. |
+| Later day | 01 | Recall 02 | Locked | 0 | Required before variables unlock. |
 
 ## Concepts unlocked
 
