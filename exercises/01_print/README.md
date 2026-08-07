@@ -1,30 +1,20 @@
-# Stage 01 Recall Check 02
+# Stage 01 Complete: `print()` and Exact Output
 
-This is the final delayed memory test for Stage 01. Do not open earlier commits, copy previous solutions, or search for `print()` syntax before attempting it.
+Stage 01 is complete.
 
-## Required output
+You passed the drill set and both delayed recall checks on different calendar days. The final recall check required corrections, but you repaired the code without receiving a full solution.
 
-Write a Python program that produces exactly this output:
+## Retained skills
 
-```text
-[FINAL RECALL]
-"Memory beats copying."
-Don't peek.
+- Writing `print()` from memory
+- Printing exact text
+- Producing multiple output lines
+- Creating a blank output line
+- Handling apostrophes and quotation marks inside strings
+- Matching capitalization, punctuation, symbols, and spacing
 
-Stage 01: almost done!
-```
+These skills are not retired. They will continue appearing in later stages.
 
-## Requirements
+## Next stage
 
-- Use exactly five `print()` calls.
-- Each call must produce one output line, including the blank fourth line.
-- Match brackets, capitalization, quotation marks, apostrophe, punctuation, numbers, and spacing exactly.
-- Use only the Python skills already learned in Stage 01.
-- Type everything from memory.
-- Commit the attempt even if it is broken.
-
-## Submission
-
-Write the attempt in [`work.py`](work.py), commit it, then ask for review.
-
-Passing this completes Stage 01 and unlocks Stage 02, where `print()` will keep appearing alongside the next concept.
+Continue with [`../02_variables/README.md`](../02_variables/README.md).
