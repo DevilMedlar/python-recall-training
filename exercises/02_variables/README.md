@@ -4,29 +4,33 @@ Stage 01 is complete. `print()` remains active knowledge and will keep appearing
 
 ## Current concept
 
-A variable can keep the same name even when the value stored under that name changes.
+Reassigning one variable changes only the value stored under that variable name. Other variables keep their own values unless you reassign them too.
 
-Reassignment still uses `=`. Python runs from top to bottom, so each `print()` call uses the value the variable has at that moment.
+Python still runs from top to bottom, so a variable can stay unchanged while another variable changes around it.
 
-## Challenge 08: Same name, three values
+## Challenge 09: One changes, one stays
 
 Write a Python program that produces exactly this output:
 
 ```text
-Start.
-Middle.
-Finish!
+[STATUS]
+Waiting.
+[STATUS]
+Running.
 ```
 
 ### Requirements
 
-- Create exactly one variable named `phase`.
-- First assign `Start.` to `phase`, then print `phase`.
-- Reassign `Middle.` to the same `phase` variable, then print `phase`.
-- Reassign `Finish!` to the same `phase` variable, then print `phase`.
-- Use exactly three `print()` calls.
-- Every `print()` call must print the variable, not a string literal directly.
-- Do not create a second variable.
+- Create exactly two variables named `label` and `state`.
+- Assign `[STATUS]` to `label` exactly once.
+- First assign `Waiting.` to `state`.
+- Print `label`, then print `state`.
+- Reassign `Running.` to the same `state` variable.
+- Print `label` again, then print `state` again.
+- Use exactly four `print()` calls.
+- Every `print()` call must print a variable, not a string literal directly.
+- Do not reassign `label`.
+- Do not create any additional variables.
 - Use only variables, string literals, assignment with `=`, and `print()`.
 - Type the code yourself.
 
@@ -34,4 +38,4 @@ Finish!
 
 Write your attempt in [`work.py`](work.py), commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. Reassignment will be mixed with earlier variable skills before Stage 02 recall checks begin.
+Only one challenge is unlocked at a time. Stage 02 will continue mixing assignment, reuse, reassignment, and older `print()` skills before delayed recall checks begin.
