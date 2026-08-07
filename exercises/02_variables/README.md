@@ -14,22 +14,24 @@ Remember:
 - When using the variable later, write its name without quotation marks.
 - Python variable names are case-sensitive.
 
-## Challenge 02: Two named values
+## Challenge 03: Reuse one value
 
 Write a Python program that produces exactly this output:
 
 ```text
-Memory grows with repetition.
-Variables have names.
+Reuse matters.
+Reuse matters.
+Print still remembers.
 ```
 
 ### Requirements
 
-- Create exactly two variables named `first_line` and `second_line`.
-- Store the first output line in `first_line`.
-- Store the second output line in `second_line`.
-- Use exactly two `print()` calls.
-- Each `print()` call must print a variable, not a repeated string literal.
+- Create exactly one variable named `reminder`.
+- Store `Reuse matters.` in `reminder`.
+- Use exactly three `print()` calls.
+- The first two `print()` calls must both print `reminder`.
+- The third `print()` call must print the final output line directly.
+- Do not assign the same text twice.
 - Use only variables, string literals, assignment with `=`, and `print()`.
 - Type the code yourself.
 
