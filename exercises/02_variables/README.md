@@ -14,29 +14,30 @@ Remember:
 - When using the variable later, write its name without quotation marks.
 - Python variable names are case-sensitive.
 - A variable can be printed more than once and in any order you choose.
-- Older `print()` skills still count, including exact punctuation and blank lines.
+- Older `print()` skills still count.
 
-## Challenge 05: Old skill, new container
+## Challenge 06: Three names, scrambled order
 
 Write a Python program that produces exactly this output:
 
 ```text
-[VARIABLE DRILL]
-She said, "Store this."
-
-She said, "Store this."
+Third variable.
+First variable.
+Second variable.
+Third variable.
+First variable.
 ```
 
 ### Requirements
 
-- Create exactly two variables named `header` and `quote`.
-- Store `[VARIABLE DRILL]` in `header`.
-- Store `She said, "Store this."` in `quote`.
-- Use exactly four `print()` calls.
-- The first `print()` call must print `header`.
-- The second and fourth `print()` calls must both print `quote`.
-- The third `print()` call must produce the blank line.
-- Do not repeat either stored text as a string literal inside a `print()` call.
+- Create exactly three variables named `first_text`, `second_text`, and `third_text`.
+- Store `First variable.` in `first_text`.
+- Store `Second variable.` in `second_text`.
+- Store `Third variable.` in `third_text`.
+- Use exactly five `print()` calls.
+- Every `print()` call must print a variable, not a repeated string literal.
+- Print the variables in the order needed to match the required output.
+- Do not assign any of the three stored texts more than once.
 - Use only variables, string literals, assignment with `=`, and `print()`.
 - Type the code yourself.
 
