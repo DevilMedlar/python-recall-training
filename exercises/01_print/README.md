@@ -1,29 +1,21 @@
-# Stage 01 Recall Check 01
+# Stage 01: Recall Check 01 Passed
 
-This is a delayed memory test. Do not open earlier commits, copy previous solutions, or search for `print()` syntax before attempting it.
+Recall Check 01 was completed successfully on 2026-08-06 without hints or copied syntax.
 
-## Required output
+## Current status
 
-Write a Python program that produces exactly this output:
+**Recall Check 02 is locked until a later calendar day.**
 
-```text
-[RECALL CHECK 01]
-She said, "Type it again."
+This delay matters. The next check should test whether the skill can be retrieved again after another gap, not whether the previous answer is still glowing in short-term memory.
 
-I didn't copy this.
-```
+## Until Recall Check 02
 
-## Requirements
+- Do not study earlier `print()` solutions.
+- Do not open old commits to rehearse the syntax.
+- Do not redo Recall Check 01.
+- Leave the cleared `work.py` file alone.
+- Return on another calendar day and ask for Recall Check 02.
 
-- Use exactly four `print()` calls.
-- Each call must produce one output line, including the blank third line.
-- Match brackets, capitalization, quotation marks, apostrophe, punctuation, and spacing exactly.
-- Use only the Python skills already learned in Stage 01.
-- Type everything from memory.
-- Commit the attempt even if it is broken.
+## Stage 01 advancement rule
 
-## Submission
-
-Write the attempt in [`work.py`](work.py), commit it, then ask for review.
-
-Passing this completes Recall Check 01. Recall Check 02 must happen on another later calendar day before variables and `input()` unlock.
+Passing Recall Check 02 on another day completes Stage 01 and unlocks the next training stage, where earlier `print()` skills will continue appearing alongside new material.
