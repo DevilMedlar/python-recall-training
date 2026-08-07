@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **02 - Variables that store text**
-- Current challenge: **01**
+- Current challenge: **02**
 - Stage 01: **Complete**
 - Recall Check 01: **Passed**
 - Recall Check 02: **Passed after corrections**
@@ -27,7 +27,8 @@ Stage 01 was completed after seven drills and two delayed recall checks on diffe
 | 2026-08-05 | 01 | 07 | Passed | 0 | Combined brackets, nested quotation marks, apostrophe, and a blank line. |
 | 2026-08-06 | 01 | Recall 01 | Passed | 0 | Recalled four exact `print()` calls after a delayed gap. |
 | 2026-08-07 | 01 | Recall 02 | Passed after corrections | 3 | Corrected function spelling, case sensitivity, and quotation/closing syntax across attempts. |
-| 2026-08-07 | 02 | 01 | In progress | 2 | Renamed the stored variable to `message`, but the first `print()` still refers to the old variable name. |
+| 2026-08-07 | 02 | 01 | Passed after corrections | 2 | Used the required `message` variable consistently in both assignment and `print()`. |
+| 2026-08-07 | 02 | 02 | Unlocked | 0 | Repeats text-variable assignment with two named values. |
 
 ## Concepts unlocked
 
