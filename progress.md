@@ -4,7 +4,8 @@
 
 - Current stage: **02 - Variables that store text**
 - Drill set: **Complete**
-- Stage 02 Recall Check 01: **Active**
+- Stage 02 Recall Check 01: **Passed**
+- Stage 02 Recall Check 02: **Locked until a later calendar day**
 - Stage 01: **Complete**
 - Stage 01 Recall Check 01: **Passed**
 - Stage 01 Recall Check 02: **Passed after corrections**
@@ -17,7 +18,7 @@ Stage 01 was completed after seven drills and two delayed recall checks on diffe
 
 ## Stage 02 mastery requirements
 
-The ten normal variable drills are complete. Stage 02 is not mastered yet. Delayed recall checks are required on later calendar days before another major Python feature is unlocked.
+The ten normal variable drills and Stage 02 Recall Check 01 are complete. Stage 02 is not mastered yet. One more delayed recall check on a later calendar day is required before another major Python feature is unlocked.
 
 ## Attempt log
 
@@ -42,7 +43,8 @@ The ten normal variable drills are complete. Stage 02 is not mastered yet. Delay
 | 2026-08-07 | 02 | 08 | Passed | 0 | Reassigned one `phase` variable through three successive text values and printed each value at the correct moment. |
 | 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` unchanged while reassigning `state`, then printed both values at the correct moments. |
 | 2026-08-07 | 02 | 10 | Passed | 0 | Completed the capstone with three variables, reuse, reassignment, chosen print order, embedded quotes, and a blank line. |
-| 2026-08-08 | 02 | Recall 01 | Active | 0 | Delayed memory check after the normal drill set. |
+| 2026-08-08 | 02 | Recall 01 | Passed | 0 | Recalled assignment, reuse, exact output, quotes, a blank line, and reassignment without hints. |
+| Later day | 02 | Recall 02 | Locked | 0 | Final delayed memory check before Stage 02 mastery. |
 
 ## Concepts unlocked
 
