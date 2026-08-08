@@ -1,30 +1,39 @@
 # Stage 02: Variables That Store Text
 
-Stage 01 is complete. `print()` remains active knowledge and continues appearing while variables are trained.
+The ten normal Stage 02 drills are complete. Today is a delayed recall day.
 
-## Drill-set status
+## Recall Check 01
 
-**Complete.** All ten normal Stage 02 variable drills have been passed.
+Do this from memory. Do not review earlier Stage 02 solutions, commits, or examples before attempting it.
 
-The next step is **Delayed Recall Check 01**, but it is locked until a later calendar day. Do not review earlier solutions, commits, or examples before attempting it when it unlocks.
+Write a Python program that produces exactly this output:
 
-Passing the normal drill set does not complete Stage 02 mastery. Delayed recall checks are required before another major Python feature is introduced.
+```text
+[MEMORY CHECK]
+Waiting.
+She said, "Names remember."
 
-## Skills trained in this stage
+She said, "Names remember."
+Ready!
+[MEMORY CHECK]
+```
 
-- Assigning text to a variable with `=`.
-- Printing a stored variable value.
-- Reusing a variable more than once.
-- Tracking multiple variables at the same time.
-- Printing variables in an order different from their assignment order.
-- Reassigning a variable to a new value.
-- Keeping one variable unchanged while another variable changes.
-- Combining variables with exact punctuation, embedded quotation marks, and blank output lines.
+### Requirements
 
-## Completed capstone
+- Create exactly three variables named `banner`, `quote`, and `state`.
+- Store `[MEMORY CHECK]` in `banner` exactly once.
+- Store `She said, "Names remember."` in `quote` exactly once.
+- First store `Waiting.` in `state`.
+- Later reassign `Ready!` to that same `state` variable, but only after `Waiting.` has already been printed.
+- Use exactly seven `print()` calls, including the call that creates the blank fourth output line.
+- Every non-blank `print()` call must print a variable, not repeat the stored text directly.
+- Do not reassign `banner` or `quote`.
+- Do not create any additional variables.
+- Use only skills already learned in Stages 01 and 02.
+- Type it from memory.
 
-Challenge 10 required exact output using three variables named `header`, `message`, and `state`, including reuse, reassignment, quotation marks, chosen print order, and a blank output line.
+### Submission
 
-## Next step
+Write your attempt in [`work.py`](work.py), commit it even if it is broken, then ask for review.
 
-Wait until a later calendar day for Stage 02 Recall Check 01. The recall check will be written from memory using only already learned Stage 01 and Stage 02 skills.
+Only this recall check is active. No new Python feature unlocks until the delayed recall requirement is satisfied.
