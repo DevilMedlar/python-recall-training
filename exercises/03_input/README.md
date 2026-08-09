@@ -4,66 +4,64 @@ Stage 02 is mastered. Variables, reassignment, exact output, quotation marks, an
 
 ## Current concept
 
-A variable can receive text from prompted `input()` more than once. Reassigning that variable changes only its stored value. Other variables keep their own values unless you reassign them too.
+Prompted `input()` can collect multiple separate keyboard values. Those values can be stored in different variables, reused later, and printed in any order.
 
-Challenge 08 mixes prompted input with an older Stage 02 pattern: one variable stays fixed while another variable changes.
+Challenge 09 mixes that with earlier skills: one fixed stored label, two prompted keyboard values, reuse, chosen output order, and a blank line. No new syntax is introduced.
 
-## Challenge 08: One stays, prompted state changes
+## Challenge 09: Two inputs, fixed label, mixed output
 
-Create a fixed label and then collect two keyboard values in the same `state` variable.
+Create a fixed label and collect two keyboard values in separate variables.
 
 The first `input()` call must display exactly this prompt:
 
 ```text
-First state: 
+First line: 
 ```
 
 When it waits, type exactly:
 
 ```text
-Waiting.
+Keyboard alpha.
 ```
 
-After that input, print exactly:
+The second `input()` call must display exactly this prompt:
 
 ```text
-[INPUT STATUS]
-Waiting.
-```
-
-Then the second `input()` call must display exactly this prompt:
-
-```text
-Second state: 
+Second line: 
 ```
 
 When it waits, type exactly:
 
 ```text
-Ready.
+Keyboard beta.
 ```
 
-After that input, print exactly:
+After both inputs have been entered, the program must print exactly:
 
 ```text
-[INPUT STATUS]
-Ready.
+[INPUT MEMORY]
+Keyboard beta.
+
+Keyboard alpha.
+[INPUT MEMORY]
+Keyboard beta.
 ```
 
 ### Requirements
 
-- Create exactly two variables named `label` and `state`.
-- Assign the exact string `[INPUT STATUS]` to `label` exactly once.
+- Create exactly three variables named `header`, `first_line`, and `second_line`.
+- Assign the exact string `[INPUT MEMORY]` to `header` exactly once.
 - Use `input()` exactly twice.
-- The first `input()` call must contain the exact prompt string `First state: ` and store the returned keyboard text in `state`.
-- Print `label`, then print `state`.
-- The second `input()` call must contain the exact prompt string `Second state: ` and reassign its returned keyboard text to the same `state` variable.
-- Print `label` again, then print `state` again.
-- Use exactly four `print()` calls.
-- Every `print()` call must print a variable, not a string literal directly.
-- Do not reassign `label`.
+- The first `input()` call must contain the exact prompt string `First line: ` and store the returned keyboard text in `first_line`.
+- The second `input()` call must contain the exact prompt string `Second line: ` and store the returned keyboard text in `second_line`.
+- Use exactly six `print()` calls.
+- Print `header`, then `second_line`.
+- The third `print()` call must create the blank output line.
+- Then print `first_line`, `header`, and `second_line` in that order.
+- Every non-blank `print()` call must print a variable, not a string literal directly.
+- Do not reassign any variable.
 - Do not create any additional variables.
-- Do not write `Waiting.` or `Ready.` as string literals anywhere in your code.
+- Do not write `Keyboard alpha.` or `Keyboard beta.` as string literals anywhere in your code.
 - Use only variables, string literals, assignment with `=`, `input()`, and `print()`.
 - Type the code yourself.
 
