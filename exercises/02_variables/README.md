@@ -6,21 +6,41 @@ The ten normal Stage 02 drills are complete.
 
 **Recall Check 01: Passed on 2026-08-08 without hints.**
 
-Stage 02 is not mastered yet. **Recall Check 02 is locked until a later calendar day.** Do not review earlier Stage 02 solutions, commits, or examples before attempting it when it unlocks.
+**Recall Check 02: Active on 2026-08-09.**
 
-The final recall check will use only skills already learned in Stages 01 and 02. No new Python feature is unlocked until that delayed memory check is passed.
+This is the final delayed memory check for Stage 02. Do it from memory. Do not review earlier Stage 02 solutions, commits, or examples before attempting it.
 
-## Skills being retained
+## Recall Check 02
 
-- Assigning text to variables with `=`.
-- Printing stored values.
-- Reusing variables.
-- Tracking multiple variables.
-- Printing variables in a chosen order.
-- Reassigning a variable to a new text value.
-- Keeping one variable unchanged while another changes.
-- Exact punctuation, embedded quotation marks, and blank output lines.
+Write a Python program that produces exactly this output:
 
-## Next step
+```text
+She said, "Recall the name."
+[FINAL VARIABLE CHECK]
+Before.
 
-Wait until a later calendar day for Stage 02 Recall Check 02. When it unlocks, attempt it from memory before reviewing earlier work.
+[FINAL VARIABLE CHECK]
+After!
+She said, "Recall the name."
+[FINAL VARIABLE CHECK]
+```
+
+### Requirements
+
+- Create exactly three variables named `tag`, `line`, and `mode`.
+- Store `[FINAL VARIABLE CHECK]` in `tag` exactly once.
+- Store `She said, "Recall the name."` in `line` exactly once.
+- First store `Before.` in `mode`.
+- Reassign `After!` to that same `mode` variable only after `Before.` has already been printed.
+- Use exactly eight `print()` calls, including the call that creates the blank fourth output line.
+- Every non-blank `print()` call must print a variable, not repeat stored text directly.
+- Do not reassign `tag` or `line`.
+- Do not create any additional variables.
+- Use only skills already learned in Stages 01 and 02.
+- Type it from memory.
+
+### Submission
+
+Write your attempt in [`work.py`](work.py), commit it even if it is broken, then ask for review.
+
+Passing this delayed recall check completes Stage 02 mastery. No new Python feature is introduced inside this check.
