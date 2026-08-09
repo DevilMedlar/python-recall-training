@@ -1,2 +1,1 @@
-# Stage 02 Recall Check 01 passed.
-# Recall Check 02 is locked until a later calendar day.
+# Write only your current Stage 02 Recall Check 02 attempt below this line.
