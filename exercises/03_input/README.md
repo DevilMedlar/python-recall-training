@@ -2,52 +2,55 @@
 
 Stage 02 is mastered. Variables, reassignment, exact output, quotation marks, and blank lines remain active knowledge and will keep returning.
 
-## Current concept
+## New concept
 
-`input()` waits for keyboard text and returns what you typed.
+So far, `input()` has used empty parentheses and waited silently.
 
-A variable that receives text from `input()` can be reassigned later, just like any other variable. The new keyboard value replaces the old stored value under that same name.
+A string literal can also go inside the parentheses:
 
-For now, keep using `input()` with empty parentheses only. Prompt text inside `input()` is still locked.
-
-## Challenge 04: Reassign with keyboard input
-
-Run the program. When it waits for input the first time, type exactly:
-
-```text
-First keyboard value.
+```python
+input("Prompt text: ")
 ```
 
-After that value is printed, the program must wait for input again. Type exactly:
+Python displays that prompt text first, then waits for keyboard input. The value returned by `input()` is still only the text you type. The prompt itself is not stored as part of that returned value.
+
+## Challenge 05: Prompt, store, print
+
+Run the program. Before it waits for input, it must display exactly this prompt:
 
 ```text
-Second keyboard value.
+Type this: 
 ```
 
-The program must print exactly:
+The prompt must end with one space after the colon so the keyboard text begins on the same line with a gap.
+
+When it waits for input, type exactly:
 
 ```text
-First keyboard value.
-Second keyboard value.
+Prompt remembered.
+```
+
+After you press Enter, the program must print exactly:
+
+```text
+Prompt remembered.
 ```
 
 ### Requirements
 
 - Create exactly one variable named `message`.
-- Use `input()` exactly twice.
-- Store the first keyboard value in `message`.
-- Print `message` before the second `input()` call happens.
-- Reassign the second keyboard value to that same `message` variable.
-- Print `message` again after the reassignment.
-- Use exactly two `print()` calls.
-- Do not create a second variable.
-- Do not write either keyboard value as a string literal anywhere in your code.
-- Do not put prompt text inside either `input()` call.
-- Use only variables, assignment with `=`, `input()`, and `print()`.
+- Use `input()` exactly once.
+- Put the exact string literal `Type this: ` inside that `input()` call.
+- Assign the text returned by `input()` to `message`.
+- Use exactly one `print()` call.
+- The `print()` call must print `message`.
+- Do not write `Prompt remembered.` as a string literal anywhere in your code.
+- Do not create any additional variables.
+- Use only variables, string literals, assignment with `=`, `input()`, and `print()`.
 - Type the code yourself.
 
 ### Submission
 
 Write your attempt in [`work.py`](work.py), run it locally, commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. `input()` will keep repeating and mixing with older variable skills before another major concept appears.
+Only one challenge is unlocked at a time. Prompted `input()` will be repeated and mixed with earlier skills before another major concept appears.
