@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **03 - Keyboard input as text**
-- Current challenge: **03**
+- Current challenge: **04**
 - Stage 02: **Mastered**
 - Stage 02 Recall Check 01: **Passed**
 - Stage 02 Recall Check 02: **Passed**
@@ -48,7 +48,8 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 | 2026-08-09 | 02 | Recall 02 | Passed | 0 | Passed the final delayed variable recall check without hints. |
 | 2026-08-09 | 03 | 01 | Passed | 0 | Stored text returned by one `input()` call in `message` and printed the stored value. |
 | 2026-08-09 | 03 | 02 | Passed | 0 | Stored two keyboard inputs separately and printed them in reverse order. |
-| 2026-08-09 | 03 | 03 | Unlocked | 0 | Reuses one keyboard input around a blank output line. |
+| 2026-08-09 | 03 | 03 | Passed | 0 | Reused one stored keyboard input around a blank output line. |
+| 2026-08-09 | 03 | 04 | Unlocked | 0 | Reassigns the same variable using a second `input()` value. |
 
 ## Concepts unlocked
 
@@ -69,6 +70,7 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 - Storing text returned by `input()` in a variable
 - Storing multiple keyboard inputs in separate variables
 - Reusing a stored keyboard input value
+- Reassigning the same variable from a later `input()` call
 
 ## Concepts not yet unlocked
 
