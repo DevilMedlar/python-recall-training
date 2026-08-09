@@ -4,44 +4,66 @@ Stage 02 is mastered. Variables, reassignment, exact output, quotation marks, an
 
 ## Current concept
 
-Prompt text inside `input()` is displayed before Python waits for keyboard text. The returned keyboard text can still be stored and reused just like any other value you learned earlier.
+A variable can receive text from prompted `input()` more than once. Reassigning that variable changes only its stored value. Other variables keep their own values unless you reassign them too.
 
-Challenge 07 combines prompted input with reuse and an older blank-line skill. No new syntax is introduced.
+Challenge 08 mixes prompted input with an older Stage 02 pattern: one variable stays fixed while another variable changes.
 
-## Challenge 07: Prompt, reuse, blank line
+## Challenge 08: One stays, prompted state changes
 
-Run the program. The `input()` call must display exactly this prompt:
+Create a fixed label and then collect two keyboard values in the same `state` variable.
+
+The first `input()` call must display exactly this prompt:
 
 ```text
-Repeat: 
+First state: 
 ```
 
 When it waits, type exactly:
 
 ```text
-Prompted echo.
+Waiting.
 ```
 
-After you press Enter, the program must print exactly:
+After that input, print exactly:
 
 ```text
-Prompted echo.
+[INPUT STATUS]
+Waiting.
+```
 
-Prompted echo.
+Then the second `input()` call must display exactly this prompt:
+
+```text
+Second state: 
+```
+
+When it waits, type exactly:
+
+```text
+Ready.
+```
+
+After that input, print exactly:
+
+```text
+[INPUT STATUS]
+Ready.
 ```
 
 ### Requirements
 
-- Create exactly one variable named `echo`.
-- Use `input()` exactly once.
-- Put the exact prompt string `Repeat: ` inside that `input()` call.
-- Store the returned keyboard text in `echo`.
-- Use exactly three `print()` calls.
-- The first `print()` call must print `echo`.
-- The second `print()` call must create the blank output line.
-- The third `print()` call must print `echo` again.
-- Do not write `Prompted echo.` as a string literal anywhere in your code.
+- Create exactly two variables named `label` and `state`.
+- Assign the exact string `[INPUT STATUS]` to `label` exactly once.
+- Use `input()` exactly twice.
+- The first `input()` call must contain the exact prompt string `First state: ` and store the returned keyboard text in `state`.
+- Print `label`, then print `state`.
+- The second `input()` call must contain the exact prompt string `Second state: ` and reassign its returned keyboard text to the same `state` variable.
+- Print `label` again, then print `state` again.
+- Use exactly four `print()` calls.
+- Every `print()` call must print a variable, not a string literal directly.
+- Do not reassign `label`.
 - Do not create any additional variables.
+- Do not write `Waiting.` or `Ready.` as string literals anywhere in your code.
 - Use only variables, string literals, assignment with `=`, `input()`, and `print()`.
 - Type the code yourself.
 
@@ -49,4 +71,4 @@ Prompted echo.
 
 Write your attempt in [`work.py`](work.py), run it locally, commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. Prompted `input()` will continue mixing with earlier skills before delayed recall checks begin.
+Only one challenge is unlocked at a time. Stage 03 will keep combining input with earlier skills before delayed recall checks begin.
