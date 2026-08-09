@@ -3,7 +3,9 @@
 ## Current status
 
 - Current stage: **03 - Keyboard input as text**
-- Current challenge: **10**
+- Drill set: **Complete**
+- Stage 03 Recall Check 01: **Locked until a later calendar day**
+- Stage 03 Recall Check 02: **Locked**
 - Stage 02: **Mastered**
 - Stage 02 Recall Check 01: **Passed**
 - Stage 02 Recall Check 02: **Passed**
@@ -20,6 +22,10 @@ Stage 01 was completed after seven drills and two delayed recall checks on diffe
 ## Stage 02 result
 
 Stage 02 was mastered after ten normal variable drills and two delayed recall checks on later calendar days. Recall Check 01 and Recall Check 02 were both passed without hints.
+
+## Stage 03 mastery requirements
+
+The ten normal keyboard-input drills are complete. Recall Check 01 must happen on a later calendar day, not on 2026-08-09. The earliest eligible date is 2026-08-10. After Recall Check 01 is passed, Recall Check 02 must happen on another later calendar day before Stage 03 is mastered and another major Python feature unlocks.
 
 ## Attempt log
 
@@ -55,7 +61,7 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 | 2026-08-09 | 03 | 07 | Passed | 0 | Reused one prompted keyboard value twice with a blank output line between the prints. |
 | 2026-08-09 | 03 | 08 | Passed | 0 | Kept `label` fixed while reassigning `state` from two prompted keyboard inputs and printing both states. |
 | 2026-08-09 | 03 | 09 | Passed | 0 | Combined a fixed header, two prompted inputs, chosen output order, reuse, and a blank line. |
-| 2026-08-09 | 03 | 10 | Unlocked | 0 | Normal-drill capstone combining prompted input, reuse, reassignment, fixed text, and a blank line. |
+| 2026-08-09 | 03 | 10 | Passed | 0 | Completed the normal-drill capstone with prompted input, reuse, reassignment, fixed text, chosen output order, and a blank line. |
 
 ## Concepts unlocked
 
