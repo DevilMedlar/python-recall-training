@@ -4,64 +4,83 @@ Stage 02 is mastered. Variables, reassignment, exact output, quotation marks, an
 
 ## Current concept
 
-Prompted `input()` can collect multiple separate keyboard values. Those values can be stored in different variables, reused later, and printed in any order.
+You now know how to collect keyboard text with `input()`, add prompt text, store multiple values, reuse stored input, and reassign a variable from a later input.
 
-Challenge 09 mixes that with earlier skills: one fixed stored label, two prompted keyboard values, reuse, chosen output order, and a blank line. No new syntax is introduced.
+Challenge 10 is the normal-drill capstone for Stage 03. It combines those skills with older variable and exact-output skills. No new syntax is introduced.
 
-## Challenge 09: Two inputs, fixed label, mixed output
+## Challenge 10: Input capstone
 
-Create a fixed label and collect two keyboard values in separate variables.
+Create one fixed header, collect a message, then collect two different states in the same `state` variable.
 
 The first `input()` call must display exactly this prompt:
 
 ```text
-First line: 
+Message: 
 ```
 
 When it waits, type exactly:
 
 ```text
-Keyboard alpha.
+She said, "Keyboard memory."
 ```
 
 The second `input()` call must display exactly this prompt:
 
 ```text
-Second line: 
+State one: 
 ```
 
 When it waits, type exactly:
 
 ```text
-Keyboard beta.
+Waiting.
 ```
 
-After both inputs have been entered, the program must print exactly:
+After those two inputs, print exactly:
 
 ```text
-[INPUT MEMORY]
-Keyboard beta.
+She said, "Keyboard memory."
+[INPUT CAPSTONE]
+Waiting.
 
-Keyboard alpha.
-[INPUT MEMORY]
-Keyboard beta.
+```
+
+Then the third `input()` call must display exactly this prompt:
+
+```text
+State two: 
+```
+
+When it waits, type exactly:
+
+```text
+Ready!
+```
+
+After that input, print exactly:
+
+```text
+[INPUT CAPSTONE]
+Ready!
+She said, "Keyboard memory."
 ```
 
 ### Requirements
 
-- Create exactly three variables named `header`, `first_line`, and `second_line`.
-- Assign the exact string `[INPUT MEMORY]` to `header` exactly once.
-- Use `input()` exactly twice.
-- The first `input()` call must contain the exact prompt string `First line: ` and store the returned keyboard text in `first_line`.
-- The second `input()` call must contain the exact prompt string `Second line: ` and store the returned keyboard text in `second_line`.
-- Use exactly six `print()` calls.
-- Print `header`, then `second_line`.
-- The third `print()` call must create the blank output line.
-- Then print `first_line`, `header`, and `second_line` in that order.
+- Create exactly three variables named `header`, `message`, and `state`.
+- Assign the exact string `[INPUT CAPSTONE]` to `header` exactly once.
+- Use `input()` exactly three times.
+- The first `input()` call must contain the exact prompt string `Message: ` and store the returned keyboard text in `message`.
+- The second `input()` call must contain the exact prompt string `State one: ` and store the returned keyboard text in `state`.
+- Print `message`, then `header`, then `state`.
+- The fourth `print()` call must create the blank output line.
+- Only after the first `state` value has been printed, use a third `input()` call with the exact prompt string `State two: ` and reassign its returned keyboard text to the same `state` variable.
+- Then print `header`, `state`, and `message` in that order.
+- Use exactly seven `print()` calls total.
 - Every non-blank `print()` call must print a variable, not a string literal directly.
-- Do not reassign any variable.
+- Do not reassign `header` or `message`.
 - Do not create any additional variables.
-- Do not write `Keyboard alpha.` or `Keyboard beta.` as string literals anywhere in your code.
+- Do not write `She said, "Keyboard memory."`, `Waiting.`, or `Ready!` as string literals anywhere in your code.
 - Use only variables, string literals, assignment with `=`, `input()`, and `print()`.
 - Type the code yourself.
 
@@ -69,4 +88,4 @@ Keyboard beta.
 
 Write your attempt in [`work.py`](work.py), run it locally, commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. Stage 03 will keep combining input with earlier skills before delayed recall checks begin.
+Passing this challenge completes the normal Stage 03 drill set. Delayed recall checks are still required before Stage 03 is mastered and another major Python feature unlocks.
