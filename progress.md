@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **03 - Keyboard input as text**
-- Current challenge: **09**
+- Current challenge: **10**
 - Stage 02: **Mastered**
 - Stage 02 Recall Check 01: **Passed**
 - Stage 02 Recall Check 02: **Passed**
@@ -54,7 +54,8 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 | 2026-08-09 | 03 | 06 | Passed | 0 | Used two exact prompts, stored both keyboard values separately, and printed them in reverse order. |
 | 2026-08-09 | 03 | 07 | Passed | 0 | Reused one prompted keyboard value twice with a blank output line between the prints. |
 | 2026-08-09 | 03 | 08 | Passed | 0 | Kept `label` fixed while reassigning `state` from two prompted keyboard inputs and printing both states. |
-| 2026-08-09 | 03 | 09 | Unlocked | 0 | Combines a fixed label, two prompted inputs, chosen output order, reuse, and a blank line. |
+| 2026-08-09 | 03 | 09 | Passed | 0 | Combined a fixed header, two prompted inputs, chosen output order, reuse, and a blank line. |
+| 2026-08-09 | 03 | 10 | Unlocked | 0 | Normal-drill capstone combining prompted input, reuse, reassignment, fixed text, and a blank line. |
 
 ## Concepts unlocked
 
