@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **03 - Keyboard input as text**
-- Current challenge: **08**
+- Current challenge: **09**
 - Stage 02: **Mastered**
 - Stage 02 Recall Check 01: **Passed**
 - Stage 02 Recall Check 02: **Passed**
@@ -53,7 +53,8 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 | 2026-08-09 | 03 | 05 | Passed | 0 | Used exact prompt text inside `input()` while storing and printing only the keyboard-entered text. |
 | 2026-08-09 | 03 | 06 | Passed | 0 | Used two exact prompts, stored both keyboard values separately, and printed them in reverse order. |
 | 2026-08-09 | 03 | 07 | Passed | 0 | Reused one prompted keyboard value twice with a blank output line between the prints. |
-| 2026-08-09 | 03 | 08 | Unlocked | 0 | Keeps one variable fixed while a prompted keyboard value is reassigned in another variable. |
+| 2026-08-09 | 03 | 08 | Passed | 0 | Kept `label` fixed while reassigning `state` from two prompted keyboard inputs and printing both states. |
+| 2026-08-09 | 03 | 09 | Unlocked | 0 | Combines a fixed label, two prompted inputs, chosen output order, reuse, and a blank line. |
 
 ## Concepts unlocked
 
@@ -78,6 +79,7 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 - Prompt text inside `input()`
 - Reusing a value returned by prompted `input()`
 - Keeping one stored variable fixed while another is reassigned from prompted `input()`
+- Combining prompted inputs with fixed variables, chosen output order, reuse, and blank lines
 
 ## Concepts not yet unlocked
 
