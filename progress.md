@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **03 - Keyboard input as text**
-- Current challenge: **04**
+- Current challenge: **05**
 - Stage 02: **Mastered**
 - Stage 02 Recall Check 01: **Passed**
 - Stage 02 Recall Check 02: **Passed**
@@ -49,7 +49,8 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 | 2026-08-09 | 03 | 01 | Passed | 0 | Stored text returned by one `input()` call in `message` and printed the stored value. |
 | 2026-08-09 | 03 | 02 | Passed | 0 | Stored two keyboard inputs separately and printed them in reverse order. |
 | 2026-08-09 | 03 | 03 | Passed | 0 | Reused one stored keyboard input around a blank output line. |
-| 2026-08-09 | 03 | 04 | Unlocked | 0 | Reassigns the same variable using a second `input()` value. |
+| 2026-08-09 | 03 | 04 | Passed | 0 | Reassigned the same `message` variable from a second `input()` call after printing the first value. |
+| 2026-08-09 | 03 | 05 | Unlocked | 0 | Introduces prompt text inside `input()` while still storing and printing keyboard text. |
 
 ## Concepts unlocked
 
@@ -71,10 +72,10 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 - Storing multiple keyboard inputs in separate variables
 - Reusing a stored keyboard input value
 - Reassigning the same variable from a later `input()` call
+- Prompt text inside `input()`
 
 ## Concepts not yet unlocked
 
-- Prompt text inside `input()`
 - Number conversion
 - Arithmetic
 - Conditionals
