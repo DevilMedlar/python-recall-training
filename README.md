@@ -25,10 +25,11 @@ This repository is not designed to race through topics. Each skill is repeated, 
 
 ## Current stage
 
-**Stage 02: Variables that store text**
+**Stage 03: Keyboard input as text**
 
-See [`exercises/02_variables/README.md`](exercises/02_variables/README.md).
+See [`exercises/03_input/README.md`](exercises/03_input/README.md).
 
 Stage 01 (`print()` and exact output) is complete.
+Stage 02 (variables that store text) is mastered after ten drills and two delayed recall checks.
 
 Progress is tracked in [`progress.md`](progress.md), and the tutoring contract is recorded in [`rules.md`](rules.md).
