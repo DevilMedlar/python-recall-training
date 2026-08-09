@@ -6,42 +6,37 @@ Stage 02 is mastered. Variables, reassignment, exact output, quotation marks, an
 
 `input()` waits for keyboard text and returns what you typed.
 
-That returned text can be stored in a variable. Different `input()` calls can store different pieces of text in different variables, and those variables can be printed in any order.
+Once that returned text is stored in a variable, the variable can be reused just like any other stored text value you already learned in Stage 02.
 
 For now, keep using `input()` with empty parentheses only. Prompt text inside `input()` is still locked.
 
-## Challenge 02: Two inputs, reverse output
+## Challenge 03: Input, reuse, blank line
 
-Run the program. When it waits for input the first time, type exactly:
+Run the program. When it waits for input, type exactly:
 
 ```text
-First keyboard line.
+Echo from keyboard.
 ```
 
-When it waits for input the second time, type exactly:
+After you press Enter, the program must print exactly:
 
 ```text
-Second keyboard line.
-```
+Echo from keyboard.
 
-After both inputs have been entered, the program must print exactly:
-
-```text
-Second keyboard line.
-First keyboard line.
+Echo from keyboard.
 ```
 
 ### Requirements
 
-- Create exactly two variables named `first_message` and `second_message`.
-- Use `input()` exactly twice.
-- Store the first keyboard value in `first_message`.
-- Store the second keyboard value in `second_message`.
-- Use exactly two `print()` calls.
-- First print `second_message`.
-- Then print `first_message`.
-- Do not write either keyboard line as a string literal anywhere in your code.
-- Do not put prompt text inside either `input()` call.
+- Create exactly one variable named `echo`.
+- Use `input()` exactly once.
+- Store the keyboard value in `echo`.
+- Use exactly three `print()` calls.
+- The first `print()` call must print `echo`.
+- The second `print()` call must create the blank output line.
+- The third `print()` call must print `echo` again.
+- Do not write `Echo from keyboard.` as a string literal anywhere in your code.
+- Do not put prompt text inside `input()`.
 - Use only variables, assignment with `=`, `input()`, and `print()`.
 - Type the code yourself.
 
@@ -49,4 +44,4 @@ First keyboard line.
 
 Write your attempt in [`work.py`](work.py), run it locally, commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. `input()` will be repeated and mixed with older variable skills before another major concept appears.
+Only one challenge is unlocked at a time. `input()` will keep repeating and mixing with older skills before another major concept appears.
