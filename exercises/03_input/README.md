@@ -4,53 +4,43 @@ Stage 02 is mastered. Variables, reassignment, exact output, quotation marks, an
 
 ## Current concept
 
-`input()` can display prompt text and return only what the user types.
+Prompt text inside `input()` is displayed before Python waits for keyboard text. The returned keyboard text can still be stored and reused just like any other value you learned earlier.
 
-Different prompted `input()` calls can store different keyboard values in separate variables. Those stored values can then be printed in any order, just like variables from Stage 02.
+Challenge 07 combines prompted input with reuse and an older blank-line skill. No new syntax is introduced.
 
-## Challenge 06: Two prompts, reverse output
+## Challenge 07: Prompt, reuse, blank line
 
-Run the program. The first `input()` call must display exactly this prompt:
+Run the program. The `input()` call must display exactly this prompt:
 
 ```text
-First: 
+Repeat: 
 ```
 
 When it waits, type exactly:
 
 ```text
-Keyboard one.
+Prompted echo.
 ```
 
-The second `input()` call must display exactly this prompt:
+After you press Enter, the program must print exactly:
 
 ```text
-Second: 
-```
+Prompted echo.
 
-When it waits, type exactly:
-
-```text
-Keyboard two.
-```
-
-After both inputs have been entered, the program must print exactly:
-
-```text
-Keyboard two.
-Keyboard one.
+Prompted echo.
 ```
 
 ### Requirements
 
-- Create exactly two variables named `first_text` and `second_text`.
-- Use `input()` exactly twice.
-- The first `input()` call must contain the exact prompt string `First: ` and store the returned keyboard text in `first_text`.
-- The second `input()` call must contain the exact prompt string `Second: ` and store the returned keyboard text in `second_text`.
-- Use exactly two `print()` calls.
-- First print `second_text`.
-- Then print `first_text`.
-- Do not write either keyboard value as a string literal anywhere in your code.
+- Create exactly one variable named `echo`.
+- Use `input()` exactly once.
+- Put the exact prompt string `Repeat: ` inside that `input()` call.
+- Store the returned keyboard text in `echo`.
+- Use exactly three `print()` calls.
+- The first `print()` call must print `echo`.
+- The second `print()` call must create the blank output line.
+- The third `print()` call must print `echo` again.
+- Do not write `Prompted echo.` as a string literal anywhere in your code.
 - Do not create any additional variables.
 - Use only variables, string literals, assignment with `=`, `input()`, and `print()`.
 - Type the code yourself.
@@ -59,4 +49,4 @@ Keyboard one.
 
 Write your attempt in [`work.py`](work.py), run it locally, commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. Prompted `input()` will keep repeating and mixing with earlier skills before another major concept appears.
+Only one challenge is unlocked at a time. Prompted `input()` will continue mixing with earlier skills before delayed recall checks begin.
