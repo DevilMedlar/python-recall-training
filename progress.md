@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **03 - Keyboard input as text**
-- Current challenge: **06**
+- Current challenge: **07**
 - Stage 02: **Mastered**
 - Stage 02 Recall Check 01: **Passed**
 - Stage 02 Recall Check 02: **Passed**
@@ -51,7 +51,8 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 | 2026-08-09 | 03 | 03 | Passed | 0 | Reused one stored keyboard input around a blank output line. |
 | 2026-08-09 | 03 | 04 | Passed | 0 | Reassigned the same `message` variable from a second `input()` call after printing the first value. |
 | 2026-08-09 | 03 | 05 | Passed | 0 | Used exact prompt text inside `input()` while storing and printing only the keyboard-entered text. |
-| 2026-08-09 | 03 | 06 | Unlocked | 0 | Uses two prompted inputs, stores them separately, and prints the values in reverse order. |
+| 2026-08-09 | 03 | 06 | Passed | 0 | Used two exact prompts, stored both keyboard values separately, and printed them in reverse order. |
+| 2026-08-09 | 03 | 07 | Unlocked | 0 | Reuses one prompted keyboard value around a blank output line. |
 
 ## Concepts unlocked
 
@@ -74,6 +75,7 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 - Reusing a stored keyboard input value
 - Reassigning the same variable from a later `input()` call
 - Prompt text inside `input()`
+- Reusing a value returned by prompted `input()`
 
 ## Concepts not yet unlocked
 
