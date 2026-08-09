@@ -2,37 +2,46 @@
 
 Stage 02 is mastered. Variables, reassignment, exact output, quotation marks, and blank lines remain active knowledge and will keep returning.
 
-## New concept
+## Current concept
 
-`input()` pauses the program and waits for you to type something and press Enter.
+`input()` waits for keyboard text and returns what you typed.
 
-The text you type is returned by `input()`. Because you already know assignment with `=`, that returned text can be stored in a variable and used later.
+That returned text can be stored in a variable. Different `input()` calls can store different pieces of text in different variables, and those variables can be printed in any order.
 
-For this first drill, use `input()` with empty parentheses only. Do not put prompt text inside the parentheses yet.
+For now, keep using `input()` with empty parentheses only. Prompt text inside `input()` is still locked.
 
-## Challenge 01: Store keyboard text
+## Challenge 02: Two inputs, reverse output
 
-Run the program and type exactly this when it waits for input:
+Run the program. When it waits for input the first time, type exactly:
 
 ```text
-Memory came from me.
+First keyboard line.
 ```
 
-After you press Enter, the program must print exactly:
+When it waits for input the second time, type exactly:
 
 ```text
-Memory came from me.
+Second keyboard line.
+```
+
+After both inputs have been entered, the program must print exactly:
+
+```text
+Second keyboard line.
+First keyboard line.
 ```
 
 ### Requirements
 
-- Create exactly one variable named `message`.
-- Use `input()` exactly once.
-- Assign the text returned by `input()` to `message`.
-- Use exactly one `print()` call.
-- The `print()` call must print `message`.
-- Do not write `Memory came from me.` as a string literal anywhere in your code.
-- Do not put any prompt text inside `input()` yet.
+- Create exactly two variables named `first_message` and `second_message`.
+- Use `input()` exactly twice.
+- Store the first keyboard value in `first_message`.
+- Store the second keyboard value in `second_message`.
+- Use exactly two `print()` calls.
+- First print `second_message`.
+- Then print `first_message`.
+- Do not write either keyboard line as a string literal anywhere in your code.
+- Do not put prompt text inside either `input()` call.
 - Use only variables, assignment with `=`, `input()`, and `print()`.
 - Type the code yourself.
 
@@ -40,4 +49,4 @@ Memory came from me.
 
 Write your attempt in [`work.py`](work.py), run it locally, commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. `input()` will be repeated across multiple drills before another major concept appears.
+Only one challenge is unlocked at a time. `input()` will be repeated and mixed with older variable skills before another major concept appears.
