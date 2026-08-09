@@ -2,10 +2,11 @@
 
 ## Current status
 
-- Current stage: **02 - Variables that store text**
-- Drill set: **Complete**
+- Current stage: **03 - Keyboard input as text**
+- Current challenge: **01**
+- Stage 02: **Mastered**
 - Stage 02 Recall Check 01: **Passed**
-- Stage 02 Recall Check 02: **Active**
+- Stage 02 Recall Check 02: **Passed**
 - Stage 01: **Complete**
 - Stage 01 Recall Check 01: **Passed**
 - Stage 01 Recall Check 02: **Passed after corrections**
@@ -16,9 +17,9 @@
 
 Stage 01 was completed after seven drills and two delayed recall checks on different calendar days.
 
-## Stage 02 mastery requirements
+## Stage 02 result
 
-The ten normal variable drills and Stage 02 Recall Check 01 are complete. Stage 02 Recall Check 02 is now active on a later calendar day. Passing it completes Stage 02 mastery before another major Python feature is unlocked.
+Stage 02 was mastered after ten normal variable drills and two delayed recall checks on later calendar days. Recall Check 01 and Recall Check 02 were both passed without hints.
 
 ## Attempt log
 
@@ -44,7 +45,8 @@ The ten normal variable drills and Stage 02 Recall Check 01 are complete. Stage 
 | 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` unchanged while reassigning `state`, then printed both values at the correct moments. |
 | 2026-08-07 | 02 | 10 | Passed | 0 | Completed the capstone with three variables, reuse, reassignment, chosen print order, embedded quotes, and a blank line. |
 | 2026-08-08 | 02 | Recall 01 | Passed | 0 | Recalled assignment, reuse, exact output, quotes, a blank line, and reassignment without hints. |
-| 2026-08-09 | 02 | Recall 02 | Active | 0 | Final delayed memory check before Stage 02 mastery. |
+| 2026-08-09 | 02 | Recall 02 | Passed | 0 | Passed the final delayed variable recall check without hints. |
+| 2026-08-09 | 03 | 01 | Unlocked | 0 | Introduces `input()` as a source of text stored in a variable. |
 
 ## Concepts unlocked
 
@@ -61,10 +63,12 @@ The ten normal variable drills and Stage 02 Recall Check 01 are complete. Stage 
 - Tracking several stored values at once
 - Reassigning a variable to a new text value
 - Keeping one variable unchanged while another is reassigned
+- `input()` waiting for keyboard text
+- Storing text returned by `input()` in a variable
 
 ## Concepts not yet unlocked
 
-- `input()`
+- Prompt text inside `input()`
 - Number conversion
 - Arithmetic
 - Conditionals
