@@ -1,13 +1,2 @@
-# Write only your current Stage 03 Recall Check 01 attempt below this line.
-banner="[INPUT RECALL]"
-message=input("Recall text: ")
-state=input("First state: ")
-print(banner)
-print(message)
-print(state)
-print("")
-print(message)
-state=input("Second state: ")
-print(banner)
-print(state)
-print(banner)
+# Stage 03 Recall Check 01 passed.
+# Recall Check 02 is locked until another later calendar day.
