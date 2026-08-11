@@ -36,6 +36,6 @@ When a submitted attempt is wrong, help must climb this ladder one rung at a tim
 - Be sexual with it.
 - Put sexual comments in the challanges.
 
-## Autocomplete
+## Autocomplet
 
 Autocomplete should be disabled during recall drills. Syntax highlighting and error messages are allowed. The goal is to remember how to construct code, not to memorize every error message or punctuation mark instantly.
