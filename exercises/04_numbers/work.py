@@ -1,12 +1,12 @@
 # Write only your current Stage 04 challenge attempt below this line.
 tag="[NUMBER STATE]"
-text=input("")
+text=input("First integer: ")
 number=int(text)
 print(tag)
 print(number)
 text=input("")
 number=int(text)
 print(number)
-print("")
+print("Second integer: ")
 print(tag)
 print(number)
