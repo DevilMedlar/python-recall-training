@@ -1,15 +1,3 @@
-# Write only your current Stage 04 challenge attempt below this line.
-header="[INTEGER CAPSTONE]"
-text=input("First integer: ")
-first_number=int(text)
-text=input("Current integer: ")
-number=int(text)
-print(number)
-print(header)
-print(first_number)
-print("")
-text=input("Next integer: ")
-number=int(text)
-print(header)
-print(number)
-print(first_number)
+# Stage 04 normal drills are complete.
+# Recall Check 01 is intentionally delayed until a later calendar day.
+# Do not start the recall check yet.
