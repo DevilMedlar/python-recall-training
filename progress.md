@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **04 - Converting text to whole numbers**
-- Current challenge: **07**
+- Current challenge: **08**
 - Stage 03: **Mastered**
 - Stage 03 Recall Check 01: **Passed**
 - Stage 03 Recall Check 02: **Passed**
@@ -60,7 +60,7 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 | 2026-08-09 | 03 | 05 | Passed | 0 | Used exact prompt text inside `input()` while storing and printing only the keyboard-entered text. |
 | 2026-08-09 | 03 | 06 | Passed | 0 | Used two exact prompts, stored both keyboard values separately, and printed them in reverse order. |
 | 2026-08-09 | 03 | 07 | Passed | 0 | Reused one prompted keyboard value twice with a blank output line between the prints. |
-| 2026-08-09 | 03 | 08 | Passed | 0 | Kept `label` fixed while reassigning `state` from two prompted keyboard inputs and printing both states. |
+| 2026-08-09 | 03 | 08 | Passed | 0 | Kept `label` fixed while reassigning `state`, then printed both values. |
 | 2026-08-09 | 03 | 09 | Passed | 0 | Combined a fixed header, two prompted inputs, chosen output order, reuse, and a blank line. |
 | 2026-08-09 | 03 | 10 | Passed | 0 | Completed the normal-drill capstone with prompted input, reuse, reassignment, fixed text, chosen output order, and a blank line. |
 | 2026-08-10 | 03 | Recall 01 | Passed | 0 | Passed the first delayed Stage 03 memory check without hints. |
@@ -71,7 +71,8 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 | 2026-08-11 | 04 | 04 | Passed | 0 | Reused and reassigned the same `text` and `number` variables for a second prompted value and conversion. |
 | 2026-08-11 | 04 | 05 | Passed | 0 | Combined a fixed text label with one converted integer, reuse, and a blank output line. |
 | 2026-08-11 | 04 | 06 | Passed | 0 | Combined two converted integers with a fixed tag, chosen output order, reuse, and a blank line. |
-| 2026-08-11 | 04 | 07 | Needs correction | 2 | First prompt is corrected. The second prompt is still attached to the wrong operation, and the fourth print no longer creates the required blank line. |
+| 2026-08-11 | 04 | 07 | Passed after corrections | 2 | Corrected both exact `input()` prompts and restored the required blank fourth print while keeping the conversion and reassignment structure correct. |
+| 2026-08-11 | 04 | 08 | Unlocked | 0 | Reuses one text variable for two prompted inputs while preserving both converted integers separately. |
 
 ## Concepts unlocked
 
@@ -104,6 +105,7 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 - Combining converted integers with fixed text, reuse, and blank lines
 - Combining multiple converted integers with fixed text, chosen output order, reuse, and blank lines
 - Reusing text and integer variables for later conversions while keeping fixed text unchanged
+- Reusing one text variable across multiple inputs while preserving converted integers separately
 
 ## Concepts not yet unlocked
 
