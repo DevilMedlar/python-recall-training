@@ -3,7 +3,9 @@
 ## Current status
 
 - Current stage: **04 - Converting text to whole numbers**
-- Current challenge: **10**
+- Current challenge: **Waiting for Recall Check 01 (delayed)**
+- Stage 04 normal drills: **Complete**
+- Stage 04 Recall Check 01: **Locked until a later calendar day**
 - Stage 03: **Mastered**
 - Stage 03 Recall Check 01: **Passed**
 - Stage 03 Recall Check 02: **Passed**
@@ -28,6 +30,10 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 
 Stage 03 was mastered after ten normal keyboard-input drills and two delayed recall checks on later calendar days. Recall Check 01 and Recall Check 02 were both passed without hints.
 
+## Stage 04 normal-drill result
+
+The ten normal whole-number conversion drills are complete. Recall Check 01 must occur on a later calendar day before Stage 04 can progress toward mastery. Earliest unlock date: **2026-08-12**.
+
 ## Attempt log
 
 | Date | Stage | Challenge | Result | Hint level | Notes |
@@ -49,7 +55,7 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 | 2026-08-07 | 02 | 06 | Passed | 0 | Tracked three named values and printed them in a deliberately scrambled order. |
 | 2026-08-07 | 02 | 07 | Passed | 0 | Reassigned `status` from `Loading...` to `Ready.` and printed the value before and after the change. |
 | 2026-08-07 | 02 | 08 | Passed | 0 | Reassigned one `phase` variable through three successive text values and printed each value at the correct moment. |
-| 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` unchanged while reassigning `state`, then printed both values. |
+| 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` fixed while reassigning `state`, then printed both values. |
 | 2026-08-07 | 02 | 10 | Passed | 0 | Completed the capstone with three variables, reuse, reassignment, chosen print order, embedded quotes, and a blank line. |
 | 2026-08-08 | 02 | Recall 01 | Passed | 0 | Recalled assignment, reuse, exact output, quotes, a blank line, and reassignment without hints. |
 | 2026-08-09 | 02 | Recall 02 | Passed | 0 | Passed the final delayed variable recall check without hints. |
@@ -74,7 +80,7 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 | 2026-08-11 | 04 | 07 | Passed after corrections | 2 | Corrected both exact `input()` prompts and restored the required blank fourth print while keeping the conversion and reassignment structure correct. |
 | 2026-08-11 | 04 | 08 | Passed | 0 | Reused one text variable for two prompted inputs while preserving both converted integers separately. |
 | 2026-08-11 | 04 | 09 | Passed | 0 | Reused one text variable for three prompted inputs while preserving all three converted integers separately and printing them in the required order. |
-| 2026-08-11 | 04 | 10 | Unlocked | 0 | Normal-drill capstone mixing conversion, text reuse, integer preservation, integer reassignment, exact prompts, chosen output order, and a blank line. |
+| 2026-08-11 | 04 | 10 | Passed | 0 | Completed the normal-drill capstone with conversion, text reuse, preserved and reassigned integers, exact prompts, chosen output order, reuse, and a blank line. |
 
 ## Concepts unlocked
 
