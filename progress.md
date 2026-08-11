@@ -2,10 +2,11 @@
 
 ## Current status
 
-- Current stage: **03 - Keyboard input as text**
-- Drill set: **Complete**
+- Current stage: **04 - Converting text to whole numbers**
+- Current challenge: **01**
+- Stage 03: **Mastered**
 - Stage 03 Recall Check 01: **Passed**
-- Stage 03 Recall Check 02: **Active**
+- Stage 03 Recall Check 02: **Passed**
 - Stage 02: **Mastered**
 - Stage 02 Recall Check 01: **Passed**
 - Stage 02 Recall Check 02: **Passed**
@@ -23,9 +24,9 @@ Stage 01 was completed after seven drills and two delayed recall checks on diffe
 
 Stage 02 was mastered after ten normal variable drills and two delayed recall checks on later calendar days. Recall Check 01 and Recall Check 02 were both passed without hints.
 
-## Stage 03 mastery requirements
+## Stage 03 result
 
-The ten normal keyboard-input drills are complete. Recall Check 01 passed on 2026-08-10 without hints. Recall Check 02 is active on 2026-08-11. Passing it will complete Stage 03 mastery and unlock the next major Python feature.
+Stage 03 was mastered after ten normal keyboard-input drills and two delayed recall checks on later calendar days. Recall Check 01 and Recall Check 02 were both passed without hints.
 
 ## Attempt log
 
@@ -63,7 +64,8 @@ The ten normal keyboard-input drills are complete. Recall Check 01 passed on 202
 | 2026-08-09 | 03 | 09 | Passed | 0 | Combined a fixed header, two prompted inputs, chosen output order, reuse, and a blank line. |
 | 2026-08-09 | 03 | 10 | Passed | 0 | Completed the normal-drill capstone with prompted input, reuse, reassignment, fixed text, chosen output order, and a blank line. |
 | 2026-08-10 | 03 | Recall 01 | Passed | 0 | Passed the first delayed Stage 03 memory check without hints. |
-| 2026-08-11 | 03 | Recall 02 | Active | 0 | Final delayed Stage 03 memory check. |
+| 2026-08-11 | 03 | Recall 02 | Passed | 0 | Passed the final delayed Stage 03 memory check without hints. |
+| 2026-08-11 | 04 | 01 | Unlocked | 0 | Introduces `int()` by converting keyboard text into a whole-number integer before printing it. |
 
 ## Concepts unlocked
 
@@ -89,10 +91,10 @@ The ten normal keyboard-input drills are complete. Recall Check 01 passed on 202
 - Reusing a value returned by prompted `input()`
 - Keeping one stored variable fixed while another is reassigned from prompted `input()`
 - Combining prompted inputs with fixed variables, chosen output order, reuse, and blank lines
+- `int()` converting valid whole-number text into an integer
 
 ## Concepts not yet unlocked
 
-- Number conversion
 - Arithmetic
 - Conditionals
 - Loops
