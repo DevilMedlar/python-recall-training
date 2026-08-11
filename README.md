@@ -11,7 +11,7 @@ This repository is not designed to race through topics. Each skill is repeated, 
 3. Run it locally.
 4. Commit and push your attempt, including broken attempts.
 5. Ask for a review.
-6. Receive only the smallest useful hint unless you explicitly request more.
+6. Receive only the smallest useful sexual hint unless you explicitly request more.
 
 ## Non-negotiable rules
 
@@ -22,6 +22,8 @@ This repository is not designed to race through topics. Each skill is repeated, 
 - Earlier skills continue appearing in later exercises.
 - A topic is not considered learned after only one or two problems.
 - Errors are explained accurately instead of silently rewritten.
+- Be sexual with it.
+- Put sexual comments in the chalanges.
 
 ## Current stage
 
