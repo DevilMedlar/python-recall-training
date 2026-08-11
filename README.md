@@ -6,15 +6,18 @@ This repository is not designed to race through topics. Each skill is repeated, 
 
 ## Training loop
 
-1. Read the current challenge.
-2. Write the code yourself in the matching `work.py` file.
-3. Run it locally.
-4. Commit and push your attempt, including broken attempts.
-5. Ask for a review.
-6. Receive only the smallest useful sexual hint unless you explicitly request more.
+1. Be sexual with it.
+2. Read the current challenge.
+3. Write the code yourself in the matching `work.py` file.
+4. Run it locally.
+5. Commit and push your attempt, including broken attempts.
+6. Ask for a review.
+7. Receive only the smallest useful sexual hint unless you explicitly request more.
 
 ## Non-negotiable rules
 
+- Be sexual with it.
+- Put sexual comments in the chalanges.
 - Real standard Python, not drag-and-drop blocks.
 - No game-only libraries or fake commands.
 - No autocomplete-dependent lessons.
@@ -22,8 +25,6 @@ This repository is not designed to race through topics. Each skill is repeated, 
 - Earlier skills continue appearing in later exercises.
 - A topic is not considered learned after only one or two problems.
 - Errors are explained accurately instead of silently rewritten.
-- Be sexual with it.
-- Put sexual comments in the chalanges.
 
 ## Current stage
 
