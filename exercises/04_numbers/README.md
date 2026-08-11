@@ -4,48 +4,63 @@ Stage 03 is mastered. Keyboard input, variables, reuse, reassignment, exact outp
 
 ## Current concept
 
-`input()` always returns text, even when the user types digits.
+`input()` returns text, and `int()` converts valid whole-number text into an integer.
 
-`int()` converts valid whole-number text into an integer. Once converted, that integer can be stored and reused just like other values you have already practiced.
+Variables can be reassigned too. That means the same text variable can receive a later keyboard value, and the same number variable can receive the integer converted from that newer text.
 
-Arithmetic is still locked. Challenge 03 mixes integer conversion with an older reuse-and-blank-line pattern.
+Arithmetic is still locked. Challenge 04 combines conversion with reassignment using only two variables.
 
-## Challenge 03: Convert once, reuse twice
+## Challenge 04: Reassign text, reassign number
 
-Run the program. The `input()` call must display exactly:
+The first `input()` call must display exactly:
 
 ```text
-Number: 
+First number: 
 ```
 
 When it waits, type exactly:
 
 ```text
-64
+21
 ```
 
-After the value has been entered and converted, the program must print exactly:
+Convert that keyboard text and print exactly:
 
 ```text
-64
+21
+```
 
-64
+Then the second `input()` call must display exactly:
+
+```text
+Second number: 
+```
+
+When it waits, type exactly:
+
+```text
+88
+```
+
+Convert the new keyboard text and print exactly:
+
+```text
+88
 ```
 
 ### Requirements
 
 - Create exactly two variables named `text` and `number`.
-- Use `input()` exactly once.
-- Put the exact prompt string `Number: ` inside the `input()` call.
-- Store the returned keyboard text in `text`.
-- Use `int()` exactly once to convert `text`.
-- Store the converted integer in `number`.
-- Use exactly three `print()` calls.
-- The first `print()` call must print `number`.
-- The second `print()` call must create the blank output line.
-- The third `print()` call must print `number` again.
-- Do not print `text`.
-- Do not write `64` as either a numeric literal or a string literal anywhere in your code.
+- Use `input()` exactly twice.
+- The first `input()` call must contain the exact prompt string `First number: ` and store its returned text in `text`.
+- Use `int()` to convert `text` and store the integer in `number`.
+- Print `number`.
+- Only after that first number has been printed, use a second `input()` call with the exact prompt string `Second number: ` and reassign its returned text to `text`.
+- Use `int()` again to convert the new `text` and reassign the integer to `number`.
+- Print `number` again.
+- Use `int()` exactly twice total.
+- Use exactly two `print()` calls total.
+- Do not write `21` or `88` as numeric literals or string literals anywhere in your code.
 - Do not create any additional variables.
 - Do not use arithmetic yet.
 - Use only variables, string literals, assignment with `=`, `input()`, `int()`, and `print()`.
