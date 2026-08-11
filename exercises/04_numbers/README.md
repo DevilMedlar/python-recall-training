@@ -6,61 +6,59 @@ Stage 03 is mastered. Keyboard input, variables, reuse, reassignment, exact outp
 
 `input()` returns text, and `int()` converts valid whole-number text into an integer.
 
-Variables can be reassigned too. That means the same text variable can receive a later keyboard value, and the same number variable can receive the integer converted from that newer text.
+Converted integers can be stored and reused alongside ordinary text variables. Challenge 05 mixes number conversion with an older fixed-label, reuse, and blank-line pattern.
 
-Arithmetic is still locked. Challenge 04 combines conversion with reassignment using only two variables.
+Arithmetic is still locked.
 
-## Challenge 04: Reassign text, reassign number
+## Challenge 05: Fixed label, converted number, reuse
 
-The first `input()` call must display exactly:
+Create a fixed label containing exactly:
 
 ```text
-First number: 
+[NUMBER MEMORY]
+```
+
+Then the `input()` call must display exactly:
+
+```text
+Value: 
 ```
 
 When it waits, type exactly:
 
 ```text
-21
+37
 ```
 
-Convert that keyboard text and print exactly:
+Convert the keyboard text into an integer.
+
+The five `print()` calls must produce exactly:
 
 ```text
-21
-```
+[NUMBER MEMORY]
+37
 
-Then the second `input()` call must display exactly:
-
-```text
-Second number: 
-```
-
-When it waits, type exactly:
-
-```text
-88
-```
-
-Convert the new keyboard text and print exactly:
-
-```text
-88
+37
+[NUMBER MEMORY]
 ```
 
 ### Requirements
 
-- Create exactly two variables named `text` and `number`.
-- Use `input()` exactly twice.
-- The first `input()` call must contain the exact prompt string `First number: ` and store its returned text in `text`.
-- Use `int()` to convert `text` and store the integer in `number`.
-- Print `number`.
-- Only after that first number has been printed, use a second `input()` call with the exact prompt string `Second number: ` and reassign its returned text to `text`.
-- Use `int()` again to convert the new `text` and reassign the integer to `number`.
-- Print `number` again.
-- Use `int()` exactly twice total.
-- Use exactly two `print()` calls total.
-- Do not write `21` or `88` as numeric literals or string literals anywhere in your code.
+- Create exactly three variables named `label`, `text`, and `number`.
+- Assign the exact string `[NUMBER MEMORY]` to `label` exactly once.
+- Do not reassign `label`.
+- Use `input()` exactly once.
+- Put the exact prompt string `Value: ` inside the `input()` call.
+- Store the returned keyboard text in `text`.
+- Use `int()` exactly once to convert `text`.
+- Store the converted integer in `number`.
+- Use exactly five `print()` calls.
+- Print `label`, then `number`.
+- The third `print()` call must create the blank output line.
+- Then print `number`, then `label` again.
+- Every non-blank `print()` call must print a variable.
+- Do not print `text`.
+- Do not write `37` as either a numeric literal or a string literal anywhere in your code.
 - Do not create any additional variables.
 - Do not use arithmetic yet.
 - Use only variables, string literals, assignment with `=`, `input()`, `int()`, and `print()`.
