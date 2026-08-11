@@ -2,45 +2,61 @@
 
 Stage 03 is mastered. Keyboard input, variables, reuse, reassignment, exact output, and prompt text remain active knowledge and will keep returning.
 
-## New concept
+## Current concept
 
 `input()` always returns text, even when the user types digits.
 
-`int()` can convert text that represents a whole number into an integer value. For example, `int("42")` produces the integer `42`.
+`int()` converts valid whole-number text into an integer. Separate keyboard inputs can be converted separately, stored in different variables, and printed in any order.
 
-For now, enter only valid whole-number text when a challenge asks for it. Arithmetic is still locked. The goal of this stage begins with understanding the conversion itself.
+Arithmetic is still locked. For now, the job is to recognize when a value is still text and when it has been converted into an integer.
 
-## Challenge 01: Text first, number second
+## Challenge 02: Two conversions, reverse output
 
-Run the program. It must display exactly this prompt:
+Run the program. The first `input()` call must display exactly:
 
 ```text
-Whole number: 
+First number: 
 ```
 
 When it waits, type exactly:
 
 ```text
-42
+17
 ```
 
-After you press Enter, the program must print exactly:
+The second `input()` call must display exactly:
 
 ```text
-42
+Second number: 
+```
+
+When it waits, type exactly:
+
+```text
+29
+```
+
+After both values have been entered and converted, the program must print exactly:
+
+```text
+29
+17
 ```
 
 ### Requirements
 
-- Create exactly two variables named `text` and `number`.
-- Use `input()` exactly once.
-- Put the exact prompt string `Whole number: ` inside the `input()` call.
-- Store the text returned by `input()` in `text`.
-- Use `int()` exactly once to convert `text` to a whole-number integer.
-- Store that converted integer in `number`.
-- Use exactly one `print()` call.
-- The `print()` call must print `number`.
-- Do not write `42` as either a numeric literal or a string literal anywhere in your code.
+- Create exactly four variables named `first_text`, `first_number`, `second_text`, and `second_number`.
+- Use `input()` exactly twice.
+- The first `input()` call must contain the exact prompt string `First number: ` and store the returned text in `first_text`.
+- Use `int()` to convert `first_text` and store the integer in `first_number`.
+- The second `input()` call must contain the exact prompt string `Second number: ` and store the returned text in `second_text`.
+- Use `int()` to convert `second_text` and store the integer in `second_number`.
+- Use `int()` exactly twice total.
+- Use exactly two `print()` calls.
+- First print `second_number`.
+- Then print `first_number`.
+- Do not print either text variable.
+- Do not write `17` or `29` as numeric literals or string literals anywhere in your code.
 - Do not create any additional variables.
 - Do not use arithmetic yet.
 - Use only variables, string literals, assignment with `=`, `input()`, `int()`, and `print()`.
@@ -50,4 +66,4 @@ After you press Enter, the program must print exactly:
 
 Write your attempt in [`work.py`](work.py), run it locally, commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. Number conversion will repeat and mix with earlier skills before arithmetic is introduced.
+Only one challenge is unlocked at a time. Number conversion will keep repeating and mixing with earlier skills before arithmetic is introduced.
