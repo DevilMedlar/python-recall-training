@@ -1,16 +1,1 @@
 # Write only your current Stage 04 challenge attempt below this line.
-header="[INTEGER TRIO]"
-text=input("First value: ")
-first_number=int(text)
-text=input("Second value: ")
-second_number=int(text)
-text=input("Third value: ")
-third_number=int(text)
-print(third_number)
-print(first_number)
-print(header)
-print("")
-print(second_number)
-print(third_number)
-print(first_number)
-print(header)
