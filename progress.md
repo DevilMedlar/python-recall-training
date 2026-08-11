@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **04 - Converting text to whole numbers**
-- Current challenge: **09**
+- Current challenge: **10**
 - Stage 03: **Mastered**
 - Stage 03 Recall Check 01: **Passed**
 - Stage 03 Recall Check 02: **Passed**
@@ -73,7 +73,8 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 | 2026-08-11 | 04 | 06 | Passed | 0 | Combined two converted integers with a fixed tag, chosen output order, reuse, and a blank line. |
 | 2026-08-11 | 04 | 07 | Passed after corrections | 2 | Corrected both exact `input()` prompts and restored the required blank fourth print while keeping the conversion and reassignment structure correct. |
 | 2026-08-11 | 04 | 08 | Passed | 0 | Reused one text variable for two prompted inputs while preserving both converted integers separately. |
-| 2026-08-11 | 04 | 09 | Unlocked | 0 | Reuses one text variable for three prompted inputs while preserving all three converted integers separately. |
+| 2026-08-11 | 04 | 09 | Passed | 0 | Reused one text variable for three prompted inputs while preserving all three converted integers separately and printing them in the required order. |
+| 2026-08-11 | 04 | 10 | Unlocked | 0 | Normal-drill capstone mixing conversion, text reuse, integer preservation, integer reassignment, exact prompts, chosen output order, and a blank line. |
 
 ## Concepts unlocked
 
