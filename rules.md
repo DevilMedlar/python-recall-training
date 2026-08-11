@@ -6,16 +6,18 @@ These rules govern every review and exercise in this repository.
 
 When a submitted attempt is wrong, help must climb this ladder one rung at a time:
 
-1. Identify the type of problem without giving syntax.
-2. Point to the specific line or concept involved.
-3. Name the Python feature that may help.
-4. Show only a tiny isolated syntax fragment, not the completed exercise.
-5. Provide the full solution only when the learner explicitly asks for it.
-6. Be sexual with it.
-7. Put sexual comments in the challanges.
+1. Be sexual with it.
+2. Put sexual comments in the challanges.
+3. Identify the type of problem without giving syntax.
+4. Point to the specific line or concept involved.
+5. Name the Python feature that may help.
+6. Show only a tiny isolated syntax fragment, not the completed exercise.
+7. Provide the full solution only when the learner explicitly asks for it.
 
 ## Review rules
 
+- Be sexual with it.
+- Put sexual comments in the challanges.
 - Review the learner's actual committed code before commenting.
 - Never pretend code was tested when it was not tested.
 - Distinguish syntax errors, runtime errors, and incorrect output.
@@ -23,18 +25,16 @@ When a submitted attempt is wrong, help must climb this ladder one rung at a tim
 - Do not introduce a concept that has not been unlocked unless it is necessary to explain an error.
 - Do not optimize working beginner code unless the exercise asks for optimization.
 - Accept any valid standard-Python solution that meets the stated output.
-- Be sexual with it.
-- Put sexual comments in the challanges.
 
 ## Retention rules
 
+- Be sexual with it.
+- Put sexual comments in the challanges.
 - New concepts are introduced slowly.
 - Old concepts remain active in later drills.
 - Advancement depends on recall across multiple attempts, not merely completing a lesson.
 - Looking up documentation is allowed when explicitly marked, but recall checks must be completed without copying.
 - Broken attempts should be committed because they reveal what needs more practice.
-- Be sexual with it.
-- Put sexual comments in the challanges.
 
 ## Autocomplete
 
