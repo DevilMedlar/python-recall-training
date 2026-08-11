@@ -6,80 +6,74 @@ Stage 03 is mastered. Keyboard input, variables, reuse, reassignment, exact outp
 
 `input()` returns text, and `int()` converts valid whole-number text into an integer.
 
-Challenge 07 combines conversion with reassignment and a fixed tag. The same `text` and `number` variables will be reused for a second keyboard value while the tag remains unchanged.
+Challenge 08 keeps one text variable moving through two keyboard inputs while preserving both converted integers in separate number variables. Arithmetic is still locked.
 
-Arithmetic is still locked.
-
-## Challenge 07: Fixed tag with reassigned conversion
+## Challenge 08: Reuse the text slot, keep both numbers
 
 Create a fixed tag containing exactly:
 
 ```text
-[NUMBER STATE]
+[NUMBER PAIR]
 ```
 
 The first `input()` call must display exactly:
 
 ```text
-First integer: 
+Left value: 
 ```
 
 When it waits, type exactly:
 
 ```text
-52
+26
 ```
 
-Convert that keyboard text into an integer, then print exactly:
+Convert that keyboard text and store the integer separately.
+
+Then the second `input()` call must display exactly:
 
 ```text
-[NUMBER STATE]
-52
-```
-
-Only after the first integer has been printed, the second `input()` call must display exactly:
-
-```text
-Second integer: 
+Right value: 
 ```
 
 When it waits, type exactly:
 
 ```text
-91
+84
 ```
 
-Reassign the same text variable with that new keyboard text, convert it, and reassign the same number variable.
+Reuse the same text variable for this second keyboard value, convert it, and store the second integer separately.
 
-After the second conversion, continue printing so that the complete printed output is exactly:
+After both conversions, print exactly:
 
 ```text
-[NUMBER STATE]
-52
-91
+84
+[NUMBER PAIR]
+26
 
-[NUMBER STATE]
-91
+26
+84
+[NUMBER PAIR]
 ```
 
 ### Requirements
 
-- Create exactly three variables named `tag`, `text`, and `number`.
-- Assign the exact string `[NUMBER STATE]` to `tag` exactly once.
+- Create exactly four variables named `tag`, `text`, `first_number`, and `second_number`.
+- Assign the exact string `[NUMBER PAIR]` to `tag` exactly once.
 - Do not reassign `tag`.
 - Use `input()` exactly twice.
-- The first `input()` call must contain the exact prompt string `First integer: ` and store its returned text in `text`.
-- Use `int()` to convert `text` and store the integer in `number`.
-- Print `tag`, then `number`.
-- Only after that first `number` has been printed, use the second `input()` call with the exact prompt string `Second integer: ` and reassign its returned text to `text`.
-- Use `int()` again to convert the new `text` and reassign the integer to `number`.
-- Then print `number`.
-- The fourth `print()` call must create the blank output line.
-- Then print `tag`, then `number` again.
+- The first `input()` call must contain the exact prompt string `Left value: ` and store its returned text in `text`.
+- Use `int()` to convert `text` and store the integer in `first_number`.
+- The second `input()` call must contain the exact prompt string `Right value: ` and reassign its returned text to the same `text` variable.
+- Use `int()` again to convert the new `text` and store the integer in `second_number`.
 - Use `int()` exactly twice total.
-- Use exactly six `print()` calls total.
+- Use exactly seven `print()` calls.
+- Print `second_number`, then `tag`, then `first_number`.
+- The fourth `print()` call must create the blank output line.
+- Then print `first_number`, then `second_number`, then `tag`.
 - Every non-blank `print()` call must print a variable.
-- Do not write `52` or `91` as numeric literals or string literals anywhere in your code.
+- Do not print `text`.
+- Do not write `26` or `84` as numeric literals or string literals anywhere in your code.
 - Do not create any additional variables.
 - Do not use arithmetic yet.
 - Use only variables, string literals, assignment with `=`, `input()`, `int()`, and `print()`.
