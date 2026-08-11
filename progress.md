@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **04 - Converting text to whole numbers**
-- Current challenge: **01**
+- Current challenge: **02**
 - Stage 03: **Mastered**
 - Stage 03 Recall Check 01: **Passed**
 - Stage 03 Recall Check 02: **Passed**
@@ -65,7 +65,8 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 | 2026-08-09 | 03 | 10 | Passed | 0 | Completed the normal-drill capstone with prompted input, reuse, reassignment, fixed text, chosen output order, and a blank line. |
 | 2026-08-10 | 03 | Recall 01 | Passed | 0 | Passed the first delayed Stage 03 memory check without hints. |
 | 2026-08-11 | 03 | Recall 02 | Passed | 0 | Passed the final delayed Stage 03 memory check without hints. |
-| 2026-08-11 | 04 | 01 | Unlocked | 0 | Introduces `int()` by converting keyboard text into a whole-number integer before printing it. |
+| 2026-08-11 | 04 | 01 | Passed | 0 | Stored keyboard text in `text`, converted it with `int()` into `number`, and printed the integer. |
+| 2026-08-11 | 04 | 02 | Unlocked | 0 | Converts two separate keyboard inputs into integers and prints the converted values in reverse order. |
 
 ## Concepts unlocked
 
@@ -92,6 +93,7 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 - Keeping one stored variable fixed while another is reassigned from prompted `input()`
 - Combining prompted inputs with fixed variables, chosen output order, reuse, and blank lines
 - `int()` converting valid whole-number text into an integer
+- Converting multiple separate keyboard inputs into integers
 
 ## Concepts not yet unlocked
 
