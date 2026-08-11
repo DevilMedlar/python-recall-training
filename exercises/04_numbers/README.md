@@ -1,64 +1,78 @@
 # Stage 04: Converting Text to Whole Numbers
 
-Stage 03 is mastered. Keyboard input, variables, reuse, reassignment, exact output, and prompt text remain active knowledge and will keep returning.
+Stage 03 is mastered. Keyboard input, variables, reuse, reassignment, exact output, prompt text, and blank lines remain active knowledge and will keep returning.
 
 ## Current concept
 
 `input()` returns text, and `int()` converts valid whole-number text into an integer.
 
-Converted integers can be stored and reused alongside ordinary text variables. Challenge 05 mixes number conversion with an older fixed-label, reuse, and blank-line pattern.
+Challenge 06 combines two separate conversions with a fixed tag, chosen output order, reuse, and a blank line. Arithmetic is still locked.
 
-Arithmetic is still locked.
+## Challenge 06: Two converted values with a fixed tag
 
-## Challenge 05: Fixed label, converted number, reuse
-
-Create a fixed label containing exactly:
+Create a fixed tag containing exactly:
 
 ```text
-[NUMBER MEMORY]
+[INTEGER LOG]
 ```
 
-Then the `input()` call must display exactly:
+The first `input()` call must display exactly:
 
 ```text
-Value: 
+First value: 
 ```
 
 When it waits, type exactly:
 
 ```text
-37
+14
 ```
 
-Convert the keyboard text into an integer.
+Convert that keyboard text into an integer.
 
-The five `print()` calls must produce exactly:
+The second `input()` call must display exactly:
 
 ```text
-[NUMBER MEMORY]
-37
+Second value: 
+```
 
-37
-[NUMBER MEMORY]
+When it waits, type exactly:
+
+```text
+73
+```
+
+Convert that keyboard text into an integer.
+
+After both values have been entered and converted, use your stored variables to print exactly:
+
+```text
+[INTEGER LOG]
+73
+14
+
+73
+[INTEGER LOG]
 ```
 
 ### Requirements
 
-- Create exactly three variables named `label`, `text`, and `number`.
-- Assign the exact string `[NUMBER MEMORY]` to `label` exactly once.
-- Do not reassign `label`.
-- Use `input()` exactly once.
-- Put the exact prompt string `Value: ` inside the `input()` call.
-- Store the returned keyboard text in `text`.
-- Use `int()` exactly once to convert `text`.
-- Store the converted integer in `number`.
-- Use exactly five `print()` calls.
-- Print `label`, then `number`.
-- The third `print()` call must create the blank output line.
-- Then print `number`, then `label` again.
+- Create exactly five variables named `tag`, `first_text`, `first_number`, `second_text`, and `second_number`.
+- Assign the exact string `[INTEGER LOG]` to `tag` exactly once.
+- Do not reassign `tag`.
+- Use `input()` exactly twice.
+- The first `input()` call must contain the exact prompt string `First value: ` and store its returned text in `first_text`.
+- Use `int()` to convert `first_text` and store the integer in `first_number`.
+- The second `input()` call must contain the exact prompt string `Second value: ` and store its returned text in `second_text`.
+- Use `int()` to convert `second_text` and store the integer in `second_number`.
+- Use `int()` exactly twice total.
+- Use exactly six `print()` calls.
+- Print `tag`, then `second_number`, then `first_number`.
+- The fourth `print()` call must create the blank output line.
+- Then print `second_number`, then `tag`.
 - Every non-blank `print()` call must print a variable.
-- Do not print `text`.
-- Do not write `37` as either a numeric literal or a string literal anywhere in your code.
+- Do not print either text variable.
+- Do not write `14` or `73` as numeric literals or string literals anywhere in your code.
 - Do not create any additional variables.
 - Do not use arithmetic yet.
 - Use only variables, string literals, assignment with `=`, `input()`, `int()`, and `print()`.
