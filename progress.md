@@ -13,7 +13,7 @@
 - Stage 01: **Complete**
 - Stage 01 Recall Check 01: **Passed**
 - Stage 01 Recall Check 02: **Passed after corrections**
-- Hints used: **8**
+- Hints used: **9**
 - Full solutions requested: **0**
 
 ## Stage 01 result
@@ -71,7 +71,7 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 | 2026-08-11 | 04 | 04 | Passed | 0 | Reused and reassigned the same `text` and `number` variables for a second prompted value and conversion. |
 | 2026-08-11 | 04 | 05 | Passed | 0 | Combined a fixed text label with one converted integer, reuse, and a blank output line. |
 | 2026-08-11 | 04 | 06 | Passed | 0 | Combined two converted integers with a fixed tag, chosen output order, reuse, and a blank line. |
-| 2026-08-11 | 04 | 07 | Needs correction | 1 | Conversion and reassignment structure is correct, but both `input()` calls are missing their required prompt text. |
+| 2026-08-11 | 04 | 07 | Needs correction | 2 | First prompt is corrected. The second prompt is still attached to the wrong operation, and the fourth print no longer creates the required blank line. |
 
 ## Concepts unlocked
 
