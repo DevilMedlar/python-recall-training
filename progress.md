@@ -3,7 +3,7 @@
 ## Current status
 
 - Current stage: **04 - Converting text to whole numbers**
-- Current challenge: **08**
+- Current challenge: **09**
 - Stage 03: **Mastered**
 - Stage 03 Recall Check 01: **Passed**
 - Stage 03 Recall Check 02: **Passed**
@@ -49,7 +49,7 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 | 2026-08-07 | 02 | 06 | Passed | 0 | Tracked three named values and printed them in a deliberately scrambled order. |
 | 2026-08-07 | 02 | 07 | Passed | 0 | Reassigned `status` from `Loading...` to `Ready.` and printed the value before and after the change. |
 | 2026-08-07 | 02 | 08 | Passed | 0 | Reassigned one `phase` variable through three successive text values and printed each value at the correct moment. |
-| 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` unchanged while reassigning `state`, then printed both values at the correct moments. |
+| 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` unchanged while reassigning `state`, then printed both values. |
 | 2026-08-07 | 02 | 10 | Passed | 0 | Completed the capstone with three variables, reuse, reassignment, chosen print order, embedded quotes, and a blank line. |
 | 2026-08-08 | 02 | Recall 01 | Passed | 0 | Recalled assignment, reuse, exact output, quotes, a blank line, and reassignment without hints. |
 | 2026-08-09 | 02 | Recall 02 | Passed | 0 | Passed the final delayed variable recall check without hints. |
@@ -72,7 +72,8 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 | 2026-08-11 | 04 | 05 | Passed | 0 | Combined a fixed text label with one converted integer, reuse, and a blank output line. |
 | 2026-08-11 | 04 | 06 | Passed | 0 | Combined two converted integers with a fixed tag, chosen output order, reuse, and a blank line. |
 | 2026-08-11 | 04 | 07 | Passed after corrections | 2 | Corrected both exact `input()` prompts and restored the required blank fourth print while keeping the conversion and reassignment structure correct. |
-| 2026-08-11 | 04 | 08 | Unlocked | 0 | Reuses one text variable for two prompted inputs while preserving both converted integers separately. |
+| 2026-08-11 | 04 | 08 | Passed | 0 | Reused one text variable for two prompted inputs while preserving both converted integers separately. |
+| 2026-08-11 | 04 | 09 | Unlocked | 0 | Reuses one text variable for three prompted inputs while preserving all three converted integers separately. |
 
 ## Concepts unlocked
 
