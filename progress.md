@@ -3,9 +3,10 @@
 ## Current status
 
 - Current stage: **04 - Converting text to whole numbers**
-- Current challenge: **Recall Check 01**
+- Current challenge: **Waiting for Recall Check 02 (delayed)**
 - Stage 04 normal drills: **Complete**
-- Stage 04 Recall Check 01: **Needs correction**
+- Stage 04 Recall Check 01: **Passed after correction**
+- Stage 04 Recall Check 02: **Locked until a later calendar day**
 - Stage 03: **Mastered**
 - Stage 03 Recall Check 01: **Passed**
 - Stage 03 Recall Check 02: **Passed**
@@ -32,7 +33,7 @@ Stage 03 was mastered after ten normal keyboard-input drills and two delayed rec
 
 ## Stage 04 normal-drill result
 
-The ten normal whole-number conversion drills are complete. Recall Check 01 is now unlocked on **2026-08-12** after the required delayed gap.
+The ten normal whole-number conversion drills are complete. Recall Check 01 was passed on **2026-08-12** after one correction. Recall Check 02 must occur on another later calendar day before Stage 04 can be mastered. Earliest unlock date: **2026-08-13**.
 
 ## Attempt log
 
@@ -55,7 +56,7 @@ The ten normal whole-number conversion drills are complete. Recall Check 01 is n
 | 2026-08-07 | 02 | 06 | Passed | 0 | Tracked three named values and printed them in a deliberately scrambled order. |
 | 2026-08-07 | 02 | 07 | Passed | 0 | Reassigned `status` from `Loading...` to `Ready.` and printed the value before and after the change. |
 | 2026-08-07 | 02 | 08 | Passed | 0 | Reassigned one `phase` variable through three successive text values and printed each value at the correct moment. |
-| 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` unchanged while reassigning `state`, then printed both values. |
+| 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` fixed while reassigning `state`, then printed both values. |
 | 2026-08-07 | 02 | 10 | Passed | 0 | Completed the capstone with three variables, reuse, reassignment, chosen print order, embedded quotes, and a blank line. |
 | 2026-08-08 | 02 | Recall 01 | Passed | 0 | Recalled assignment, reuse, exact output, quotes, a blank line, and reassignment without hints. |
 | 2026-08-09 | 02 | Recall 02 | Passed | 0 | Passed the final delayed variable recall check without hints. |
@@ -81,7 +82,7 @@ The ten normal whole-number conversion drills are complete. Recall Check 01 is n
 | 2026-08-11 | 04 | 08 | Passed | 0 | Reused one text variable for two prompted inputs while preserving both converted integers separately. |
 | 2026-08-11 | 04 | 09 | Passed | 0 | Reused one text variable for three prompted inputs while preserving all three converted integers separately and printing them in the required order. |
 | 2026-08-11 | 04 | 10 | Passed | 0 | Completed the normal-drill capstone with conversion, text reuse, preserved and reassigned integers, exact prompts, chosen output order, reuse, and a blank line. |
-| 2026-08-12 | 04 | Recall 01 | Needs correction | 1 | Python cannot parse the submitted source, so the attempt stops at the syntax gate before runtime behavior can be fully reviewed. |
+| 2026-08-12 | 04 | Recall 01 | Passed after correction | 1 | Corrected the banner string syntax; the remaining conversion, reassignment, prompts, output order, reuse, and blank line were correct. |
 
 ## Concepts unlocked
 
