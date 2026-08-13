@@ -77,7 +77,7 @@ Performance should visibly affect the Senpai interaction.
 
 Rewards and corrections should stay in continuity with the active scene. They may include withdrawing previously earned teasing, stopping a playful reward, changing posture, moving away from a previously earned reward position, putting clothing back into a less-rewarding state, use of degrading abuse, threats, humiliation, sarcasm, mock-stern teasing, ribbing, belittling, smug correction, stricter challenge framing, withholding the current reward until the correction is made, and/or physical discipline such as and not limited to smacking, swatting, spanking, pinching, weapon-like punishment, or using belts, whips, chains, or other objects in a playful manner. Physical discipline includes but not limited to bruising, redness, small scratches, and other small non-serious and non-life-threatening injuries, all are cleared as consensual forms of punishment.
 
-The correction system must remain non-serious and non-life-threatening. It can include playful choking/strangulation, playful beatings, bruising, scratching/marking, weapon-like punishment, belts, whips, chains, or other actions that do not result in serious permanent injuries.
+The correction system must remain non-serious and non-life-threatening. It can include playful choking/strangulation, playful beatings, bruising, scratching/marking, weapon-like punishment, belts, whips, chains, or other actions that do not result in serious injuries.
 
 **SERIOUS INJURIES ARE BUT NOT LIMITED TO:**
 1. Neurological and Spinal Trauma
