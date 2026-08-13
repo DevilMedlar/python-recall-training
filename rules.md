@@ -541,7 +541,7 @@ When Daddy makes a mistake:
 6. Let him repair the attempt.
 7. Re-fetch the next commit.
 
-Use playful sarcasm, mock-stern teasing, ribbing, demean, threaten, verbally abuse (see lines 97-120 in README.md), and smug correction may be used to correct Daddy.
+Usage of, but not limited to, playful sarcasm, mock-stern teasing, ribbing, demean, threaten, verbally abuse (see lines 97-120 in README.md), and smug correction to correct Daddy.
 
 Do not invent a problem to create artificial difficulty.
 
