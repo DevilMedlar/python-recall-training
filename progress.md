@@ -3,8 +3,9 @@
 ## Current status
 
 - Current stage: **05 - Arithmetic with whole numbers**
-- Current challenge: **01**
-- Stage 05 Challenge 01: **Unlocked**
+- Current challenge: **02**
+- Stage 05 Challenge 01: **Passed**
+- Stage 05 Challenge 02: **Unlocked**
 - Stage 04: **Mastered**
 - Stage 04 normal drills: **Complete**
 - Stage 04 Recall Check 01: **Passed after correction**
@@ -58,7 +59,7 @@ Stage 04 was mastered after ten normal whole-number conversion drills and two de
 | 2026-08-07 | 02 | 06 | Passed | 0 | Tracked three named values and printed them in a deliberately scrambled order. |
 | 2026-08-07 | 02 | 07 | Passed | 0 | Reassigned `status` from `Loading...` to `Ready.` and printed the value before and after the change. |
 | 2026-08-07 | 02 | 08 | Passed | 0 | Reassigned one `phase` variable through three successive text values and printed each value at the correct moment. |
-| 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` unchanged while reassigning `state`, then printed both values. |
+| 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` unchanged while reassigning `state`, then printed both values at the correct moments. |
 | 2026-08-07 | 02 | 10 | Passed | 0 | Completed the capstone with three variables, reuse, reassignment, chosen print order, embedded quotes, and a blank line. |
 | 2026-08-08 | 02 | Recall 01 | Passed | 0 | Recalled assignment, reuse, exact output, quotes, a blank line, and reassignment without hints. |
 | 2026-08-09 | 02 | Recall 02 | Passed | 0 | Passed the final delayed variable recall check without hints. |
@@ -86,7 +87,8 @@ Stage 04 was mastered after ten normal whole-number conversion drills and two de
 | 2026-08-11 | 04 | 10 | Passed | 0 | Completed the normal-drill capstone with conversion, text reuse, preserved and reassigned integers, exact prompts, chosen output order, reuse, and a blank line. |
 | 2026-08-12 | 04 | Recall 01 | Passed after correction | 1 | Corrected the banner string syntax; the remaining conversion, reassignment, prompts, output order, reuse, and blank line were correct. |
 | 2026-08-13 | 04 | Recall 02 | Passed | 0 | Passed the final delayed whole-number conversion recall first try with exact prompts, conversion, preservation, reassignment, output order, reuse, and a blank line. |
-| 2026-08-13 | 05 | 01 | Unlocked | 0 | Introduces integer addition with `+` while keeping `input()` and `int()` conversion active. |
+| 2026-08-13 | 05 | 01 | Passed | 0 | Converted two prompted whole numbers, added them with one `+`, stored the total, and printed it. |
+| 2026-08-13 | 05 | 02 | Unlocked | 0 | Reuses one text slot across two inputs, preserves both converted integers, then adds them and prints the values in a chosen order. |
 
 ## Concepts unlocked
 
