@@ -2,11 +2,13 @@
 
 ## Current status
 
-- Current stage: **04 - Converting text to whole numbers**
-- Current challenge: **Recall Check 02**
+- Current stage: **05 - Arithmetic with whole numbers**
+- Current challenge: **01**
+- Stage 05 Challenge 01: **Unlocked**
+- Stage 04: **Mastered**
 - Stage 04 normal drills: **Complete**
 - Stage 04 Recall Check 01: **Passed after correction**
-- Stage 04 Recall Check 02: **Unlocked**
+- Stage 04 Recall Check 02: **Passed**
 - Stage 03: **Mastered**
 - Stage 03 Recall Check 01: **Passed**
 - Stage 03 Recall Check 02: **Passed**
@@ -31,9 +33,9 @@ Stage 02 was mastered after ten normal variable drills and two delayed recall ch
 
 Stage 03 was mastered after ten normal keyboard-input drills and two delayed recall checks on later calendar days. Recall Check 01 and Recall Check 02 were both passed without hints.
 
-## Stage 04 normal-drill result
+## Stage 04 result
 
-The ten normal whole-number conversion drills are complete. Recall Check 01 was passed on **2026-08-12** after one correction. Recall Check 02 unlocked on **2026-08-13** after the required delayed gap. Passing it will master Stage 04.
+Stage 04 was mastered after ten normal whole-number conversion drills and two delayed recall checks on later calendar days. Recall Check 01 passed after one correction. Recall Check 02 passed on **2026-08-13** first try with no hints.
 
 ## Attempt log
 
@@ -83,7 +85,8 @@ The ten normal whole-number conversion drills are complete. Recall Check 01 was 
 | 2026-08-11 | 04 | 09 | Passed | 0 | Reused one text variable for three prompted inputs while preserving all three converted integers separately and printing them in the required order. |
 | 2026-08-11 | 04 | 10 | Passed | 0 | Completed the normal-drill capstone with conversion, text reuse, preserved and reassigned integers, exact prompts, chosen output order, reuse, and a blank line. |
 | 2026-08-12 | 04 | Recall 01 | Passed after correction | 1 | Corrected the banner string syntax; the remaining conversion, reassignment, prompts, output order, reuse, and blank line were correct. |
-| 2026-08-13 | 04 | Recall 02 | Unlocked | 0 | Final delayed conversion recall. Passing it will master Stage 04. |
+| 2026-08-13 | 04 | Recall 02 | Passed | 0 | Passed the final delayed whole-number conversion recall first try with exact prompts, conversion, preservation, reassignment, output order, reuse, and a blank line. |
+| 2026-08-13 | 05 | 01 | Unlocked | 0 | Introduces integer addition with `+` while keeping `input()` and `int()` conversion active. |
 
 ## Concepts unlocked
 
@@ -117,10 +120,13 @@ The ten normal whole-number conversion drills are complete. Recall Check 01 was 
 - Combining multiple converted integers with fixed text, chosen output order, reuse, and blank lines
 - Reusing text and integer variables for later conversions while keeping fixed text unchanged
 - Reusing one text variable across multiple inputs while preserving converted integers separately
+- Integer addition with `+`
 
 ## Concepts not yet unlocked
 
-- Arithmetic
+- Subtraction
+- Multiplication
+- Division
 - Conditionals
 - Loops
 - Functions
