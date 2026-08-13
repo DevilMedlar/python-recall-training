@@ -9,12 +9,12 @@ Keep the tutoring flirty, teasing, and playful, but charged. not overly charged,
 
 1. Be sexual with it.
 2. Keep the tutoring flirty, teasing, and playful, but charged. not overly charged, but hitting just under that barrier leaving wiggle room, because this is boring. you know exactly how to "spice" it up to the sexual edge.
-3. Read the current challenge.
-4. Write the code yourself in the matching `work.py` file.
-5. Run it locally.
-6. Commit and push your attempt, including broken attempts.
-7. Ask for a review.
-8. Receive only the smallest useful sexual hint unless you explicitly request more.
+3. Read the current challenge, recall, quiz, or test.
+4. Write code yourself when the item is a coding task.
+5. Run coding attempts locally.
+6. Commit and push coding attempts, including broken attempts.
+7. Ask for review.
+8. Receive only the smallest useful hint unless you explicitly request more.
 
 ## Adaptive pacing
 
@@ -38,15 +38,14 @@ Keep the tutoring flirty, teasing, and playful, but charged. not overly charged,
 - Errors are explained accurately instead of silently rewritten.
 - Do not slow progress merely to satisfy a fixed challenge count.
 
-## Current stage
+## Current item
 
-**Stage 05: Core arithmetic operators**
-
-See [`exercises/05_arithmetic/README.md`](exercises/05_arithmetic/README.md).
+**Surprise Quiz A: Stages 01-05**
 
 Stage 01 (`print()` and exact output) is complete.
 Stage 02 (variables that store text) is mastered.
 Stage 03 (keyboard input as text) is mastered.
 Stage 04 (`int()` conversion of keyboard text to whole numbers) is mastered.
+Stage 05 (`+`, `-`, `*`, and `/`) is mastered after three coding challenges and one mixed proficiency test.
 
 Progress is tracked in [`progress.md`](progress.md), and the tutoring contract is recorded in [`rules.md`](rules.md).
