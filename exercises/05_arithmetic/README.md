@@ -1,14 +1,21 @@
-# Stage 05: Arithmetic with Whole Numbers
+# Stage 05: Core Arithmetic Operators
 
 Stage 04 is mastered. `print()`, variables, `input()`, reassignment, exact prompts, blank lines, and `int()` conversion all remain active knowledge.
 
-## Current concept
+## Current concept cluster
 
-The `+` operator adds two integers and produces a new integer.
+The four core arithmetic operators are now unlocked together:
 
-For now, **addition is the only arithmetic operator unlocked**. Subtraction, multiplication, division, and everything beyond them stay locked until later drills.
+- `+` adds.
+- `-` subtracts.
+- `*` multiplies.
+- `/` divides.
 
-You earned the plus sign, Daddy. Now make it behave while an older skill slides back into the room. 😏🐍
+Important Python detail: `/` produces a floating-point result, even when the division comes out evenly. For example, `8 / 2` produces `4.0`.
+
+Stage 05 now uses **adaptive mixed practice**. There is no fixed ten-challenge requirement and no automatic pair of delayed recall days. Expect ordinary coding challenges, surprise recall of older skills, short quizzes, and broader tests in an unpredictable mix. Clean performance speeds things up; repeated mistakes earn targeted extra reps.
+
+All four operators are on the table now, Daddy. Much better. 😏🐍
 
 ## Challenge 01: Add two converted integers
 
@@ -18,67 +25,76 @@ The challenge correctly used two prompted text inputs, converted both with `int(
 
 ## Challenge 02: Reuse the text slot, then add
 
+**Passed on 2026-08-13.** First try, no hints.
+
+The challenge reused one text variable across two prompted inputs, preserved both converted integers, added them, and printed the total followed by both original integers.
+
+## Challenge 03: Four operators, same two numbers
+
+Use two keyboard values to produce four different arithmetic results.
+
 The first `input()` call must display exactly:
 
 ```text
-Left number: 
+Left operand: 
 ```
 
 When it waits, type exactly:
 
 ```text
-23
+18
 ```
 
-Store the keyboard text in a variable named `text`, convert it to an integer, and preserve that integer in `first_number`.
+Store the keyboard text in `first_text` and convert it to `first_number`.
 
 The second `input()` call must display exactly:
 
 ```text
-Right number: 
+Right operand: 
 ```
 
 When it waits, type exactly:
 
 ```text
-16
+6
 ```
 
-Reuse the same `text` variable for this second keyboard value, convert it, and preserve that integer in `second_number`.
+Store that keyboard text in `second_text` and convert it to `second_number`.
 
-Add the two converted integers together and store the result in `total`.
+Using those two converted integers, calculate and store:
+
+- their sum in `sum_result`
+- `first_number - second_number` in `difference`
+- their product in `product`
+- `first_number / second_number` in `quotient`
 
 Then print exactly:
 
 ```text
-39
-23
-16
+24
+12
+108
+3.0
 ```
 
 ### Requirements
 
-- Create exactly four variables named `text`, `first_number`, `second_number`, and `total`.
-- Use `input()` exactly twice.
-- The first `input()` call must contain the exact prompt string `Left number: ` and store its returned text in `text`.
-- Convert `text` with `int()` and store the integer in `first_number`.
-- The second `input()` call must contain the exact prompt string `Right number: ` and reassign its returned text to the same `text` variable.
-- Convert the new `text` with `int()` and store the integer in `second_number`.
-- Add `first_number` and `second_number` with `+` and store the result in `total`.
-- Use `+` exactly once.
-- Use `int()` exactly twice total.
-- Use exactly three `print()` calls.
-- Print `total`, then `first_number`, then `second_number`.
+- Create exactly eight variables named `first_text`, `first_number`, `second_text`, `second_number`, `sum_result`, `difference`, `product`, and `quotient`.
+- Use `input()` exactly twice with the exact prompts above.
+- Use `int()` exactly twice.
+- Use `+` exactly once, `-` exactly once, `*` exactly once, and `/` exactly once.
+- Store each arithmetic result in its required result variable before printing it.
+- Use exactly four `print()` calls.
+- Print `sum_result`, then `difference`, then `product`, then `quotient`.
 - Every `print()` call must print a variable.
-- Do not print `text`.
-- Do not write `23`, `16`, or `39` as numeric literals or string literals anywhere in your code.
-- Do not create any additional variables.
-- Do not use subtraction, multiplication, division, conditions, loops, functions, collections, imports, f-strings, or string concatenation.
-- Use only unlocked Python plus the `+` operator.
+- Do not print either text variable.
+- Do not write `18`, `6`, `24`, `12`, `108`, or `3.0` as numeric literals or string literals anywhere in your code.
+- Do not create additional variables.
+- Do not use `%`, `//`, `**`, conditions, loops, functions, collections, imports, f-strings, or string concatenation.
 - Type the code yourself from memory.
 
 ### Submission
 
 Write your attempt in [`work.py`](work.py), run it locally, commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. Addition will keep mixing with earlier skills before any other arithmetic operator is introduced.
+After any passed challenge, the next item may be another coding challenge, a surprise recall from an older stage, a quiz, or a broader test. No fixed pattern.
