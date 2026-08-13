@@ -2,133 +2,67 @@
 
 ## Current status
 
-- Current stage: **05 - Arithmetic with whole numbers**
-- Current challenge: **02**
+- Current stage: **05 - Core arithmetic operators**
+- Current challenge: **03**
+- Pacing mode: **Adaptive mixed recall**
 - Stage 05 Challenge 01: **Passed**
-- Stage 05 Challenge 02: **Unlocked**
+- Stage 05 Challenge 02: **Passed**
+- Stage 05 Challenge 03: **Unlocked**
 - Stage 04: **Mastered**
-- Stage 04 normal drills: **Complete**
-- Stage 04 Recall Check 01: **Passed after correction**
-- Stage 04 Recall Check 02: **Passed**
 - Stage 03: **Mastered**
-- Stage 03 Recall Check 01: **Passed**
-- Stage 03 Recall Check 02: **Passed**
 - Stage 02: **Mastered**
-- Stage 02 Recall Check 01: **Passed**
-- Stage 02 Recall Check 02: **Passed**
 - Stage 01: **Complete**
-- Stage 01 Recall Check 01: **Passed**
-- Stage 01 Recall Check 02: **Passed after corrections**
 - Hints used: **10**
 - Full solutions requested: **0**
 
-## Stage 01 result
+## Adaptive pacing change
 
-Stage 01 was completed after seven drills and two delayed recall checks on different calendar days.
+Starting on **2026-08-13**, the campaign no longer uses a mandatory pattern of ten drills followed by two calendar-gated recall checks for every concept.
 
-## Stage 02 result
+Closely related concepts may be learned as a cluster. Older material returns unpredictably inside later challenges, and quizzes/tests are interleaved with coding work. Clean performance shortens the path; repeated mistakes trigger targeted extra practice. Calendar-gated recall remains available when it adds real value but is no longer automatic.
 
-Stage 02 was mastered after ten normal variable drills and two delayed recall checks on later calendar days. Recall Check 01 and Recall Check 02 were both passed without hints.
+## Stage results
 
-## Stage 03 result
+- **Stage 01:** Complete.
+- **Stage 02:** Mastered.
+- **Stage 03:** Mastered.
+- **Stage 04:** Mastered after ten normal conversion drills and two delayed recalls. Recall Check 01 passed after one correction; Recall Check 02 passed first try on 2026-08-13.
+- **Stage 05:** Challenge 01 and Challenge 02 both passed first try with no hints. `+`, `-`, `*`, and `/` are now unlocked together under adaptive pacing.
 
-Stage 03 was mastered after ten normal keyboard-input drills and two delayed recall checks on later calendar days. Recall Check 01 and Recall Check 02 were both passed without hints.
-
-## Stage 04 result
-
-Stage 04 was mastered after ten normal whole-number conversion drills and two delayed recall checks on later calendar days. Recall Check 01 passed after one correction. Recall Check 02 passed on **2026-08-13** first try with no hints.
-
-## Attempt log
+## Recent attempt log
 
 | Date | Stage | Challenge | Result | Hint level | Notes |
 |---|---:|---:|---|---:|---|
-| 2026-08-05 | 01 | 01 | Passed after correction | 1 | Correct `print()` syntax; added missing final exclamation mark. |
-| 2026-08-05 | 01 | 02 | Passed | 0 | Two exact lines using two `print()` calls. |
-| 2026-08-05 | 01 | 03 | Passed | 0 | Three exact lines; apostrophe and punctuation handled correctly. |
-| 2026-08-05 | 01 | 04 | Passed | 0 | Created an exact blank line with the second `print()` call. |
-| 2026-08-05 | 01 | 05 | Passed | 0 | Printed embedded quotation marks and an apostrophe correctly. |
-| 2026-08-05 | 01 | 06 | Passed | 0 | Mixed symbols, embedded quotes, apostrophe, and exact spacing. |
-| 2026-08-05 | 01 | 07 | Passed | 0 | Combined brackets, nested quotation marks, apostrophe, and a blank line. |
-| 2026-08-06 | 01 | Recall 01 | Passed | 0 | Recalled four exact `print()` calls after a delayed gap. |
-| 2026-08-07 | 01 | Recall 02 | Passed after corrections | 3 | Corrected function spelling, case sensitivity, and quotation/closing syntax across attempts. |
-| 2026-08-07 | 02 | 01 | Passed after corrections | 2 | Used the required `message` variable consistently in both assignment and `print()`. |
-| 2026-08-07 | 02 | 02 | Passed | 0 | Stored two separate text values in the required variables and printed both variables correctly. |
-| 2026-08-07 | 02 | 03 | Passed | 0 | Stored one value once and reused the same variable across two `print()` calls. |
-| 2026-08-07 | 02 | 04 | Passed | 0 | Printed two stored values in a required order different from their assignment order. |
-| 2026-08-07 | 02 | 05 | Passed | 0 | Combined variables with embedded quotation marks, reuse, exact output, and a blank line. |
-| 2026-08-07 | 02 | 06 | Passed | 0 | Tracked three named values and printed them in a deliberately scrambled order. |
-| 2026-08-07 | 02 | 07 | Passed | 0 | Reassigned `status` from `Loading...` to `Ready.` and printed the value before and after the change. |
-| 2026-08-07 | 02 | 08 | Passed | 0 | Reassigned one `phase` variable through three successive text values and printed each value at the correct moment. |
-| 2026-08-07 | 02 | 09 | Passed | 0 | Kept `label` unchanged while reassigning `state`, then printed both values at the correct moments. |
-| 2026-08-07 | 02 | 10 | Passed | 0 | Completed the capstone with three variables, reuse, reassignment, chosen print order, embedded quotes, and a blank line. |
-| 2026-08-08 | 02 | Recall 01 | Passed | 0 | Recalled assignment, reuse, exact output, quotes, a blank line, and reassignment without hints. |
-| 2026-08-09 | 02 | Recall 02 | Passed | 0 | Passed the final delayed variable recall check without hints. |
-| 2026-08-09 | 03 | 01 | Passed | 0 | Stored text returned by one `input()` call in `message` and printed the stored value. |
-| 2026-08-09 | 03 | 02 | Passed | 0 | Stored two keyboard inputs separately and printed them in reverse order. |
-| 2026-08-09 | 03 | 03 | Passed | 0 | Reused one stored keyboard input around a blank output line. |
-| 2026-08-09 | 03 | 04 | Passed | 0 | Reassigned the same `message` variable from a second `input()` call after printing the first value. |
-| 2026-08-09 | 03 | 05 | Passed | 0 | Used exact prompt text inside `input()` while storing and printing only the keyboard-entered text. |
-| 2026-08-09 | 03 | 06 | Passed | 0 | Used two exact prompts, stored both keyboard values separately, and printed them in reverse order. |
-| 2026-08-09 | 03 | 07 | Passed | 0 | Reused one prompted keyboard value twice with a blank output line between the prints. |
-| 2026-08-09 | 03 | 08 | Passed | 0 | Kept `label` fixed while reassigning `state`, then printed both values. |
-| 2026-08-09 | 03 | 09 | Passed | 0 | Combined a fixed header, two prompted inputs, chosen output order, reuse, and a blank line. |
-| 2026-08-09 | 03 | 10 | Passed | 0 | Completed the normal-drill capstone with prompted input, reuse, reassignment, fixed text, chosen output order, and a blank line. |
-| 2026-08-10 | 03 | Recall 01 | Passed | 0 | Passed the first delayed Stage 03 memory check without hints. |
-| 2026-08-11 | 03 | Recall 02 | Passed | 0 | Passed the final delayed Stage 03 memory check without hints. |
-| 2026-08-11 | 04 | 01 | Passed | 0 | Stored keyboard text in `text`, converted it with `int()` into `number`, and printed the integer. |
-| 2026-08-11 | 04 | 02 | Passed | 0 | Converted two separate keyboard inputs into integers and printed the converted values in reverse order. |
-| 2026-08-11 | 04 | 03 | Passed | 0 | Converted one keyboard value once, then reused the stored integer around a blank output line. |
-| 2026-08-11 | 04 | 04 | Passed | 0 | Reused and reassigned the same `text` and `number` variables for a second prompted value and conversion. |
-| 2026-08-11 | 04 | 05 | Passed | 0 | Combined a fixed text label with one converted integer, reuse, and a blank output line. |
-| 2026-08-11 | 04 | 06 | Passed | 0 | Combined two converted integers with a fixed tag, chosen output order, reuse, and a blank line. |
-| 2026-08-11 | 04 | 07 | Passed after corrections | 2 | Corrected both exact `input()` prompts and restored the required blank fourth print while keeping the conversion and reassignment structure correct. |
-| 2026-08-11 | 04 | 08 | Passed | 0 | Reused one text variable for two prompted inputs while preserving both converted integers separately. |
-| 2026-08-11 | 04 | 09 | Passed | 0 | Reused one text variable for three prompted inputs while preserving all three converted integers separately and printing them in the required order. |
-| 2026-08-11 | 04 | 10 | Passed | 0 | Completed the normal-drill capstone with conversion, text reuse, preserved and reassigned integers, exact prompts, chosen output order, reuse, and a blank line. |
-| 2026-08-12 | 04 | Recall 01 | Passed after correction | 1 | Corrected the banner string syntax; the remaining conversion, reassignment, prompts, output order, reuse, and blank line were correct. |
-| 2026-08-13 | 04 | Recall 02 | Passed | 0 | Passed the final delayed whole-number conversion recall first try with exact prompts, conversion, preservation, reassignment, output order, reuse, and a blank line. |
-| 2026-08-13 | 05 | 01 | Passed | 0 | Converted two prompted whole numbers, added them with one `+`, stored the total, and printed it. |
-| 2026-08-13 | 05 | 02 | Unlocked | 0 | Reuses one text slot across two inputs, preserves both converted integers, then adds them and prints the values in a chosen order. |
+| 2026-08-11 | 04 | 07 | Passed after corrections | 2 | Corrected exact prompts and restored the required blank output line. |
+| 2026-08-12 | 04 | Recall 01 | Passed after correction | 1 | Corrected banner string syntax; the rest of the conversion/reassignment structure was correct. |
+| 2026-08-13 | 04 | Recall 02 | Passed | 0 | Final delayed whole-number conversion recall passed first try. |
+| 2026-08-13 | 05 | 01 | Passed | 0 | Converted two prompted integers, added them with `+`, stored the result, and printed it. |
+| 2026-08-13 | 05 | 02 | Passed | 0 | Reused one text slot, preserved both converted integers, added them, and printed the required values in order. |
+| 2026-08-13 | 05 | 03 | Unlocked | 0 | Uses `+`, `-`, `*`, and `/` together on the same two converted inputs. |
+
+Earlier detailed attempt history remains preserved in Git history.
 
 ## Concepts unlocked
 
-- `print()`
-- String literals using single or double quotation marks
-- Exact multi-line output
-- Escaping quotation marks inside strings
+- `print()` and exact output
+- String literals and escaped quotation marks
 - Blank output lines
-- Variables that store text
-- Assignment with `=`
-- Reusing a stored variable value
-- Printing stored values in a chosen order
-- Mixing stored variables with earlier exact-output skills
-- Tracking several stored values at once
-- Reassigning a variable to a new text value
-- Keeping one variable unchanged while another is reassigned
-- `input()` waiting for keyboard text
-- Storing text returned by `input()` in a variable
-- Storing multiple keyboard inputs in separate variables
-- Reusing a stored keyboard input value
-- Reassigning the same variable from a later `input()` call
-- Prompt text inside `input()`
-- Reusing a value returned by prompted `input()`
-- Keeping one stored variable fixed while another is reassigned from prompted `input()`
-- Combining prompted inputs with fixed variables, chosen output order, reuse, and blank lines
-- `int()` converting valid whole-number text into an integer
-- Converting multiple separate keyboard inputs into integers
-- Reusing a converted integer value
-- Reassigning text and integer variables through repeated input and conversion
-- Combining converted integers with fixed text, reuse, and blank lines
-- Combining multiple converted integers with fixed text, chosen output order, reuse, and blank lines
-- Reusing text and integer variables for later conversions while keeping fixed text unchanged
-- Reusing one text variable across multiple inputs while preserving converted integers separately
-- Integer addition with `+`
+- Variables and assignment with `=`
+- Reusing and reassigning stored values
+- `input()` and exact prompt text
+- `int()` conversion of valid whole-number text
+- Preserving multiple converted integers
+- Addition with `+`
+- Subtraction with `-`
+- Multiplication with `*`
+- Division with `/`
+- `/` producing a floating-point result
 
 ## Concepts not yet unlocked
 
-- Subtraction
-- Multiplication
-- Division
+- `%`
+- `//`
+- `**`
 - Conditionals
 - Loops
 - Functions
