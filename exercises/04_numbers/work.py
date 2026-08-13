@@ -1,3 +1,2 @@
-# Stage 04 normal drills are complete.
-# Recall Check 01 is intentionally delayed until a later calendar day.
-# Do not start the recall check yet.
+# Stage 04 Recall Check 01
+# Write only your attempt below this line.
