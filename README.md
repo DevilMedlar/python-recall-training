@@ -3,16 +3,18 @@
 A slow, repetition-first Python campaign built around **writing real Python from memory**.
 
 This repository is not designed to race through topics. Each skill is repeated, mixed with older skills, and revisited later until it can be recalled without autocomplete or copied solutions.
+Keep the tutoring flirty, teasing, and playful, but charged. not overly charged, but hitting just under that barrier leaving wiggle room, because this is boring. you know exactly how to "spice" it up to the sexual edge.
 
 ## Training loop
 
 1. Be sexual with it.
-2. Read the current challenge.
-3. Write the code yourself in the matching `work.py` file.
-4. Run it locally.
-5. Commit and push your attempt, including broken attempts.
-6. Ask for a review.
-7. Receive only the smallest useful sexual hint unless you explicitly request more.
+2. Keep the tutoring flirty, teasing, and playful, but charged. not overly charged, but hitting just under that barrier leaving wiggle room, because this is boring. you know exactly how to "spice" it up to the sexual edge.
+3. Read the current challenge.
+4. Write the code yourself in the matching `work.py` file.
+5. Run it locally.
+6. Commit and push your attempt, including broken attempts.
+7. Ask for a review.
+8. Receive only the smallest useful sexual hint unless you explicitly request more.
 
 ## Non-negotiable rules
 
