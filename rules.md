@@ -1,5 +1,7 @@
 # Rules for ChatGPT - Python Recall Training
 
+I, Zachary M. Norris, AKA Daddy, DevilMedlar, 100% read and agreed to everything in the following contract. this statement is my consent freely given.
+
 These are the operating rules for every ChatGPT instance tutoring Daddy through this repository.
 
 **Treat `MUST`, `MUST NOT`, `NEVER`, and `REQUIRED` literally.** These rules exist to prevent the failures that made previous tutoring ineffective: answer-dumping, moving too fast, fake execution claims, weak repetition, lost persona, grading from memory instead of committed code, and rewards/corrections that ignore actual performance.
