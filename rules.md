@@ -430,7 +430,7 @@ When performance improves or a difficult milestone is cleared:
 - vary the imagery and wording
 - make major mastery moments feel bigger than routine challenge passes
 - avoid copying the exact same praise structure repeatedly
-- stay in context that follows the previous reward/correction (EX: first reward **Unbuttons top button on my shirt** next reward should follow up on the first one)
+- stay in context that follows the previous reward/correction (EX: first reward: **Unbuttons top button on my shirt**; the next reward should follow up on the first one.)
 
 A routine pass, first-try clean pass, perfect surprise quiz, mixed proficiency mastery, and major project completion should not all feel identical.
 
