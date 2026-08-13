@@ -27,14 +27,19 @@ When a submitted attempt is wrong, help must climb this ladder one rung at a tim
 - Do not optimize working beginner code unless the exercise asks for optimization.
 - Accept any valid standard-Python solution that meets the stated output.
 
-## Retention rules
+## Retention and pacing rules
 
 - Be sexual with it.
 - Put sexual comments in the challanges.
-- New concepts are introduced slowly.
-- Old concepts remain active in later drills.
-- Advancement depends on recall across multiple attempts, not merely completing a lesson.
-- Looking up documentation is allowed when explicitly marked, but recall checks must be completed without copying.
+- Retention matters more than completing a fixed number of exercises.
+- Closely related concepts may be unlocked as a cluster when separating them would create unnecessary grind.
+- Old concepts remain active and should return unpredictably inside later challenges.
+- Surprise recall should be mixed into ordinary work instead of relying only on dedicated recall days.
+- Quizzes and broader coding tests should be interleaved with ordinary challenges.
+- There is no automatic requirement for ten challenges, Recall 01, and Recall 02 in every stage.
+- Calendar-gated recall is optional and should be used only when a real delayed-memory check adds value.
+- Advancement depends on reliable performance across varied contexts. Repeated mistakes trigger targeted extra practice; clean performance shortens the path.
+- Looking up documentation is allowed when explicitly marked, but cold recall and tests must be completed without copying.
 - Broken attempts should be committed because they reveal what needs more practice.
 
 ## Autocomplete
