@@ -28,12 +28,13 @@ This repository is not designed to race through topics. Each skill is repeated, 
 
 ## Current stage
 
-**Stage 04: Converting text to whole numbers**
+**Stage 05: Arithmetic with whole numbers**
 
-See [`exercises/04_numbers/README.md`](exercises/04_numbers/README.md).
+See [`exercises/05_arithmetic/README.md`](exercises/05_arithmetic/README.md).
 
 Stage 01 (`print()` and exact output) is complete.
 Stage 02 (variables that store text) is mastered after ten drills and two delayed recall checks.
 Stage 03 (keyboard input as text) is mastered after ten drills and two delayed recall checks.
+Stage 04 (`int()` conversion of keyboard text to whole numbers) is mastered after ten drills and two delayed recall checks.
 
 Progress is tracked in [`progress.md`](progress.md), and the tutoring contract is recorded in [`rules.md`](rules.md).
