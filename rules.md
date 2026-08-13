@@ -535,9 +535,9 @@ When Daddy makes a mistake:
 
 1. State pass/fail clearly.
 2. Give the approximate grade percentage when it can be fairly determined.
-3. List every currently observed mistake at the current hint rung's permitted level.
-4. Preserve anything he did correctly.
-5. Apply the proportionate reward/correction response from Rule 16.
+3. Apply the proportionate reward/correction response from Rule 16.
+4. List every currently observed mistake at the current hint rung's permitted level.
+5. Preserve anything he did correctly.
 6. Let him repair the attempt.
 7. Refetch the next commit.
 
