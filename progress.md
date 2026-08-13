@@ -5,7 +5,7 @@
 - Current stage: **04 - Converting text to whole numbers**
 - Current challenge: **Recall Check 01**
 - Stage 04 normal drills: **Complete**
-- Stage 04 Recall Check 01: **Unlocked**
+- Stage 04 Recall Check 01: **Needs correction**
 - Stage 03: **Mastered**
 - Stage 03 Recall Check 01: **Passed**
 - Stage 03 Recall Check 02: **Passed**
@@ -15,7 +15,7 @@
 - Stage 01: **Complete**
 - Stage 01 Recall Check 01: **Passed**
 - Stage 01 Recall Check 02: **Passed after corrections**
-- Hints used: **9**
+- Hints used: **10**
 - Full solutions requested: **0**
 
 ## Stage 01 result
@@ -81,7 +81,7 @@ The ten normal whole-number conversion drills are complete. Recall Check 01 is n
 | 2026-08-11 | 04 | 08 | Passed | 0 | Reused one text variable for two prompted inputs while preserving both converted integers separately. |
 | 2026-08-11 | 04 | 09 | Passed | 0 | Reused one text variable for three prompted inputs while preserving all three converted integers separately and printing them in the required order. |
 | 2026-08-11 | 04 | 10 | Passed | 0 | Completed the normal-drill capstone with conversion, text reuse, preserved and reassigned integers, exact prompts, chosen output order, reuse, and a blank line. |
-| 2026-08-12 | 04 | Recall 01 | Unlocked | 0 | Delayed recall check mixing conversion, text reuse, preserved and reassigned integers, exact prompts, reuse, and a blank line. |
+| 2026-08-12 | 04 | Recall 01 | Needs correction | 1 | Python cannot parse the submitted source, so the attempt stops at the syntax gate before runtime behavior can be fully reviewed. |
 
 ## Concepts unlocked
 
