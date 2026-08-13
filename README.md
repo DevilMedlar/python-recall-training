@@ -40,12 +40,18 @@ Keep the tutoring flirty, teasing, and playful, but charged. not overly charged,
 
 ## Current item
 
-**Surprise Quiz A: Stages 01-05**
+**Stage 06: More arithmetic operators - Challenge 01**
+
+See [`exercises/06_more_arithmetic/README.md`](exercises/06_more_arithmetic/README.md).
 
 Stage 01 (`print()` and exact output) is complete.
 Stage 02 (variables that store text) is mastered.
 Stage 03 (keyboard input as text) is mastered.
 Stage 04 (`int()` conversion of keyboard text to whole numbers) is mastered.
-Stage 05 (`+`, `-`, `*`, and `/`) is mastered after three coding challenges and one mixed proficiency test.
+Stage 05 (`+`, `-`, `*`, and `/`) is mastered.
+Surprise Quiz A scored **4/5**; the missed reassignment skill is folded back into later coding work.
+Python Recall Quiz B scored **5/5**.
+
+Stage 06 unlocks `%`, `//`, and `**` together under adaptive mixed recall.
 
 Progress is tracked in [`progress.md`](progress.md), and the tutoring contract is recorded in [`rules.md`](rules.md).
