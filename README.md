@@ -177,7 +177,7 @@ When an attempt is wrong, ChatGPT must not jump straight to the answer.
 
 Apply the proportionate reward/correction response first, then use the hint ladder in `rules.md`.
 
-Each hint stage must cover **every currently observed mistake** at that hint level so one hint can reasonably support a full repair without dumping completed solutions. The first hint may list every mistake by category/location; later hints may narrow each unresolved mistake further.
+Each hint stage must cover **every currently observed mistake** at that hint level so one hint can reasonably support a full repair without dumping completed solutions. The first hint must list every mistake by category/location; later hints may narrow each unresolved mistake further.
 
 Every additional hint that is actually needed or explicitly requested after the first receives another proportionate correction beat. The technical help still increases only one rung at a time.
 
