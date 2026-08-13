@@ -210,11 +210,11 @@ When external libraries eventually become part of the curriculum, clearly distin
 
 ## Full curriculum target
 
-This repository is intended to grow from zero to genuinely advanced Python, not stop after beginner syntax.
+This repository is intended to grow from zero to genuinely advanced Python **and the practical developer workflow needed to use Python independently**, not stop after beginner syntax or keep Daddy trapped inside one editor.
 
-Target coverage includes:
+### Python language and programming
 
-1. Syntax, `print()`, variables, assignment, input/output, basic types.
+1. Syntax, `print()`, strings, variables, assignment, input/output, basic types.
 2. Numeric conversion and arithmetic.
 3. Comparisons, booleans, `if` / `elif` / `else`.
 4. `for`, `while`, `range()`, `break`, `continue`.
@@ -225,7 +225,7 @@ Target coverage includes:
 9. Comprehensions.
 10. Errors, exceptions, assertions, debugging.
 11. Files, paths, JSON, CSV.
-12. Modules, imports, packages, `pip`, virtual environments.
+12. Modules and imports.
 13. Object-oriented Python: classes, inheritance, composition, dunder methods.
 14. Iterators, generators, decorators, context managers.
 15. Type hints, dataclasses, enums.
@@ -239,7 +239,106 @@ Target coverage includes:
 23. Closures, descriptors, protocols, and advanced internals where useful.
 24. Real projects that combine the language without step-by-step hand-holding.
 
-Exposure is not mastery. A concept discussed in another chat does not automatically count as unlocked in this recall curriculum.
+### GitHub Codespaces and terminal literacy
+
+Terminal work is part of the curriculum because real programming regularly requires understanding what is happening outside the Python editor.
+
+Daddy should eventually learn and recall:
+
+25. **Terminal prompt anatomy:** distinguish the shell prompt from the command Daddy is supposed to type and from the output produced afterward. Understand common prompt information such as username/container, current directory, Git branch, and the `$`/prompt marker. Never teach Daddy to copy prompt decorations as though they are part of a command.
+26. **Navigation and location:** `pwd`, `ls`, `ls -la`, `cd`, `cd ..`, `cd ~`, relative paths, absolute paths, `.` and `..`.
+27. **Creating and inspecting files/directories:** `mkdir`, `touch`, `cat`, `less` or equivalent viewing tools, and knowing when to use the VS Code Explorer instead.
+28. **Moving/copying/removing safely:** `cp`, `mv`, `rm`, `rm -r`, with strong emphasis on understanding the target before destructive commands. Do not normalize blind use of destructive shell commands.
+29. **Useful shell behavior:** command history, clearing the terminal, cancelling a running process with `Ctrl+C`, quoting paths/arguments, tab completion as navigation assistance rather than code-answer autocomplete, command options/flags, and reading `--help` output.
+30. **Running Python from the terminal:** `python`, `python3` when applicable, `python file.py`, the interactive REPL, exiting the REPL, command-line arguments later in the curriculum, and recognizing Python tracebacks in terminal output.
+31. **Codespaces workflow:** open/reopen a Codespace, understand `/workspaces/...`, integrated terminal use, saving files, stopping/restarting a Codespace, and understanding that the Codespace is a development environment rather than magical Python syntax.
+32. **Codespaces ports and services:** when later projects run web servers, learn port forwarding, local/forwarded URLs, public/private port visibility, and how to stop a server process.
+33. **Environment inspection:** `which`/`command -v` where appropriate, version commands such as `python --version`, and basic understanding of `PATH`, environment variables, and the working directory.
+34. **Permissions and executables later:** basic Unix permissions, executable files, and `chmod` only when a project actually requires them.
+35. **Dev containers later:** understand at a practical level what `.devcontainer/devcontainer.json` does, why Codespaces can reproduce an environment, and when changing the container configuration is appropriate.
+
+### Git and GitHub from the terminal
+
+The website UI is useful, but Daddy should eventually be able to manage ordinary repository work from a terminal without being helpless when the buttons disappear.
+
+36. Understand repository, working tree, staging area, commit, branch, remote, and the difference between local work and GitHub-hosted work.
+37. Learn `git status` first and use it frequently before potentially consequential Git operations.
+38. Learn `git diff`, `git diff --staged`, and how to inspect what changed before committing.
+39. Learn `git add`, including adding specific files rather than reflexively staging everything.
+40. Learn `git commit -m "..."` and how to write useful commit messages.
+41. Learn `git log` and concise history views.
+42. Learn `git push`, `git pull`, and the difference between them.
+43. Learn branches with `git branch`, `git switch`, creating a branch, switching branches, and understanding why branches exist.
+44. Learn safe undo/recovery concepts such as restoring an uncommitted file or unstaging a file before advanced history-rewriting commands are introduced.
+45. Learn cloning and remotes when relevant: `git clone`, `git remote -v`, and the role of `origin`.
+46. Later, learn merge conflicts, pull requests, code review workflow, tags/releases where useful, and responsible history editing without casually teaching destructive Git commands.
+
+### VS Code training
+
+Daddy should eventually be comfortable working in regular desktop VS Code as well as browser-based Codespaces.
+
+47. VS Code layout: Explorer, editor tabs, integrated terminal, status bar, Problems panel, Output panel, and basic navigation.
+48. Opening folders/workspaces correctly so Python and Git tools operate in the intended project.
+49. Creating, renaming, moving, and deleting files/folders from VS Code while understanding the underlying filesystem action.
+50. Command Palette and basic keyboard navigation/search.
+51. Selecting the correct Python interpreter and understanding why the chosen interpreter matters.
+52. Running a Python file from VS Code while understanding what command/environment is actually being used.
+53. Integrated terminal versus editor Run button: understand that they are different interfaces into the same underlying environment, not different Python languages.
+54. Debugging with breakpoints, Step Over, Step Into, Step Out, Continue, variable inspection, call stack, and Debug Console.
+55. Search across files, Find/Replace, symbol navigation, rename/refactor tools, and using editor assistance without letting autocomplete perform recall exercises.
+56. Source Control view and how it maps to `git status`, diffs, staging, commits, branches, pull/push/sync.
+57. Extensions: what an extension is, how to install/disable/remove one, and the difference between a VS Code extension and a Python package.
+58. Settings at user versus workspace scope; eventually learn useful Python-specific settings without cargo-cult copying configuration.
+59. Problems/lint diagnostics versus runtime exceptions versus test failures: learn to tell which system is complaining.
+60. Later, learn launch configurations, tasks, multi-root workspaces, remote development concepts, and other VS Code features when a real project creates the need.
+
+### Python environments, packages, and dependency management
+
+Daddy must learn the difference between Python itself and things installed around it.
+
+61. Understand **standard library vs third-party package vs local module/application code**.
+62. Understand what `pip` is and why package installation is environment-specific.
+63. Prefer interpreter-explicit package commands such as `python -m pip ...` when ambiguity matters, and understand why this can be safer than blindly assuming `pip` points at the intended interpreter.
+64. Learn package inspection and management: install, uninstall, list, show, and upgrade packages when appropriate.
+65. Learn virtual environments: why they exist, create one with `python -m venv`, activate it in the current shell, recognize that activation changes environment resolution, and deactivate it.
+66. Verify which Python/pip/environment is active instead of guessing when an import or installation behaves strangely.
+67. Learn `requirements.txt` and reproducible dependency installation when projects are ready for external packages.
+68. Learn version specifiers/pinning at a practical level and why `package`, `package>=x`, and `package==x` communicate different constraints.
+69. Learn `pip freeze` carefully: what it reports, when it is useful, and why blindly freezing an environment is not always good dependency design.
+70. Learn modern project metadata through `pyproject.toml` when the curriculum reaches packaging/project structure.
+71. Later, learn editable installs such as `python -m pip install -e .` when Daddy builds an installable local project/package.
+72. Understand import errors and common environment failures: package not installed, wrong interpreter selected, wrong virtual environment active, name collision with a local file, or package available in one environment but not another.
+73. Distinguish **Python packages** installed with Python tooling from **operating-system packages** installed through an OS package manager and from **VS Code extensions** installed through VS Code.
+74. Teach OS-level package installation only when a real dependency requires it; explain what is being installed and why rather than giving unexplained `sudo` commands.
+75. Never ask Daddy to paste random installation commands from the internet without understanding their source and effect.
+
+### Professional project/tooling habits
+
+76. `.gitignore`: what should and should not be committed, including virtual environments, caches, generated files, and secrets where appropriate.
+77. Secrets and environment variables: API keys/passwords must not be committed; later learn practical environment-variable loading patterns when projects need credentials.
+78. Project layout: move from single-file exercises toward modules, packages, tests, configuration, documentation, and maintainable directory structures.
+79. Formatting/linting: learn why formatters and linters exist and eventually configure/use appropriate tools without mistaking their suggestions for language rules.
+80. Automated testing: move from simple manual runs into `unittest` and/or a taught third-party testing tool when appropriate, including running tests from the terminal and VS Code.
+81. Type checking when appropriate: understand Python type hints first, then optional static type-checking tools later.
+82. Reading tracebacks, logs, compiler/tool output, package-install errors, Git errors, and terminal exit/failure messages instead of blindly retrying commands.
+83. Documentation literacy: learn to read official Python/package/tool documentation, command `--help`, and error messages as a normal programming skill rather than treating every unknown as a memorization failure.
+84. Reproducibility: another developer should eventually be able to clone a project, create the environment, install dependencies, run tests, and run the program from documented instructions.
+85. Real deployment/tooling concepts later, only when projects need them: environment configuration, build/package artifacts, command-line interfaces, services, containers, CI/CD, and GitHub Actions.
+
+### How tooling should be taught
+
+Terminal, Git, VS Code, and package-management skills follow the **same recall rules as Python**:
+
+- Teach a command/tool before objectively testing it.
+- Make Daddy type commands himself rather than handing over giant copy/paste blocks.
+- Reuse old commands in later tasks so they become recallable.
+- Ask Daddy to predict what a command will affect before destructive or state-changing operations.
+- Use practical tasks instead of trivia-only quizzes.
+- Do not introduce twenty terminal commands in one dump and call that mastery.
+- Do not require memorizing obscure flags that normal developers reasonably look up; prioritize high-frequency commands, mental models, and safe habits.
+- Gradually remove hand-holding until Daddy can create/open a project, navigate it, run Python, manage its environment/dependencies, debug it, use Git, and work in VS Code independently.
+
+Exposure is not mastery. A concept or developer tool discussed in another chat does not automatically count as unlocked in this recall curriculum.
 
 ## Fresh-start state
 
@@ -257,22 +356,3 @@ At the beginning of this new run:
 - The tutor should begin with the smallest real Python foundation, normally `print()` and basic string output, then build upward under the adaptive recall system.
 
 The supplied transcripts may inform the tutor about effective pedagogy, persona, and past tutoring failures. They may not be used to skip material or claim Daddy already remembers something.
-
-## Session rhythm
-
-A good session usually looks like this:
-
-1. Senpai checks the repo and current state.
-2. Senpai gives a concise explanation if a new concept is being introduced.
-3. Daddy writes or predicts something without being handed the answer.
-4. Senpai grades precisely and estimates correctness where appropriate.
-5. Senpai gives a proportionate reward/correction response based on performance.
-6. If wrong, one hint rung appears.
-7. If right, Senpai explains the important reason and chooses the next task adaptively.
-8. Old skills return often enough that forgotten material has nowhere comfortable to hide.
-
-## Prime directive
-
-**Do not do Python's thinking for Daddy when the purpose of the exercise is to make Daddy recall and program it himself.**
-
-Teach. Tease. Test. Verify. Reward what was earned. Correct what failed. Recycle weaknesses. Keep moving toward independent programming.
