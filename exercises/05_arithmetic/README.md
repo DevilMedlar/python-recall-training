@@ -4,91 +4,86 @@ Stage 04 is mastered. `print()`, variables, `input()`, reassignment, exact promp
 
 ## Current concept cluster
 
-The four core arithmetic operators are now unlocked together:
+The four core arithmetic operators are unlocked together:
 
 - `+` adds.
 - `-` subtracts.
 - `*` multiplies.
-- `/` divides.
+- `/` divides and produces a floating-point result.
 
-Important Python detail: `/` produces a floating-point result, even when the division comes out evenly. For example, `8 / 2` produces `4.0`.
+Stage 05 uses **adaptive mixed practice**. There is no fixed ten-challenge requirement and no automatic pair of delayed recall days. Clean performance shortens the path; repeated mistakes earn targeted extra reps.
 
-Stage 05 now uses **adaptive mixed practice**. There is no fixed ten-challenge requirement and no automatic pair of delayed recall days. Expect ordinary coding challenges, surprise recall of older skills, short quizzes, and broader tests in an unpredictable mix. Clean performance speeds things up; repeated mistakes earn targeted extra reps.
+## Passed work
 
-All four operators are on the table now, Daddy. Much better. 😏🐍
+- **Challenge 01:** Passed first try, no hints. Added two converted integers.
+- **Challenge 02:** Passed first try, no hints. Reused one text slot, preserved both converted integers, and added them.
+- **Challenge 03:** Passed first try, no hints. Used `+`, `-`, `*`, and `/` exactly once on the same two converted inputs.
 
-## Challenge 01: Add two converted integers
+Three clean passes in a row means you do not need seven more arithmetic clones, Daddy. Time for a broader test. 😏🐍
 
-**Passed on 2026-08-13.** First try, no hints.
+## Mixed Proficiency Test A: Arithmetic under old-skill pressure
 
-The challenge correctly used two prompted text inputs, converted both with `int()`, added the two integers with one `+`, stored the result, and printed the total.
+This is a coding test, not a guided drill. It mixes Stage 05 arithmetic with older recall skills: exact prompts, one reused text slot, conversion, preserved values, a fixed header, chosen output order, and a blank line.
 
-## Challenge 02: Reuse the text slot, then add
-
-**Passed on 2026-08-13.** First try, no hints.
-
-The challenge reused one text variable across two prompted inputs, preserved both converted integers, added them, and printed the total followed by both original integers.
-
-## Challenge 03: Four operators, same two numbers
-
-Use two keyboard values to produce four different arithmetic results.
-
-The first `input()` call must display exactly:
+Create a fixed header containing exactly:
 
 ```text
-Left operand: 
+[ARITHMETIC TEST]
 ```
 
-When it waits, type exactly:
+Use one text variable named `text` for all three keyboard inputs.
+
+The three `input()` prompts must be exactly:
 
 ```text
-18
+First value: 
+Second value: 
+Third value: 
 ```
 
-Store the keyboard text in `first_text` and convert it to `first_number`.
-
-The second `input()` call must display exactly:
+When each prompt waits, type these keyboard values in order:
 
 ```text
-Right operand: 
+20
+4
+3
 ```
 
-When it waits, type exactly:
+Convert and preserve the three integers separately as `first_number`, `second_number`, and `third_number`.
 
-```text
-6
-```
+Then calculate and store:
 
-Store that keyboard text in `second_text` and convert it to `second_number`.
-
-Using those two converted integers, calculate and store:
-
-- their sum in `sum_result`
-- `first_number - second_number` in `difference`
-- their product in `product`
+- `first_number + second_number` in `sum_result`
+- `first_number - third_number` in `difference`
+- `second_number * third_number` in `product`
 - `first_number / second_number` in `quotient`
 
-Then print exactly:
+Print exactly:
 
 ```text
+[ARITHMETIC TEST]
 24
+17
+
 12
-108
-3.0
+5.0
+[ARITHMETIC TEST]
 ```
 
 ### Requirements
 
-- Create exactly eight variables named `first_text`, `first_number`, `second_text`, `second_number`, `sum_result`, `difference`, `product`, and `quotient`.
-- Use `input()` exactly twice with the exact prompts above.
-- Use `int()` exactly twice.
+- Create exactly nine variables named `header`, `text`, `first_number`, `second_number`, `third_number`, `sum_result`, `difference`, `product`, and `quotient`.
+- Assign `[ARITHMETIC TEST]` to `header` exactly once and do not reassign it.
+- Use `input()` exactly three times with the exact prompts above.
+- Reuse the same `text` variable for all three input results.
+- Use `int()` exactly three times, storing the converted integers in the three required number variables.
 - Use `+` exactly once, `-` exactly once, `*` exactly once, and `/` exactly once.
-- Store each arithmetic result in its required result variable before printing it.
-- Use exactly four `print()` calls.
-- Print `sum_result`, then `difference`, then `product`, then `quotient`.
-- Every `print()` call must print a variable.
-- Do not print either text variable.
-- Do not write `18`, `6`, `24`, `12`, `108`, or `3.0` as numeric literals or string literals anywhere in your code.
+- Store every arithmetic result before printing it.
+- Use exactly seven `print()` calls.
+- Print in this exact order: `header`, `sum_result`, `difference`, blank line, `product`, `quotient`, `header`.
+- Every non-blank `print()` call must print a variable.
+- Do not print `text`.
+- Do not write `20`, `4`, `3`, `24`, `17`, `12`, or `5.0` as numeric literals or string literals anywhere in your code.
 - Do not create additional variables.
 - Do not use `%`, `//`, `**`, conditions, loops, functions, collections, imports, f-strings, or string concatenation.
 - Type the code yourself from memory.
@@ -97,4 +92,4 @@ Then print exactly:
 
 Write your attempt in [`work.py`](work.py), run it locally, commit it even if it is broken, then ask for review.
 
-After any passed challenge, the next item may be another coding challenge, a surprise recall from an older stage, a quiz, or a broader test. No fixed pattern.
+**If this test passes cleanly, Stage 05 is mastered immediately.** No mandatory Recall 01 or Recall 02 follows it.
