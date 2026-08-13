@@ -8,65 +8,77 @@ The `+` operator adds two integers and produces a new integer.
 
 For now, **addition is the only arithmetic operator unlocked**. Subtraction, multiplication, division, and everything beyond them stay locked until later drills.
 
-You finally earned the plus sign, Daddy. Don't get greedy with it yet. 😏🐍
+You earned the plus sign, Daddy. Now make it behave while an older skill slides back into the room. 😏🐍
 
 ## Challenge 01: Add two converted integers
+
+**Passed on 2026-08-13.** First try, no hints.
+
+The challenge correctly used two prompted text inputs, converted both with `int()`, added the two integers with one `+`, stored the result, and printed the total.
+
+## Challenge 02: Reuse the text slot, then add
 
 The first `input()` call must display exactly:
 
 ```text
-First addend: 
+Left number: 
 ```
 
 When it waits, type exactly:
 
 ```text
-12
+23
 ```
 
-Store the keyboard text, convert it to an integer, and preserve that integer.
+Store the keyboard text in a variable named `text`, convert it to an integer, and preserve that integer in `first_number`.
 
 The second `input()` call must display exactly:
 
 ```text
-Second addend: 
+Right number: 
 ```
 
 When it waits, type exactly:
 
 ```text
-7
+16
 ```
 
-Store that keyboard text separately and convert it to an integer.
+Reuse the same `text` variable for this second keyboard value, convert it, and preserve that integer in `second_number`.
 
-Add the two converted integers together, store the result, then print exactly:
+Add the two converted integers together and store the result in `total`.
+
+Then print exactly:
 
 ```text
-19
+39
+23
+16
 ```
 
 ### Requirements
 
-- Create exactly five variables named `first_text`, `first_number`, `second_text`, `second_number`, and `total`.
+- Create exactly four variables named `text`, `first_number`, `second_number`, and `total`.
 - Use `input()` exactly twice.
-- The first `input()` call must contain the exact prompt string `First addend: ` and store its returned text in `first_text`.
-- Convert `first_text` with `int()` and store the integer in `first_number`.
-- The second `input()` call must contain the exact prompt string `Second addend: ` and store its returned text in `second_text`.
-- Convert `second_text` with `int()` and store the integer in `second_number`.
+- The first `input()` call must contain the exact prompt string `Left number: ` and store its returned text in `text`.
+- Convert `text` with `int()` and store the integer in `first_number`.
+- The second `input()` call must contain the exact prompt string `Right number: ` and reassign its returned text to the same `text` variable.
+- Convert the new `text` with `int()` and store the integer in `second_number`.
 - Add `first_number` and `second_number` with `+` and store the result in `total`.
 - Use `+` exactly once.
 - Use `int()` exactly twice total.
-- Use exactly one `print()` call, and it must print `total`.
-- Do not print either text variable.
-- Do not write `12`, `7`, or `19` as numeric literals or string literals anywhere in your code.
+- Use exactly three `print()` calls.
+- Print `total`, then `first_number`, then `second_number`.
+- Every `print()` call must print a variable.
+- Do not print `text`.
+- Do not write `23`, `16`, or `39` as numeric literals or string literals anywhere in your code.
 - Do not create any additional variables.
 - Do not use subtraction, multiplication, division, conditions, loops, functions, collections, imports, f-strings, or string concatenation.
-- Use only unlocked Python plus the newly unlocked `+` operator.
+- Use only unlocked Python plus the `+` operator.
 - Type the code yourself from memory.
 
 ### Submission
 
 Write your attempt in [`work.py`](work.py), run it locally, commit it even if it is broken, then ask for review.
 
-Only one challenge is unlocked at a time. Addition will repeat and mix with earlier skills before any other arithmetic operator is introduced.
+Only one challenge is unlocked at a time. Addition will keep mixing with earlier skills before any other arithmetic operator is introduced.
