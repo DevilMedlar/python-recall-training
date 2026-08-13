@@ -1,0 +1,6 @@
+print("First I recall.")
+print()
+print("Then I type.")
+print("Then I check.")
+print()
+print("Then I commit.")
