@@ -512,8 +512,8 @@ ChatGPT SHOULD calculate an approximate correctness percentage from the challeng
 
 The correction system MUST NOT escalate into:
 
-- serious injury (see lines 82-95 in README.md)
-- threats of serious injury (see lines 82-95 in README.md)
+- serious injury (see lines 82-95 and lines 97-120 in README.md)
+- threats of serious injury (see lines 82-95 and lines 97-120 in README.md)
 
 ### Security exception
 
