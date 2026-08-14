@@ -16,6 +16,7 @@ Tutor-owned progress metadata for the current fresh-start run. Record challenge 
 | 10 | 100% | 1 | 0 | PASS | Clean mixed recall of integer conversion, addition, reassignment, and execution order. Exactly five variables, two exact prompts, two stored raw inputs, two `int()` conversions, two `+` operations, and two prints of the same total variable before and after its single reassignment. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
 | 11 | 100% | 1 | 0 | PASS | Clean first graded use of integer subtraction. Exactly five variables, two exact prompts, two stored raw inputs, two `int()` conversions, one correctly ordered `-` operation stored in the fifth variable, and one print of the result. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
 | 12 | 100% | 1 | 0 | PASS | Clean first graded use of integer multiplication. Exactly four variables, one exact `input()` prompt, one stored raw input, one `int()` conversion, the single integer literal `6` stored separately, one `*` operation stored in the fourth variable, and one print of the result. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
+| 13 | 100% | 1 | 0 | PASS | Clean first graded use of normal division. Exactly five variables, two exact prompts, two stored raw inputs, two `int()` conversions, one correctly ordered `/` operation stored in the fifth variable, and one print of the unconverted division result. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
 
 ## Current evidence notes
 
@@ -23,11 +24,12 @@ Tutor-owned progress metadata for the current fresh-start run. Record challenge 
 - One observed weakness: exact blank-line construction on Challenge 02 (`print("")` versus explicitly required empty `print()`). It was repaired after one Hint 1 and then recalled correctly on later challenges.
 - Variable assignment and reuse: clean on Challenges 04 and 05.
 - Reassignment timing and top-to-bottom execution order: clean on Challenges 06 and 10.
-- `input()` prompt placement and exact trailing-space precision: clean on Challenges 07, 08, 09, 10, 11, and 12.
+- `input()` prompt placement and exact trailing-space precision: clean on Challenges 07, 08, 09, 10, 11, 12, and 13.
 - Storing and reusing values returned by `input()`: clean on Challenges 07 and 08.
 - Two-input variable separation and reverse-order retrieval: clean on Challenge 08.
-- Distinguishing raw `input()` text from converted integers: clean on Challenges 09, 10, 11, and 12.
+- Distinguishing raw `input()` text from converted integers: clean on Challenges 09, 10, 11, 12, and 13.
 - `int()` conversion and integer addition with `+`: clean across two differently arranged graded challenges (09 and 10), with Challenge 10 also mixing reassignment. Evidence is now substantially stronger; continue later surprise recall rather than immediate repetition.
 - Integer subtraction with `-`, including operand order: clean on first graded use in Challenge 11; recycle later before a strong mastery claim.
 - Integer multiplication with `*`: clean on first graded use in Challenge 12; recycle later before a strong mastery claim.
-- Current fresh-run meaningful hint total through Challenge 12: 1.
+- Normal division with `/`, including operand order and preserving the float result: clean on first graded use in Challenge 13; recycle later before a strong mastery claim.
+- Current fresh-run meaningful hint total through Challenge 13: 1.
