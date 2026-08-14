@@ -18,20 +18,22 @@ Tutor-owned progress metadata for the current fresh-start run. Record challenge 
 | 12 | 100% | 1 | 0 | PASS | Clean first graded use of integer multiplication. Exactly four variables, one exact `input()` prompt, one stored raw input, one `int()` conversion, the single integer literal `6` stored separately, one `*` operation stored in the fourth variable, and one print of the result. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
 | 13 | 100% | 1 | 0 | PASS | Clean first graded use of normal division. Exactly five variables, two exact prompts, two stored raw inputs, two `int()` conversions, one correctly ordered `/` operation stored in the fifth variable, and one print of the unconverted division result. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
 | 14 | 100% final | 2 | 1 | PASS | First attempt was approximately 95%: the mixed arithmetic structure was clean, but the first exact `input()` prompt omitted its required trailing space. Hint 1 identified only the prompt-formatting category/location. Second committed attempt repaired the prompt while preserving the correct five-variable structure, two conversions, shared result variable, exact `+`, `-`, `*`, `/` sequence, four prints, and float division result. Static/visual grading only; code was fetched and inspected, not executed. |
+| 15 | ~90% | 1 | 1 | RETRY | Prompts, five-variable structure, raw-input storage, two `int()` conversions, three prints, result-variable reuse, and equality comparison are clean. The middle comparison repeats the first comparison direction instead of using the required second comparison operator, which also means the first operator appears more times than allowed. Hint 1 identified the comparison/operator mistake and middle location without giving the correction. Static/visual grading only; code was fetched and inspected, not executed. |
 
 ## Current evidence notes
 
 - Exact output, capitalization, punctuation, and ordering have been consistently strong across the current run.
 - Exact-formatting weaknesses observed so far: Challenge 02 blank-line construction and Challenge 14 first-prompt trailing-space precision. Both were repaired after one Hint 1 and did not require higher hint rungs.
 - Variable assignment and reuse: clean on Challenges 04 and 05.
-- Reassignment timing and top-to-bottom execution order: clean on Challenges 06, 10, and 14.
-- `input()` prompt placement and trailing-space precision: clean on Challenges 07–13, one repaired miss on Challenge 14 first attempt.
+- Reassignment timing and top-to-bottom execution order: clean on Challenges 06, 10, 14, and structurally clean in Challenge 15 first attempt.
+- `input()` prompt placement and trailing-space precision: clean on Challenges 07–13, one repaired miss on Challenge 14 first attempt, and clean again on Challenge 15 first attempt.
 - Storing and reusing values returned by `input()`: clean on Challenges 07 and 08.
 - Two-input variable separation and reverse-order retrieval: clean on Challenge 08.
-- Distinguishing raw `input()` text from converted integers: clean on Challenges 09–14.
+- Distinguishing raw `input()` text from converted integers: clean on Challenges 09–15.
 - Integer addition with `+`: clean across Challenges 09, 10, and 14.
 - Integer subtraction with `-`, including operand order: clean on Challenges 11 and 14.
 - Integer multiplication with `*`: clean on Challenges 12 and 14.
 - Normal division with `/`, including operand order and preserving the float result: clean on Challenges 13 and 14.
 - Mixed arithmetic proficiency: Challenge 14 passed after one prompt-formatting repair; all arithmetic and execution-order requirements were already structurally correct on the first attempt.
-- Current fresh-run meaningful hint total through Challenge 14: 2.
+- Comparison/boolean work: Challenge 15 first attempt correctly used `>` and `==` in the appropriate first and final positions, but the middle comparison repeated the first comparison direction instead of using the required second operator. Treat comparison-direction/operator selection as an active weakness until repaired and later recycled.
+- Current fresh-run meaningful hint total through Challenge 15 first attempt: 3.
