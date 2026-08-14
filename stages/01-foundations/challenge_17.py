@@ -3,6 +3,6 @@ num=int(text)
 if num > 10:
   print("high")
 elif num == 10:
-  print(equal)
+  print("equal")
 else:
   print("low")
