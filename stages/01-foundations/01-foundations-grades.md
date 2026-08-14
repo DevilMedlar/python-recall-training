@@ -17,20 +17,21 @@ Tutor-owned progress metadata for the current fresh-start run. Record challenge 
 | 11 | 100% | 1 | 0 | PASS | Clean first graded use of integer subtraction. Exactly five variables, two exact prompts, two stored raw inputs, two `int()` conversions, one correctly ordered `-` operation stored in the fifth variable, and one print of the result. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
 | 12 | 100% | 1 | 0 | PASS | Clean first graded use of integer multiplication. Exactly four variables, one exact `input()` prompt, one stored raw input, one `int()` conversion, the single integer literal `6` stored separately, one `*` operation stored in the fourth variable, and one print of the result. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
 | 13 | 100% | 1 | 0 | PASS | Clean first graded use of normal division. Exactly five variables, two exact prompts, two stored raw inputs, two `int()` conversions, one correctly ordered `/` operation stored in the fifth variable, and one print of the unconverted division result. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
-| 14 | ~95% | 1 | 1 | RETRY | Mixed arithmetic structure is otherwise clean: five variables, two inputs, two `int()` conversions, one result variable, correct `+`, `-`, `*`, `/` sequence, four prints, and preserved float division result. One exact-prompt formatting requirement is wrong in the first `input()` call, so the challenge is not yet passed. Hint 1 identified only the category/location of that mismatch. Static/visual grading only; code was fetched and inspected, not executed. |
+| 14 | 100% final | 2 | 1 | PASS | First attempt was approximately 95%: the mixed arithmetic structure was clean, but the first exact `input()` prompt omitted its required trailing space. Hint 1 identified only the prompt-formatting category/location. Second committed attempt repaired the prompt while preserving the correct five-variable structure, two conversions, shared result variable, exact `+`, `-`, `*`, `/` sequence, four prints, and float division result. Static/visual grading only; code was fetched and inspected, not executed. |
 
 ## Current evidence notes
 
-- Exact output, capitalization, punctuation, and ordering have been consistently clean across the current run, with a new exact-prompt formatting miss observed on Challenge 14.
-- One earlier observed weakness: exact blank-line construction on Challenge 02 (`print("")` versus explicitly required empty `print()`). It was repaired after one Hint 1 and then recalled correctly on later challenges.
+- Exact output, capitalization, punctuation, and ordering have been consistently strong across the current run.
+- Exact-formatting weaknesses observed so far: Challenge 02 blank-line construction and Challenge 14 first-prompt trailing-space precision. Both were repaired after one Hint 1 and did not require higher hint rungs.
 - Variable assignment and reuse: clean on Challenges 04 and 05.
-- Reassignment timing and top-to-bottom execution order: clean on Challenges 06, 10, and structurally clean on Challenge 14 first attempt.
-- `input()` prompt placement and exact trailing-space precision: clean on Challenges 07–13; Challenge 14 first attempt introduced one exact-prompt formatting miss in the first `input()` call.
+- Reassignment timing and top-to-bottom execution order: clean on Challenges 06, 10, and 14.
+- `input()` prompt placement and trailing-space precision: clean on Challenges 07–13, one repaired miss on Challenge 14 first attempt.
 - Storing and reusing values returned by `input()`: clean on Challenges 07 and 08.
 - Two-input variable separation and reverse-order retrieval: clean on Challenge 08.
 - Distinguishing raw `input()` text from converted integers: clean on Challenges 09–14.
-- `int()` conversion and integer addition with `+`: clean across Challenges 09, 10, and structurally correct in Challenge 14 first attempt.
-- Integer subtraction with `-`, including operand order: clean on Challenge 11 and structurally correct in Challenge 14 first attempt.
-- Integer multiplication with `*`: clean on Challenge 12 and structurally correct in Challenge 14 first attempt.
-- Normal division with `/`, including operand order and preserving the float result: clean on Challenge 13 and structurally correct in Challenge 14 first attempt.
-- Current fresh-run meaningful hint total through Challenge 14 first attempt: 2.
+- Integer addition with `+`: clean across Challenges 09, 10, and 14.
+- Integer subtraction with `-`, including operand order: clean on Challenges 11 and 14.
+- Integer multiplication with `*`: clean on Challenges 12 and 14.
+- Normal division with `/`, including operand order and preserving the float result: clean on Challenges 13 and 14.
+- Mixed arithmetic proficiency: Challenge 14 passed after one prompt-formatting repair; all arithmetic and execution-order requirements were already structurally correct on the first attempt.
+- Current fresh-run meaningful hint total through Challenge 14: 2.
