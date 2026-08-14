@@ -21,24 +21,26 @@ Tutor-owned progress metadata for the current fresh-start run. Record challenge 
 | 15 | 100% final | 2 | 1 | PASS | First attempt was approximately 90%: prompts, conversions, result-variable reuse, prints, and equality comparison were clean, but the middle comparison repeated `>` instead of using the required `<`. Hint 1 identified the comparison/operator category and middle location. Second committed attempt repaired the middle comparison while preserving the correct `>`, `<`, `==` sequence and all other requirements. Static/visual grading only; code was fetched and inspected, not executed. |
 | 16 | 100% final | 2 | 1 | PASS | First attempt was approximately 95% under the written specification: the Python/control-flow behavior was already structurally correct, including two variables, conversion, `if number > 10:`, indentation, paired `else`, and branch-local prints. The only miss was exact output punctuation in the `if` branch, which did not affect Python validity or branching behavior but did violate the prompt's explicit exact-string requirement. Hint 1 identified only that output-location mismatch. Second committed attempt repaired the string and passed 100%. Static/visual grading only; code was fetched and inspected, not executed. |
 | 17 | 100% final | 2 | 1 | PASS | First attempt was approximately 90%: the `if` / `elif` / `else` structure, prompt, conversion, comparisons, colons, indentation, and branch placement were clean, but the middle branch passed an unassigned identifier to `print()` instead of the required string literal. Hint 1 identified the value-kind/name-vs-string issue without giving the correction. Second committed attempt changed the middle output to the required string while preserving the correct three-way branch structure. Static/visual grading only; code was fetched and inspected, not executed. |
+| 18 | 100% | 1 | 0 | PASS | Clean first graded `while` loop. Exactly two variables, one input and conversion, one `while` with `> 0`, correct print-before-decrement body order, one reassignment subtracting `1`, and one unindented `print("done")` after the loop. The loop variable changes toward the stopping condition, avoiding an infinite loop for positive starting values. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
 
 ## Current evidence notes
 
 - Exact output, capitalization, punctuation, and ordering have been consistently strong across the current run.
 - Exact-formatting weaknesses observed so far: Challenge 02 blank-line construction, Challenge 14 first-prompt trailing-space precision, and Challenge 16 first-branch output punctuation. All were repaired after one Hint 1. Challenge 16's first-attempt issue was specification precision only; the Python/control-flow concept itself was already correct.
 - Variable assignment and reuse: clean on Challenges 04 and 05.
-- Reassignment timing and top-to-bottom execution order: clean on Challenges 06, 10, 14, and 15.
-- `input()` prompt placement and trailing-space precision: clean on Challenges 07–13, one repaired miss on Challenge 14 first attempt, and clean on Challenges 15–17.
+- Reassignment timing and top-to-bottom execution order: clean on Challenges 06, 10, 14, 15, and 18.
+- `input()` prompt placement and trailing-space precision: clean on Challenges 07–13, one repaired miss on Challenge 14 first attempt, and clean on Challenges 15–18.
 - Storing and reusing values returned by `input()`: clean on Challenges 07 and 08.
 - Two-input variable separation and reverse-order retrieval: clean on Challenge 08.
-- Distinguishing raw `input()` text from converted integers: clean on Challenges 09–17.
+- Distinguishing raw `input()` text from converted integers: clean on Challenges 09–18.
 - Integer addition with `+`: clean across Challenges 09, 10, and 14.
-- Integer subtraction with `-`, including operand order: clean on Challenges 11 and 14.
+- Integer subtraction with `-`, including operand order: clean on Challenges 11, 14, and 18.
 - Integer multiplication with `*`: clean on Challenges 12 and 14.
 - Normal division with `/`, including operand order and preserving the float result: clean on Challenges 13 and 14.
 - Mixed arithmetic proficiency: Challenge 14 passed after one prompt-formatting repair; all arithmetic and execution-order requirements were already structurally correct on the first attempt.
 - Comparison/boolean work: Challenge 15 passed after one operator-direction repair. `>`, `<`, and `==` are correctly distinguished in the completed challenge, but comparison-direction/operator selection remains worth later surprise recycling before a strong mastery claim.
 - `if`/`else` branching structure: clean from the first Challenge 16 attempt; final exact-output compliance was repaired on attempt 2.
 - `elif` three-way branching structure: clean from the first Challenge 17 attempt, including correct `>` then `==` ordering. The first attempt exposed a name-vs-string-literal mistake inside `print()`, which was repaired on attempt 2 and should be surprise-recycled later.
+- `while` loop control: clean on first graded use in Challenge 18. The condition is rechecked after each iteration and the controlling integer is updated toward termination. Recycle later before a strong mastery claim.
 - Future challenge design should distinguish behavior-critical requirements from cosmetic exact-output constraints and avoid over-weighting punctuation when punctuation is not the learning target.
-- Current fresh-run meaningful hint total through Challenge 17: 5.
+- Current fresh-run meaningful hint total through Challenge 18: 5.
