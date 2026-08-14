@@ -1,9 +1,9 @@
-x=input("Stop after: ")
-number=int(x)
+x = input("Stop after: ")
+boobies = int(x)
 for number in range(1, 9):
-  if number == 3:
-    continue
-  if number > 9:
-    break
-  print(number)
+    if number == 3:
+        continue
+    if number > boobies:
+        break
+    print(number)
 print("done")
