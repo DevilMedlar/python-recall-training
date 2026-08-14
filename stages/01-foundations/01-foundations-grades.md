@@ -24,6 +24,7 @@ Tutor-owned progress metadata for the current fresh-start run. Record challenge 
 | 18 | 100% | 1 | 0 | PASS | Clean first graded `while` loop. Exactly two variables, one input and conversion, one `while` with `> 0`, correct print-before-decrement body order, one reassignment subtracting `1`, and one unindented `print("done")` after the loop. The loop variable changes toward the stopping condition, avoiding an infinite loop for positive starting values. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
 | 19 | 100% | 1 | 0 | PASS | Clean first graded `for` loop with `range()`. Exactly one loop variable, one `for`, one two-argument `range(4, 8)`, one indented print of the loop variable, and one unindented `print("done")` after the loop. Correctly demonstrates that the range stop value is excluded, producing 4 through 7. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
 | 20 | 100% | 1 | 0 | PASS | Clean first graded use of `continue` and `break` inside one `for` loop. `continue` correctly skips the `3` iteration before the print, `break` correctly terminates the loop at `7` before the print, and the remaining values reach the single loop-body print. Static/visual grading only; code was fetched and inspected, not executed. Full 100% reward, no correction. |
+| 21 | ~88% | 1 | 1 | RETRY | Most mixed control-flow structure is correct: exact prompt, raw-input storage, conversion call, `range(1, 9)`, skip-at-3 `continue`, two pre-print checks, loop-body print, and final `done`. However, the converted stopping-limit role and loop-variable role reuse the same variable name, so the stored limit is overwritten by the `for` loop. The second `if` therefore compares the loop variable against the wrong target (`3`) instead of the preserved converted stopping limit, causing behavior to stop too early for inputs such as `6`. Hint 1 identified the variable-role/separation issue and the second-comparison target issue without giving the repair. Static/visual grading only; code was fetched and inspected, not executed. |
 
 ## Current evidence notes
 
@@ -34,17 +35,17 @@ Tutor-owned progress metadata for the current fresh-start run. Record challenge 
 - `input()` prompt placement and trailing-space precision: clean on Challenges 07–13, one repaired miss on Challenge 14 first attempt, and clean on Challenges 15–18.
 - Storing and reusing values returned by `input()`: clean on Challenges 07 and 08.
 - Two-input variable separation and reverse-order retrieval: clean on Challenge 08.
-- Distinguishing raw `input()` text from converted integers: clean on Challenges 09–18.
+- Distinguishing raw `input()` text from converted integers: clean on Challenges 09–18; Challenge 21 first attempt exposed a variable-role collision after conversion because the converted-limit name was reused as the loop variable.
 - Integer addition with `+`: clean across Challenges 09, 10, and 14.
 - Integer subtraction with `-`, including operand order: clean on Challenges 11, 14, and 18.
 - Integer multiplication with `*`: clean on Challenges 12 and 14.
 - Normal division with `/`, including operand order and preserving the float result: clean on Challenges 13 and 14.
 - Mixed arithmetic proficiency: Challenge 14 passed after one prompt-formatting repair; all arithmetic and execution-order requirements were already structurally correct on the first attempt.
-- Comparison/boolean work: Challenge 15 passed after one operator-direction repair. `>`, `<`, and `==` are correctly distinguished in the completed challenge, but comparison-direction/operator selection remains worth later surprise recycling before a strong mastery claim.
+- Comparison/boolean work: Challenge 15 passed after one operator-direction repair. `>`, `<`, and `==` are correctly distinguished in the completed challenge. Challenge 21 first attempt used the required `>` direction but compared against the wrong target because the stored limit was not preserved as a separate variable.
 - `if`/`else` branching structure: clean from the first Challenge 16 attempt; final exact-output compliance was repaired on attempt 2.
 - `elif` three-way branching structure: clean from the first Challenge 17 attempt, including correct `>` then `==` ordering. The first attempt exposed a name-vs-string-literal mistake inside `print()`, which was repaired on attempt 2 and should be surprise-recycled later.
 - `while` loop control: clean on first graded use in Challenge 18. The condition is rechecked after each iteration and the controlling integer is updated toward termination. Recycle later before a strong mastery claim.
 - `for` loop and `range(start, stop)`: clean on first graded use in Challenge 19. The stop value is correctly treated as exclusive, and execution resumes after the loop at the unindented statement. Recycle later before a strong mastery claim.
-- `continue` and `break`: clean on first graded use in Challenge 20. `continue` skips only the current iteration; `break` exits the loop entirely. Recycle both later in a different loop context before a strong mastery claim.
+- `continue` and `break`: clean on first graded use in Challenge 20. Challenge 21 first attempt still places both control-flow checks before the loop-body print correctly, but the `break` condition uses the wrong comparison target due to the variable-role collision.
 - Future challenge design should distinguish behavior-critical requirements from cosmetic exact-output constraints and avoid over-weighting punctuation when punctuation is not the learning target.
-- Current fresh-run meaningful hint total through Challenge 20: 5.
+- Current fresh-run meaningful hint total through Challenge 21 first attempt: 6.
