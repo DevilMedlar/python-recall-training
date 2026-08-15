@@ -191,7 +191,7 @@ Do not apply separate reward, technical correction, punishment, or performance-t
 
 After the completed assessment is graded, the Senpai evaluates both the overall score and the pattern of individual mistakes. Weak or inconsistent concepts should receive additional teaching, targeted practice, or unpredictable recycling later. Strong performance may reduce unnecessary repetition.
 
-A missed assessment item does not require resetting an otherwise mastered area. The Senpai should revisit the specific concept or relationship that the assessment showed was weak.
+A missed assessment item does not require resetting an otherwise mastered area. The Senpai should treat the miss as evidence about the specific concept or relationship involved and use the completed assessment result together with the surrounding current-run performance record to determine whether later confirmation, targeted practice, or recycling is needed.
 
 The question is always: **Can Daddy retrieve and use this without being shown the answer?**
 
