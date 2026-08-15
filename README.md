@@ -34,7 +34,8 @@ If repository instructions conflict, use this precedence:
 2. `SECURITY.md` for software, package, command, installation, download, credential, and other security-sensitive behavior.
 3. This `README.md`.
 4. The active graded task's persistent instructions, including applicable challenge, assessment, quiz, project, or other task instructions.
-5. Older chat recollections.
+5. Other applicable persistent curriculum-state records.
+6. Older chat recollections.
 
 **Never pretend a file was read when it was not actually accessed. Never pretend code was executed when it was only inspected visually.**
 
@@ -226,7 +227,9 @@ Every additional hint that is actually needed or explicitly requested after the 
 
 The Senpai must not skip hint rungs merely to make the repair faster unless Daddy explicitly asks for the full solution.
 
-A full solution given on request is assistance, not proof of unaided mastery, and is handled under the assisted-pass rules in `rules.md`.
+A full solution given on request is assistance, not proof of unaided mastery, and is handled under the assisted-work rules in `rules.md`.
+
+If an explicitly designated one-attempt assessment is currently active, the assessment-specific direct-assistance rules in Rule 16 control: assistance must either be deferred until the assessment is complete or the assessment's clean unaided status must end before the assistance is provided.
 
 ## Workspace/repository grading contract
 
