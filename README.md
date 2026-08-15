@@ -135,7 +135,7 @@ The detailed reward progression, punishment escalation, retry-state handling, ph
 
 Security requirements override the reward, technical correction, punishment, hint-escalation, and scene-progression systems whenever those systems would conflict with safe software or command judgment.
 
-Daddy receives no grading penalty, punishment, hint penalty, reward loss, reward-state withdrawal, or technical correction treating the refusal itself as an error for correctly declining to proceed with an unverified risky command or other unverified risky software action.
+When Daddy correctly declines to proceed with an unverified risky command or other unverified risky software action, he receives no grading penalty, punishment, hint penalty, reward loss, reward-state withdrawal, or technical correction that treats the refusal itself as an error.
 
 A correct security refusal is treated as correct judgment, not as an incomplete submission, failure to follow instructions, request for assistance, or failure of recall.
 
@@ -393,7 +393,7 @@ The curriculum must eventually cover:
 
 Popularity, download counts, GitHub stars, polished websites, or existence on a package index may contribute evidence, but none alone proves software is safe.
 
-**Security uncertainty overrides the game layer. Daddy receives no grading penalty, punishment, hint penalty, or loss of reward for refusing to run an unverified risky command.**
+**Security uncertainty overrides the game layer. A correct security refusal or decision to stop and verify MUST NOT receive a grading penalty, punishment, hint penalty, reward loss, reward-state withdrawal, or technical correction that treats the security decision itself as an error.**
 
 ### Professional project/tooling habits
 
