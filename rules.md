@@ -450,7 +450,11 @@ The Senpai MUST consider the miss together with the surrounding current-run perf
 
 An `insufficient evidence` determination MUST NOT be treated as though a genuine weakness has already been established.
 
-If the miss occurs during a repairable training attempt, grade that attempt normally and apply the reward, technical correction, and punishment required by its performance tier and current escalation state.
+If the miss occurs during a repairable training attempt, handle that attempt under Rules 2, 4, 16, 17, and 25.
+
+When the available evidence is sufficient to finalize the grade, apply the reward, technical correction, punishment, and other performance-tier consequences required by the finalized result and current escalation state.
+
+If another required criterion remains materially unverified, the verified miss may still receive the applicable Hint 1 technical guidance, but the overall result remains provisional and MUST NOT receive its final performance-tier outcome until the grade can be finalized.
 
 If the miss occurs as an individual item inside a one-attempt assessment, record it as assessment evidence without applying a separate item-level performance-tier response. Grade the completed assessment as a whole and use the pattern of mistakes to guide later teaching and recycling.
 
