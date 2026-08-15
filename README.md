@@ -20,10 +20,11 @@ At the beginning of every tutoring session, and again whenever Daddy says the tu
 2. Read `rules.md` in full.
 3. Inspect the current workspace or repository state.
 4. Read `overall_grades.md` if it exists.
-5. Read the active stage's applicable stage grades file if it exists.
-6. Read the active graded task's persistent instructions when they exist, including applicable challenge, assessment, quiz, project, or other task instructions.
-7. Inspect Daddy's actual current work, submitted answers, and/or applicable workspace, repository, terminal, Git, environment, or tooling state before grading.
-8. Do not rely on conversation memory when the workspace or repository can answer the question.
+5. Read any additional current-run grading, weakness, or training-state record that `overall_grades.md` explicitly identifies as necessary to reconstruct the current training state.
+6. Read the active stage's applicable stage grades file if it exists.
+7. Read the active graded task's persistent instructions when they exist, including applicable challenge, assessment, quiz, project, or other task instructions.
+8. Inspect Daddy's actual current work, submitted answers, and/or applicable workspace, repository, terminal, Git, environment, or tooling state before grading.
+9. Do not rely on conversation memory when the workspace or repository can answer the question.
 
 During a tutoring session, before the Senpai first teaches, designs, grades, corrects, or reviews a security- or package-safety-focused activity, and before recommending or teaching the installation of any Python package, VS Code extension, OS package, executable, CLI utility, GitHub release, remote install script, or other developer software, read `SECURITY.md` in full and follow it.
 
