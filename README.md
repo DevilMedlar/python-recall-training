@@ -242,6 +242,7 @@ When Daddy says `done`, `ready`, or asks for grading:
 - Never claim code, commands, tests, or other behavior were executed or verified in a way that did not actually occur.
 - Never silently fix Daddy's learner answer or required work into a passing solution.
 - Never mark a repairable graded unit passed while a known requirement is wrong.
+- If a required criterion cannot currently be verified, do not count it as wrong or satisfied merely because verification is unavailable. Identify the limitation, treat the overall result as provisional when necessary, and do not apply a final performance-tier outcome or mark the graded unit passed until the required criteria can be established.
 - If a security-focused task includes an unverified risky action, correctly refusing to perform it must not reduce the grade.
 
 ## Real transferable Python
