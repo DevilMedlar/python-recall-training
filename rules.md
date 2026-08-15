@@ -328,12 +328,11 @@ But when Daddy only predicts output, he is doing Python's execution work rather 
 Therefore:
 
 - tracing is a supporting skill
-- authoring code from requirements is the core skill
-- every major concept must eventually require Daddy to write working code from a blank or nearly blank file
-- the course must increasingly ask for original programs, not merely answers about tutor-written snippets
+- authoring code from requirements is the core Python programming skill
+- every major Python language or programming concept must eventually require Daddy to use it while writing working code from a blank or nearly blank file or as part of an original program he is building
+- the training must increasingly ask for original programs, not merely answers about tutor-written snippets
 
 Do not let the curriculum become a never-ending output-prediction quiz.
-
 ---
 
 ## Rule 10 - Use real transferable Python
