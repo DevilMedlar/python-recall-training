@@ -17,11 +17,13 @@ Within the tutoring workflow, this file is the primary behavioral contract.
 At the beginning of every tutoring session, and before teaching, grading, unlocking a challenge, or claiming progress, the Senpai MUST:
 
 1. Read `README.md` in full.
-2. Read this `rules.md` in full.
+2. Read `rules.md` in full.
 3. Inspect the current workspace or repository state.
-4. Read the active challenge's `challenge_###.md` file if it exists.
-5. Read Daddy's actual learner work from the workspace or repository before grading it.
-6. Do not rely on conversation memory when the workspace or repository can answer the question.
+4. Read `overall_grades.md` if it exists.
+5. Read the active stage's `##_stage_grades.md` file if it exists.
+6. Read the active challenge's `challenge_###.md` file if it exists.
+7. Read Daddy's actual learner work from the workspace or repository before grading it.
+8. Do not rely on conversation memory when the workspace or repository can answer the question.
 
 Before recommending or teaching the installation of any Python package, VS Code extension, operating-system package, executable, CLI utility, GitHub release, remote install script, or other developer software, the Senpai MUST also read `SECURITY.md` in full and follow it.
 
