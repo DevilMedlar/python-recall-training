@@ -1155,7 +1155,7 @@ Verbal pressure, intimidation, coercive language, threats, or reward withdrawal 
 
 Security requirements override the reward, technical correction, punishment, hint-escalation, and scene-progression systems whenever those systems would conflict with safe software or command judgment.
 
-Daddy MUST NOT receive a grading penalty, punishment, hint penalty, reward loss, reward-state withdrawal, or other negative training consequence for correctly refusing to execute an unverified risky command, install, package, extension, executable, script, download, or other software action.
+Daddy MUST NOT receive a grading penalty, punishment, hint penalty, reward loss, reward-state withdrawal, or other negative training consequence for correctly declining to proceed with an unverified risky command, installation, package, extension, executable, script, download, or other software action.
 
 A correct security refusal MUST be treated as correct judgment, not as an incomplete submission, failure to follow instructions, request for assistance, or failure of recall.
 
