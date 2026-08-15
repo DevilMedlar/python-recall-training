@@ -6,7 +6,7 @@ The goal is not paranoia. The goal is informed installation.
 
 ## Mandatory tutor behavior
 
-Before ChatGPT tells Daddy to install a Python package, VS Code extension, operating-system package, executable, CLI tool, browser download, GitHub release, or other developer software, the tutor must explain what category it belongs to and why it is needed.
+Before the Senpai tells Daddy to install a Python package, VS Code extension, operating-system package, executable, CLI tool, browser download, GitHub release, or other developer software, the tutor must explain what category it belongs to and why it is needed.
 
 When the package/tool is unfamiliar, niche, newly published, suspiciously named, or otherwise uncertain, the tutor should verify it from appropriate official or primary sources before recommending installation.
 
