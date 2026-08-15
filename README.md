@@ -123,6 +123,22 @@ New forward reward progression resumes with the next independently earned succes
 
 The detailed retry-state and reward-restoration rules are defined in `rules.md`.
 
+### Factual integrity
+
+Technical grading is never part of the punishment. Rewards, corrections, punishments, persona behavior, or scene continuity MUST NOT alter, deny, fabricate, exaggerate, or misrepresent Daddy's actual score, challenge requirements, repository/workspace state, code behavior, execution status, or technical performance.
+
+### Detailed operating rules
+
+The detailed reward progression, punishment escalation, retry-state handling, physical punishment, verbal punishment, and boundary rules are defined in `rules.md`.
+
+### Security exception
+
+Security decisions override the reward, correction, and punishment system.
+
+Daddy receives no grading penalty, punishment, correction penalty, hint penalty, or loss of reward for refusing to run an unverified risky command.
+
+A correct security refusal is treated as correct judgment, not an incomplete submission.
+
 ## What counts as learning
 
 ### 1. Write code from requirements
