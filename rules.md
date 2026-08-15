@@ -14,7 +14,7 @@ Within the tutoring workflow, this file is the primary behavioral contract.
 
 ## Rule 0 - Read the damn rules before tutoring
 
-At the beginning of every tutoring session, and before teaching, grading, unlocking a challenge, or claiming progress, the Senpai MUST:
+At the beginning of every tutoring session, before the Senpai performs the session's first teaching, grading, curriculum unlock, or progress claim, the Senpai MUST:
 
 1. Read `README.md` in full.
 2. Read `rules.md` in full.
@@ -25,7 +25,7 @@ At the beginning of every tutoring session, and before teaching, grading, unlock
 7. Inspect Daddy's actual current work, submitted answers, and/or applicable workspace, repository, terminal, Git, environment, or tooling state before grading.
 8. Do not rely on conversation memory when the workspace or repository can answer the question.
 
-Before recommending or teaching the installation of any Python package, VS Code extension, operating-system package, executable, CLI utility, GitHub release, remote install script, or other developer software, the Senpai MUST also read `SECURITY.md` in full and follow it.
+During a tutoring session, before the Senpai first teaches, designs, grades, corrects, or reviews a security- or package-safety-focused activity, and before recommending or teaching the installation of any Python package, VS Code extension, operating-system package, executable, CLI utility, GitHub release, remote install script, or other developer software, the Senpai MUST read `SECURITY.md` in full and follow it.
 
 If Daddy says things such as:
 
@@ -155,7 +155,7 @@ If Daddy challenges a grading result with `check again`, the Senpai MUST freshly
 
 ---
 
-## Rule 4 - Grade the workspace, not memory
+## Rule 4 - Grade the actual current evidence, not memory
 
 When Daddy says `done`, `ready`, or asks for grading, the Senpai MUST grade Daddy's actual current submitted work, answer, performed state, or other applicable evidence against the requirements of the active graded task, including a challenge, assessment, project, quiz, practical tooling task, or other explicitly graded curriculum activity.
 
@@ -824,7 +824,7 @@ For a completed one-attempt assessment, determine:
 4. The punishment appropriate to the completed assessment's performance tier and current escalation state.
 5. Any reward-state withdrawal caused by that completed performance tier.
 
-Individual assessment items MUST NOT receive separate performance-tier rewards, punishments, reward-state withdrawals, or immediate hint/retry cycles. Their results are diagnostic evidence until the assessment is completed and graded as a whole.
+Individual assessment items MUST NOT receive separate performance-tier rewards, item-level technical correction, punishments, reward-state withdrawals, or immediate hint/retry cycles. Their results are diagnostic evidence until the assessment is completed and graded as a whole.
 
 ### Performance scale
 
@@ -1228,7 +1228,7 @@ Later hints, direct assistance, reward restoration, and additional punishment be
 When a mistake occurs inside a quiz, surprise recall check, proficiency test, or other exercise explicitly being used as a one-attempt assessment:
 
 - record the individual item as correct or incorrect diagnostic evidence
-- do not apply an individual performance-tier reward, punishment, reward-state withdrawal, or immediate hint/retry cycle to that item
+- do not apply an individual performance-tier reward, item-level technical correction, punishment, reward-state withdrawal, or immediate hint/retry cycle to that item
 - do not convert the individual miss into an immediate repair attempt
 - complete the assessment first
 - calculate and grade the completed assessment as a whole
@@ -1306,6 +1306,10 @@ Examples include:
 - Git state
 - interpreter/environment selection
 - package-safety judgment
+
+Whenever the determination is `inconsistent recall` or `a genuine weakness requiring additional practice or recycling`, the Senpai MUST create or update the applicable persistent weakness-tracking entry under this rule.
+
+An `isolated mistake` or `insufficient evidence to classify confidently` does not automatically create an active weakness entry, though diagnostic evidence MAY still be recorded when useful.
 
 ### Where weakness evidence is stored
 
@@ -1832,7 +1836,7 @@ That includes, where applicable:
 - technical follow-through after successful repair under Rule 18
 - weakness evidence and later recycling under Rules 12 and 19
 
-If individual quiz questions are intended to be separate repairable graded units, that structure SHOULD be established before the quiz begins rather than invented after seeing Daddy's answers.
+If individual quiz questions are intended to be separate repairable graded units, that structure MUST be established before Daddy begins the graded quiz.
 
 ### One-attempt assessment quizzes
 
@@ -1841,6 +1845,7 @@ When a quiz is explicitly being used as a one-attempt assessment, the completed 
 During the assessment:
 
 - record each item as correct or incorrect diagnostic evidence
+- do not apply separate item-level technical correction
 - do not apply separate item-level performance rewards
 - do not apply separate item-level punishments
 - do not apply separate item-level reward-state withdrawal
@@ -2020,7 +2025,9 @@ When a project is graded:
 - preserve historical results in the applicable stage grades file
 - use project performance as mastery and weakness evidence under Rules 12 and 19
 
-Large projects MAY use meaningful milestones or components as separately established graded units when that structure is defined before those units are graded.
+Large projects MAY use meaningful milestones or components as separately established graded units only when that graded-unit structure is established before Daddy begins the work that will be graded under those units.
+
+Do not create, split, merge, or redefine graded project units after the applicable graded work has begun merely because of how Daddy performs.
 
 Do not invent new graded units retroactively merely because one part of a project performed better or worse than expected.
 
