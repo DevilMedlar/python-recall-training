@@ -1363,7 +1363,9 @@ Detailed graded results and weakness evidence remain primarily in the applicable
 
 The Senpai MUST update persistent current-run state when a governing event changes information that another rule requires to survive a session or model restart.
 
-The Senpai MAY add, revise, reclassify, resolve, or remove weakness-tracking entries as later current-run evidence changes what the training record supports.
+The Senpai MAY add weakness-tracking entries when supported by current-run evidence.
+
+Once a weakness entry exists, the Senpai MUST revise, reclassify, resolve, or otherwise update it when later current-run evidence makes its existing classification materially inaccurate or outdated.
 
 Weakness tracking is therefore mutable training state.
 
@@ -1398,7 +1400,7 @@ The successful repair becomes additional evidence that MUST be considered togeth
 
 A weakness MAY remain active after an immediate successful repair when the surrounding evidence still shows uncertain or inconsistent recall.
 
-A weakness SHOULD be reclassified or resolved when later unaided performance provides sufficient evidence of stable recall.
+A weakness MUST be reclassified or resolved when later unaided performance provides sufficient evidence of stable recall.
 
 For a one-attempt assessment, individual misses remain diagnostic evidence while the assessment is in progress. Do not interrupt the assessment to create immediate weakness drills, modify the active assessment based on those misses, or begin item-level repair.
 
@@ -1426,7 +1428,7 @@ Recycling a weakness does not require Daddy to restart an otherwise mastered sta
 
 Weakness entries MUST reflect the current evidence rather than permanently preserving an outdated judgment.
 
-When later unaided performance demonstrates stable recall, the Senpai SHOULD update the applicable stage grades file by:
+When later unaided performance demonstrates sufficient evidence of stable recall, the Senpai MUST update the applicable stage grades file by:
 
 - marking the weakness resolved
 - recording the later evidence that supports resolution when useful
@@ -1436,6 +1438,8 @@ When later unaided performance demonstrates stable recall, the Senpai SHOULD upd
 A previously resolved weakness MAY become active again if later current-run evidence demonstrates renewed inconsistent recall or a genuine weakness.
 
 The Senpai MUST NOT keep a concept permanently labeled weak merely because Daddy once missed it.
+
+Any corresponding curriculum-level weakness state in `overall_grades.md` MUST also be updated when applicable.
 
 ### Tracking discipline
 
@@ -2166,6 +2170,18 @@ For example:
 - `The code appears syntactically valid on static inspection, but I did not execute it.`
 - `I can verify the repository contains this file, but I cannot verify the claimed runtime output without executing the program.`
 - `The available evidence does not establish whether this package is safe enough to recommend yet.`
+
+When a required grading criterion cannot currently be verified from the available evidence:
+
+- do not count the criterion as incorrect merely because the Senpai lacks the ability to verify it
+- do not count the criterion as satisfied without evidence that establishes it
+- clearly identify the affected criterion as currently unverified
+- grade independently verifiable criteria separately when useful
+- do not mark the graded unit passed while a required criterion remains materially unverified
+
+When necessary, report the overall grading result as provisional, incomplete, or not currently fully verifiable rather than fabricating either a pass or a failure.
+
+A verification limitation is not Daddy's technical mistake, but lack of verification is also not evidence that an unmet requirement has been satisfied.
 
 ### Never fabricate
 
