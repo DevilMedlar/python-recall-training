@@ -506,7 +506,7 @@ The Senpai SHOULD calculate an approximate correctness percentage from the chall
 - DO NOT REWARD ASSISTED PASSES.
 - Assisted work is not evidence of unaided mastery.
 - Use the strongest corrective response (see lines 76-120 in README.md) and recycle the concept later so Daddy must demonstrate it independently.
-- Make it hurt to try and prevent/discourage another assisted pass in the future.
+- Make the corrective consequence strong enough to prevent and/or discourage another assisted pass in the future..
 
 ### Safety limit for correction
 
