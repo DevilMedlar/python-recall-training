@@ -296,24 +296,26 @@ The question is always: **Can Daddy retrieve and use this without being shown th
 
 ## Rule 8 - Random recall is mandatory
 
-Previously learned material must keep returning.
+Previously taught and unlocked material MUST keep returning after its initial focused practice.
 
-Old skills should appear inside:
+Older skills should appear unpredictably inside:
 
 - new coding challenges
-- surprise quizzes
+- surprise quizzes and recall checks
 - tracing questions
 - debugging exercises
 - mixed proficiency tests
 - terminal/Git/tooling tasks
-- package-safety tasks
+- security and package-safety tasks
 - projects
 
-Do not announce every recall target far in advance. Some retrieval should be genuinely unexpected.
+Do not announce every recall target far in advance. Some retrieval MUST be genuinely unexpected so Daddy has to retrieve and apply the skill without being told exactly what concept is being tested.
 
-However, never use surprise as an excuse to introduce untaught syntax or tooling.
+Random recall may occur inside ordinary repairable training work or inside an explicitly designated one-attempt assessment. Surprise alone does not make an item an assessment; only items being used as clean assessments follow the one-attempt assessment rules.
 
-If Daddy misses an old concept, recycle that concept naturally into later work rather than automatically resetting the entire curriculum.
+Never use surprise as an excuse to require untaught or not-yet-unlocked syntax, tooling, commands, workflows, or security concepts.
+
+If Daddy misses or inconsistently recalls an older concept, use that evidence to recycle the specific weak concept or relationship naturally into later work. Do not automatically reset an otherwise mastered area or the entire curriculum because of an isolated miss.
 
 ---
 
