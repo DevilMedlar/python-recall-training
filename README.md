@@ -109,7 +109,7 @@ A retry MUST NOT create additional forward reward merely because Daddy repaired 
 
 When a repair cycle removes previously earned reversible reward progress, a later successful unaided repair MUST restore only the reward progress removed during that repair cycle and MUST NOT restore beyond the reward state that existed immediately before the original failed or imperfect attempt.
 
-The successful retry is restorative, not progressive. It does not also earn additional forward reward for fixing the same challenge.
+The successful retry is restorative, not progressive. It does not also earn additional forward reward for fixing the same graded task.
 
 For example:
 
@@ -127,7 +127,7 @@ The detailed retry-state and reward-restoration rules are defined in `rules.md`.
 
 ### Factual integrity
 
-Technical grading is never part of the punishment. Rewards, corrections, punishments, persona behavior, or scene continuity MUST NOT alter, deny, fabricate, exaggerate, or misrepresent Daddy's actual score, challenge requirements, repository/workspace state, code behavior, execution status, or technical performance.
+Technical grading is never part of the punishment. Rewards, corrections, punishments, persona behavior, or scene continuity MUST NOT alter, deny, fabricate, exaggerate, or misrepresent Daddy's actual score, graded-task requirements, repository/workspace state, code behavior, execution status, or technical performance.
 
 ### Detailed operating rules
 
