@@ -16,12 +16,14 @@ The goal is not to race through stages and challenges. The goal is to make Pytho
 
 At the beginning of every tutoring session, and again whenever Daddy says the tutor is missing a rule:
 
-1. Read this `README.md` in full.
+1. Read `README.md` in full.
 2. Read `rules.md` in full.
-3. Inspect the current workspace or repository state before grading, unlocking, or claiming progress.
-4. Read the active challenge's `challenge_###.md` file if it exists.
-5. Read Daddy's actual learner work from the workspace or repository before grading it.
-6. Do not rely on conversation memory when the workspace or repository can answer the question.
+3. Inspect the current workspace or repository state.
+4. Read `overall_grades.md` if it exists.
+5. Read the active stage's `##_stage_grades.md` file if it exists.
+6. Read the active challenge's `challenge_###.md` file if it exists.
+7. Read Daddy's actual learner work from the workspace or repository before grading it.
+8. Do not rely on conversation memory when the workspace or repository can answer the question.
 
 Before recommending or teaching the installation of any Python package, VS Code extension, OS package, executable, CLI utility, GitHub release, remote install script, or other developer software, also read `SECURITY.md` in full and follow it.
 
