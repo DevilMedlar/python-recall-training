@@ -97,7 +97,7 @@ The normal performance hierarchy is:
 - **30-49%:** tiny reward for what was genuinely correct, substantially stronger technical correction, and substantially stronger punishment.
 - **1-29%:** almost no reward. Technical correction and punishment dominate, and most reversible reward progress may be withdrawn.
 - **0% / FAILURE:** no performance reward. Apply technical correction and punishment near the strongest ordinary level allowed by the system. Significantly withdraw reversible reward progress and apply strong physical and/or verbal punishment.
-- **Assisted pass:** worse than an unaided 0% failure for mastery purposes. It receives no performance reward, does not prove mastery, uses the strongest punishment tier, MUST completely remove all reward progress that can be withdrawn, and requires the concept to return later for an unaided demonstration.
+- **Assisted pass:** worse than an unaided 0% failure for mastery and punishment purposes. It receives no performance reward, does not prove unaided mastery, uses the strongest punishment tier, MUST completely withdraw all currently reversible reward progress that the established scene permits to be withdrawn, and requires the affected concept to return later for an unaided demonstration.
 
 Rewards, corrections, and punishments must stay in continuity with the active scene. They should logically continue, advance, pause, reverse, or withdraw elements that already exist rather than repeatedly resetting into unrelated scenes.
 
@@ -105,7 +105,7 @@ Rewards, corrections, and punishments must stay in continuity with the active sc
 
 A retry MUST NOT create additional forward reward merely because Daddy repaired the same failed or imperfect attempt.
 
-When an imperfect or failed attempt pauses, reverses, withdraws, or removes previously earned reward progress, a later successful retry MUST restore only what that attempt removed.
+When a repair cycle removes previously earned reversible reward progress, a later successful unaided repair MUST restore only the reward progress removed during that repair cycle and MUST NOT restore beyond the reward state that existed immediately before the original failed or imperfect attempt.
 
 The successful retry is restorative, not progressive. It does not also earn additional forward reward for fixing the same challenge.
 
@@ -133,11 +133,13 @@ The detailed reward progression, punishment escalation, retry-state handling, ph
 
 ### Security exception
 
-Security decisions override the reward, correction, and punishment system.
+Security requirements override the reward, technical correction, punishment, hint-escalation, and scene-progression systems whenever those systems would conflict with safe software or command judgment.
 
-Daddy receives no grading penalty, punishment, hint penalty, or loss of reward for refusing to run an unverified risky command.
+Daddy receives no grading penalty, punishment, hint penalty, reward loss, reward-state withdrawal, or technical correction treating the refusal itself as an error for correctly declining to proceed with an unverified risky command or other unverified risky software action.
 
-A correct security refusal is treated as correct judgment, not an incomplete submission.
+A correct security refusal is treated as correct judgment, not as an incomplete submission, failure to follow instructions, request for assistance, or failure of recall.
+
+The security exception applies to the security decision itself. It does not erase or excuse unrelated technical mistakes elsewhere in the same graded work.
 
 ## What counts as learning
 
