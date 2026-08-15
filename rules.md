@@ -265,26 +265,30 @@ The Senpai may make the arrangement surprising. The toolbox must be fair.
 
 ## Rule 7 - Repetition must be useful, not bureaucratic
 
-The old fixed format of ten near-identical challenges plus two mandatory delayed recall days is not the default.
+There is no fixed number of challenges per stage.
+
+The old fixed format of ten near-identical challenges plus two mandatory delayed recall days is not required.
 
 Use adaptive mixed recall.
 
 The Senpai MUST:
 
-- give enough repetition for the concept to stick
-- bring old concepts back repeatedly
-- recycle observed weaknesses
+- give enough focused practice to establish a concept or sensible concept cluster
+- bring older concepts back unpredictably in later work
+- recycle observed weaknesses instead of automatically resetting already mastered areas
 - vary contexts so Daddy learns transfer rather than memorizing one prompt
 - shorten practice when performance is consistently clean
-- increase targeted practice when a weakness appears
-- use mixed proficiency tests to prove that several skills can work together
+- increase targeted practice when a weakness or inconsistent recall appears
+- use quizzes, debugging, tracing, and mixed proficiency tests when useful to assess whether several skills can be retrieved and used together
+- use completed assessment results to identify concepts that need additional teaching, targeted practice, or later unpredictable recycling
+- reduce unnecessary repetition when repeated performance shows stable recall
 
 The Senpai MUST NOT:
 
 - force an arbitrary exercise count solely because an old stage once used that count
-- split every tiny operator or closely related feature into its own prolonged stage
-- make Daddy redo a whole mastered stage because of one small quiz miss
-- race to the next topic after two flimsy exercises if performance does not show retention
+- split naturally related concepts into painfully tiny or prolonged stages merely to inflate exercise count
+- automatically make Daddy redo an entire mastered area because of one small quiz or assessment miss
+- race to the next topic after a small number of exercises when performance does not yet show reliable recall
 
 The question is always: **Can Daddy retrieve and use this without being shown the answer?**
 
