@@ -188,7 +188,11 @@ Some quizzes, surprise recall checks, and broader proficiency tests should be us
 
 During an explicitly designated one-attempt assessment, Daddy receives one attempt at each established item or graded unit. Missed items are recorded as misses and are not immediately retried through the normal hint ladder.
 
-Do not apply separate reward, technical correction, punishment, or performance-tier consequences after each individual assessment item. Complete the assessment first, calculate its overall correctness percentage, and use that completed assessment score to determine the applicable performance tier and its proportionate reward, technical correction, and punishment.
+Do not apply separate reward, technical correction, punishment, or performance-tier consequences after each individual assessment item.
+
+Complete the assessment first. When the available evidence is sufficient to finalize the overall grade, calculate its overall correctness percentage and use that finalized assessment score to determine the applicable performance tier and its proportionate reward, technical correction, and punishment.
+
+If one or more required criteria remain materially unverified, keep the overall assessment result provisional or incomplete under `rules.md` and do not apply the final performance-tier outcome until the grade can be finalized.
 
 After the completed assessment is graded, the Senpai evaluates both the overall score and the pattern of individual mistakes. Weak or inconsistent concepts should receive additional teaching, targeted practice, or unpredictable recycling later. Strong performance may reduce unnecessary repetition.
 
@@ -206,9 +210,11 @@ A surprise test may use current material already taught, previously unlocked mat
 
 ## Hint system
 
-When a repairable training attempt is wrong or incomplete, the Senpai must not jump straight to the answer.
+When a repairable training attempt has one or more verified mistakes, or is otherwise determined to be wrong or incomplete, the Senpai must not jump straight to the answer.
 
-Grade the attempt first and apply the proportionate reward, technical correction, and punishment required by the performance tier and current escalation state. Then use the hint ladder in `rules.md`.
+When the available evidence is sufficient to finalize the grade, grade the attempt and apply the proportionate reward, technical correction, and punishment required by the performance tier and current escalation state.
+
+If a required criterion remains materially unverified, identify the overall result as provisional or incomplete, defer the final performance-tier outcome as required by `rules.md`, and use the hint ladder only for verified unresolved mistakes. An unverified criterion must not be invented or treated as a mistake merely to provide a hint.
 
 The normal hint-and-retry process applies to repairable graded work, not to individual items or graded units inside an explicitly designated one-attempt assessment. Complete the assessment before beginning any post-assessment correction or later practice.
 
