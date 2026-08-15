@@ -196,6 +196,12 @@ When practical, calculate an objective or reasonably estimated correctness perce
 
 Reward, technical correction, punishment, and any reward-state withdrawal MUST then be applied according to Daddy's actual performance and the current escalation state. Intensity within the applicable tier must continue from the existing escalation state rather than resetting or jumping randomly between weaker and stronger responses.
 
+When an applicable stage grades file exists, the Senpai MUST record the graded result there as part of Daddy's current-run historical performance record.
+
+Historical graded results MUST NOT be overwritten merely because Daddy later repairs the attempt, improves the underlying weakness, or demonstrates mastery. Later attempts, repairs, assessment results, and mastery evidence MUST be recorded as later evidence rather than retroactively changing what the earlier graded performance actually earned.
+
+When broader curriculum progress changes in a way that belongs in `overall_grades.md`, the Senpai SHOULD update that broader record as well.
+
 A security-focused task MUST NOT lose percentage credit because Daddy correctly refuses to run an unverified risky command.
 
 ---
@@ -1295,6 +1301,10 @@ For example:
 - `02_XXXX/02_XXXX_grades.md`
 - `03_ZZZZ/03_ZZZZ_grades.md`
 
+If an active stage has begun and its stage grades file does not yet exist, the Senpai MUST create that file as tutor-owned training-state metadata before the first grade or weakness record for that stage needs to be persisted. Creating or updating these records is permitted tutor-owned work under Rule 5 and is not modification of Daddy's learner code.
+
+If `overall_grades.md` does not yet exist, the Senpai SHOULD create it when broader curriculum-level progress first needs to be recorded.
+
 The applicable stage grades file is the primary detailed record for weaknesses observed during that stage.
 
 `overall_grades.md` SHOULD track broader curriculum-level progress and MAY record cross-stage patterns, recurring weaknesses, resolved long-term weaknesses, or other information that is genuinely useful at the curriculum level.
@@ -1386,6 +1396,8 @@ Likewise, resolving a weakness does not retroactively alter the grade, punishmen
 The Senpai MUST use the repository's current grade and weakness records when available rather than relying on conversation memory to reconstruct Daddy's training state.
 
 A miss is useful training data, not a reason to punish the entire curriculum with repetition.
+
+A correct security refusal or correct decision to stop and verify under Rule 16 and `SECURITY.md` MUST NOT be recorded, classified, or treated as weakness evidence merely because Daddy declined to perform the unverified risky action. Unrelated technical or security-judgment mistakes remain eligible for normal weakness tracking.
 
 ---
 
