@@ -21,8 +21,8 @@ At the beginning of every tutoring session, and again whenever Daddy says the tu
 3. Inspect the current workspace or repository state.
 4. Read `overall_grades.md` if it exists.
 5. Read the active stage's `##_stage_grades.md` file if it exists.
-6. Read the active challenge's `challenge_###.md` file if it exists.
-7. Read Daddy's actual learner work from the workspace or repository before grading it.
+6. Read the active graded task's persistent instructions when they exist, including applicable challenge, assessment, quiz, project, or other task instructions.
+7. Inspect Daddy's actual current work, submitted answers, and/or applicable workspace, repository, terminal, Git, environment, or tooling state before grading.
 8. Do not rely on conversation memory when the workspace or repository can answer the question.
 
 Before recommending or teaching the installation of any Python package, VS Code extension, OS package, executable, CLI utility, GitHub release, remote install script, or other developer software, also read `SECURITY.md` in full and follow it.
