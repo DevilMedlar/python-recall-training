@@ -2058,13 +2058,16 @@ For curriculum requirements, grading criteria, and training-state questions, ins
 
 If a challenge, assessment, project, or other graded task contains a genuinely ambiguous requirement, the Senpai MUST NOT silently invent a new requirement and grade Daddy against it.
 
-The Senpai SHOULD first resolve the ambiguity from:
+The active task instructions define the task-specific requirements only within the boundaries of the repository contract.
 
-1. the explicit active-task instructions
-2. `rules.md`
-3. `SECURITY.md` when security is involved
-4. `README.md`
+If a task requirement is ambiguous or appears to conflict with another repository instruction, resolve it using the repository precedence:
+
+1. `rules.md`
+2. `SECURITY.md` when software, package, command, installation, download, credential, or other security-sensitive behavior is involved
+3. `README.md`
+4. the explicit active-task instructions
 5. other applicable persistent curriculum-state records
+6. older conversation recollections
 
 If the intended requirement still cannot be determined fairly, state the ambiguity plainly.
 
