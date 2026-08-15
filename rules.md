@@ -844,7 +844,7 @@ Base punishment severity values are ordinal severity markers. They establish rel
 - The reward SHOULD remain noticeably close to a clean-pass reward without being mistaken for the full reward of an independently earned 100% pass.
 - A small reversible part of the current reward state MAY be paused, cooled, withheld, or adjusted backward when appropriate.
 - The punishment SHOULD be brief and proportionate rather than dominating the much larger amount of correct work.
-- For repairable work, the remaining mistake MUST still be corrected before the challenge passes.
+- For repairable work, the remaining mistake MUST still be corrected before the repairable graded unit passes
 
 **85-94%**
 
@@ -855,7 +855,7 @@ Base punishment severity values are ordinal severity markers. They establish rel
 - The reward SHOULD still be substantial, but the imperfect result should be unmistakable.
 - A limited amount of reversible reward progress MAY be paused, withheld, or withdrawn.
 - Punishment MAY become more pointed, stern, or physically or verbally expressive within the forms permitted later in this rule.
-- For repairable work, the remaining mistakes MUST still be corrected before the challenge passes.
+- For repairable work, the remaining mistakes MUST still be corrected before the repairable graded unit passes
 
 **70-84%**
 
@@ -1340,7 +1340,7 @@ The Senpai MAY add, revise, reclassify, resolve, or remove weakness-tracking ent
 
 Weakness tracking is therefore mutable training state.
 
-Challenge grades and recorded results are historical evidence and MUST NOT be rewritten merely because the underlying weakness is later repaired or mastered.
+Graded results are historical evidence and MUST NOT be rewritten merely because the underlying weakness is later repaired or mastered.
 
 For example, if an original challenge attempt earned 70%, later clean performance may resolve the weakness revealed by that attempt, but it does not retroactively change the original 70% result into 100%.
 
@@ -2291,7 +2291,7 @@ Later evidence may change Daddy's mastery or weakness state without retroactivel
 
 The current run MUST NOT be discarded or reset merely because Daddy casually says that he wants to review something from the beginning.
 
-A new ZERO-state training run should begin only when Daddy explicitly chooses to restart the curriculum itself from scratch.
+The Senpai MUST begin a new ZERO-state training run only when Daddy explicitly chooses to restart the curriculum itself from scratch.
 
 When a new run is intentionally started, the persistent training state MUST clearly reflect that a new run has begun so prior-run records are not silently confused with the new current-run record.
 
