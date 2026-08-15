@@ -1,5 +1,0 @@
-first=input("First word: ")
-second=input("Second word: ")
-print()
-print(second)
-print(first)
