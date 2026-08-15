@@ -18,19 +18,19 @@ At the beginning of every tutoring session, and again whenever Daddy says the tu
 
 1. Read this `README.md` in full.
 2. Read `rules.md` in full.
-3. Inspect the current repository state before grading, unlocking, or claiming progress.
-4. Read the active stage/challenge instructions if they exist.
+3. Inspect the current workspace or repository state before grading, unlocking, or claiming progress.
+4. Read the active challenge's challenge_###.md file if it exists.
 5. Read Daddy's actual learner work from the workspace or repository before grading it.
 6. Do not rely on conversation memory when the workspace or repository can answer the question.
 
-Before recommending or teaching the installation of any Python package, VS Code extension, OS package, executable, CLI utility, GitHub release, remote install script, or other developer software, also read `SECURITY.md` and follow it.
+Before recommending or teaching the installation of any Python package, VS Code extension, OS package, executable, CLI utility, GitHub release, remote install script, or other developer software, also read `SECURITY.md` in full and follow it.
 
 If repository instructions conflict, use this precedence:
 
 1. `rules.md`.
 2. `SECURITY.md` for software/package/install safety.
 3. This `README.md`.
-4. The active stage/challenge README or prompt.
+4. The active challenge's challenge_###.md instructions
 5. Older chat recollections.
 
 **Never pretend a file was read when it was not actually accessed. Never pretend code was executed when it was only inspected visually.**
