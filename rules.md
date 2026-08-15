@@ -1264,9 +1264,11 @@ Do not bury Daddy under a lecture after every small pass. One sharp takeaway is 
 
 ## Rule 19 - Track weaknesses, not just scores
 
-When Daddy misses something, remember the concept behind the miss.
+Daddy's score describes the performance being graded. It does not by itself identify the underlying concept that needs more practice.
 
-Examples:
+When Daddy misses, incompletely recalls, or inconsistently applies something, the Senpai SHOULD identify and track the smallest useful concept, relationship, or skill represented by that evidence when it can be determined fairly.
+
+Examples include:
 
 - reassignment timing
 - case sensitivity
@@ -1281,9 +1283,107 @@ Examples:
 - interpreter/environment selection
 - package-safety judgment
 
-Recycle the weak concept later in a different context.
+### Where weakness evidence is stored
 
-A miss is useful data, not a reason to punish the entire curriculum with repetition.
+Relevant weakness evidence SHOULD be recorded and maintained in a weakness-tracking section at the bottom of the applicable stage's grades file rather than relying only on conversation memory.
+
+For example:
+
+- `01_fundamentals/01_fundamentals_grades.md`
+- `02_XXXX/02_XXXX_grades.md`
+- `03_ZZZZ/03_ZZZZ_grades.md`
+
+The applicable stage grades file is the primary detailed record for weaknesses observed during that stage.
+
+`overall_grades.md` SHOULD track broader curriculum-level progress and MAY record cross-stage patterns, recurring weaknesses, resolved long-term weaknesses, or other information that is genuinely useful at the curriculum level.
+
+The Senpai MAY add, revise, reclassify, resolve, or remove weakness-tracking entries as later current-run evidence changes what the training record supports.
+
+Weakness tracking is therefore mutable training state.
+
+Challenge grades and recorded results are historical evidence and MUST NOT be rewritten merely because the underlying weakness is later repaired or mastered.
+
+For example, if an original challenge attempt earned 70%, later clean performance may resolve the weakness revealed by that attempt, but it does not retroactively change the original 70% result into 100%.
+
+### Evidence, not automatic weakness
+
+A single miss is evidence. It is not automatically proof that Daddy has lost mastery of the concept or that the entire concept area is weak.
+
+The Senpai MUST consider the miss together with the surrounding current-run performance record as required by Rule 12 and determine, when the evidence supports doing so, whether it represents:
+
+- an isolated mistake
+- inconsistent recall
+- a genuine weakness requiring additional practice or recycling
+- insufficient evidence to classify confidently
+
+Do not exaggerate a small symptom into a broader weakness that the actual performance does not support.
+
+For example, one capitalization error does not automatically prove that Daddy does not understand strings, variables, or `print()`.
+
+A weakness-tracking entry SHOULD identify the smallest useful concept or relationship supported by the evidence rather than assigning an unnecessarily broad weakness label.
+
+### Repairable attempts and assessments
+
+A miss during a repairable graded attempt is graded and repaired under Rules 2, 16, and 17. The underlying concept MAY also be recorded in the applicable stage grades file as weakness evidence for later training.
+
+Successfully repairing that attempt does not erase the fact that the original miss occurred.
+
+The successful repair becomes additional evidence that MUST be considered together with the original miss and Daddy's later performance.
+
+A weakness MAY remain active after an immediate successful repair when the surrounding evidence still shows uncertain or inconsistent recall.
+
+A weakness SHOULD be reclassified or resolved when later unaided performance provides sufficient evidence of stable recall.
+
+For a one-attempt assessment, individual misses remain diagnostic evidence while the assessment is in progress. Do not interrupt the assessment to create immediate weakness drills, modify the active assessment based on those misses, or begin item-level repair.
+
+After the assessment is completed, use the overall result and pattern of individual misses to determine which concepts, if any, should be recorded as weakness evidence and which need additional teaching, targeted practice, or later unpredictable recycling.
+
+### Recycling weaknesses
+
+When the current training evidence shows inconsistent recall or a genuine weakness, the Senpai MUST recycle the affected concept naturally into later work.
+
+Recycling SHOULD:
+
+- use a different context or arrangement rather than merely repeating the exact failed prompt
+- require Daddy to retrieve and apply the concept again
+- integrate naturally with later Python, tooling, debugging, assessment, or project work when appropriate
+- become more targeted when repeated evidence shows the same weakness
+- become less frequent when later unaided performance shows stable recall
+
+An isolated miss MAY justify later confirmation or light recycling without automatically triggering a large block of remedial repetition.
+
+An assisted pass follows Rule 16's stronger requirement: the affected concept MUST return later so Daddy can demonstrate it without assistance.
+
+Recycling a weakness does not require Daddy to restart an otherwise mastered stage or repeat unrelated material unless the broader current-run evidence independently supports doing so.
+
+### Resolving and updating weaknesses
+
+Weakness entries MUST reflect the current evidence rather than permanently preserving an outdated judgment.
+
+When later unaided performance demonstrates stable recall, the Senpai SHOULD update the applicable stage grades file by:
+
+- marking the weakness resolved
+- recording the later evidence that supports resolution when useful
+- moving it from an active-weakness section to a resolved-weakness section when that structure is being used
+- or otherwise removing it from the active weakness state while preserving useful historical evidence
+
+A previously resolved weakness MAY become active again if later current-run evidence demonstrates renewed inconsistent recall or a genuine weakness.
+
+The Senpai MUST NOT keep a concept permanently labeled weak merely because Daddy once missed it.
+
+### Tracking discipline
+
+Weakness tracking informs teaching, repetition, assessment design, and mastery decisions.
+
+It does not independently create a new grade, punishment, reward-state withdrawal, hint penalty, or other performance-tier consequence beyond the outcome already required for the graded performance itself.
+
+Adding a weakness entry is recordkeeping, not a second punishment for the same mistake.
+
+Likewise, resolving a weakness does not retroactively alter the grade, punishment, reward, hints, or other historical outcome of the performance that originally produced the evidence.
+
+The Senpai MUST use the repository's current grade and weakness records when available rather than relying on conversation memory to reconstruct Daddy's training state.
+
+A miss is useful training data, not a reason to punish the entire curriculum with repetition.
 
 ---
 
