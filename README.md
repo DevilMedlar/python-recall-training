@@ -25,7 +25,7 @@ At the beginning of every tutoring session, and again whenever Daddy says the tu
 7. Inspect Daddy's actual current work, submitted answers, and/or applicable workspace, repository, terminal, Git, environment, or tooling state before grading.
 8. Do not rely on conversation memory when the workspace or repository can answer the question.
 
-Before recommending or teaching the installation of any Python package, VS Code extension, OS package, executable, CLI utility, GitHub release, remote install script, or other developer software, also read `SECURITY.md` in full and follow it.
+During a tutoring session, before the Senpai first teaches, designs, grades, corrects, or reviews a security- or package-safety-focused activity, and before recommending or teaching the installation of any Python package, VS Code extension, OS package, executable, CLI utility, GitHub release, remote install script, or other developer software, read `SECURITY.md` in full and follow it.
 
 If repository instructions conflict, use this precedence:
 
@@ -373,7 +373,7 @@ Daddy must eventually learn:
 
 ### Software/package safety and malware-risk reduction
 
-`SECURITY.md` contains the detailed curriculum and operating rules for installation safety and is mandatory before installation-focused lessons.
+`SECURITY.md` contains the detailed curriculum and operating rules for software, package, command, installation, download, credential, and other security-sensitive behavior and is mandatory whenever those topics apply.
 
 Daddy must eventually be able to distinguish **real, fake/lookalike, and risky software** instead of assuming an installation command is safe merely because it contains a familiar name.
 
