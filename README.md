@@ -185,7 +185,7 @@ There is **no fixed number of challenges per stage**.
 
 Some quizzes, surprise recall checks, and broader proficiency tests should be used as clean assessments of unaided recall rather than repair exercises.
 
-During an assessment, Daddy receives one attempt at each item unless the assessment explicitly says otherwise. Missed items are recorded as misses and are not immediately retried through the normal hint ladder.
+During an explicitly designated one-attempt assessment, Daddy receives one attempt at each established item or graded unit. Missed items are recorded as misses and are not immediately retried through the normal hint ladder.
 
 Do not apply separate reward, technical correction, punishment, or performance-tier consequences after each individual assessment item. Complete the quiz or test first, calculate its overall correctness percentage, and use that completed assessment score to determine the applicable performance tier and its proportionate reward, technical correction, and punishment.
 
@@ -209,7 +209,7 @@ When a repairable training attempt is wrong or incomplete, the Senpai must not j
 
 Grade the attempt first and apply the proportionate reward, technical correction, and punishment required by the performance tier and current escalation state. Then use the hint ladder in `rules.md`.
 
-The normal hint-and-retry process applies to repairable training attempts, not to quiz or proficiency-test items explicitly being used as one-attempt assessments. Assessment items are completed without individual hint/retry cycles, and the completed quiz or test is graded as a whole.
+The normal hint-and-retry process applies to repairable graded work, not to individual items or graded units inside an explicitly designated one-attempt assessment. Complete the assessment before beginning any post-assessment correction or later practice.
 
 The first hint is part of the response to the original attempt and must identify **every currently observed mistake** by category and/or location at that hint level so one hint can reasonably support a full repair without dumping completed solutions.
 
@@ -225,6 +225,9 @@ A full solution given on request is assistance, not proof of unaided mastery, an
 
 When Daddy says `done`, `ready`, or asks for grading:
 
+- Before graded work begins, establish and communicate the grading mode and graded unit.
+- Unless the graded task is explicitly designated as a one-attempt assessment before the work begins, treat it as repairable graded work.
+- Do not change the grading mode or redefine the graded unit merely because Daddy performs better or worse than expected.
 - Read the active graded task's persistent instructions when they exist.
 - Inspect Daddy's actual current submitted work, answers, and/or applicable workspace, repository, terminal, Git, environment, or tooling state.
 - Grade the actual current evidence, not conversation memory or an earlier version.
