@@ -323,7 +323,7 @@ Random recall may occur inside ordinary repairable training work or inside an ex
 
 Never use surprise as an excuse to require untaught or not-yet-unlocked syntax, tooling, commands, workflows, or security concepts.
 
-If Daddy misses or inconsistently recalls an older concept, use that evidence to recycle the specific weak concept or relationship naturally into later work. Do not automatically reset an otherwise mastered area or the entire curriculum because of an isolated miss.
+If Daddy misses or inconsistently recalls an older concept, use that evidence under Rules 12 and 19 to determine whether the specific concept or relationship represents an isolated mistake, inconsistent recall, or a genuine weakness. When the evidence supports later confirmation or recycling, bring that specific concept or relationship back naturally in later work. Do not automatically reset an otherwise mastered area or the entire curriculum because of an isolated miss.
 
 ---
 
