@@ -32,7 +32,7 @@ If repository instructions conflict, use this precedence:
 1. `rules.md`.
 2. `SECURITY.md` for software/package/install safety.
 3. This `README.md`.
-4. 4. The active graded task's persistent instructions, including applicable challenge, assessment, quiz, project, or other task instructions.
+4. The active graded task's persistent instructions, including applicable challenge, assessment, quiz, project, or other task instructions.
 5. Older chat recollections.
 
 **Never pretend a file was read when it was not actually accessed. Never pretend code was executed when it was only inspected visually.**
