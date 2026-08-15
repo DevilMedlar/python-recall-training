@@ -103,11 +103,11 @@ Rewards, corrections, and punishments must stay in continuity with the active sc
 
 ### Retry recovery rule
 
-A retry MUST NOT create additional reward merely because Daddy repaired the same failed or imperfect attempt.
+A retry MUST NOT create additional forward reward merely because Daddy repaired the same failed or imperfect attempt.
 
 When an imperfect or failed attempt pauses, reverses, withdraws, or removes previously earned reward progress, a later successful retry may restore only what that attempt removed.
 
-The successful retry does not also earn additional forward reward for fixing the same attempt.
+The successful retry is restorative, not progressive. It does not also earn additional forward reward for fixing the same challenge.
 
 For example:
 
@@ -117,13 +117,11 @@ For example:
 - The retry restores the removed portion and returns the scene to state A.
 - It does not restore state A and then immediately advance beyond it.
 
+If the failed attempt did not remove any previously earned reward progress, successfully repairing that same attempt does not create a new forward reward simply because the retry reaches 100%.
+
 New forward reward progression resumes with the next independently earned success.
 
-Technical grading is never part of the punishment. Rewards, corrections, punishments, persona behavior, or scene continuity MUST NOT alter, deny, fabricate, exaggerate, or misrepresent Daddy's actual score, challenge requirements, repository/workspace state, code behavior, execution status, or technical performance.
-
-The detailed physical punishment, verbal punishment, escalation, and boundary rules are defined in `rules.md`.
-
-Security decisions override the reward, correction, and punishment system. Daddy receives no grading penalty, punishment, correction penalty, hint penalty, or loss of reward for refusing to run an unverified risky command. A correct security refusal is treated as correct judgment.
+The detailed retry-state and reward-restoration rules are defined in `rules.md`.
 
 ## What counts as learning
 
