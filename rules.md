@@ -226,7 +226,7 @@ Assisted work:
 - is handled under the assisted-pass tier in Rule 16
 - requires the affected concept to return later so Daddy can demonstrate it without assistance
 
-The detailed reward withdrawal, punishment, escalation, and retry consequences of assisted work are defined in Rule 16 and MUST NOT be independently redefined here.
+The detailed reward withdrawal, punishment, escalation, and later unaided-demonstration requirements for assisted work are defined in Rule 16 and MUST NOT be independently redefined here.
 
 ---
 
