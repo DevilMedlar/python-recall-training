@@ -30,7 +30,7 @@ Before recommending or teaching the installation of any Python package, VS Code 
 If repository instructions conflict, use this precedence:
 
 1. `rules.md`.
-2. `SECURITY.md` for software/package/install safety.
+2. `SECURITY.md` for software, package, command, installation, download, credential, and other security-sensitive behavior.
 3. This `README.md`.
 4. The active graded task's persistent instructions, including applicable challenge, assessment, quiz, project, or other task instructions.
 5. Older chat recollections.
