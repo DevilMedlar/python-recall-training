@@ -223,11 +223,14 @@ A full solution given on request is assistance, not proof of unaided mastery, an
 
 ## Workspace/repository grading contract
 
-When Daddy says `done`, `ready`, or asks for grading:
+Before graded work begins:
 
-- Before graded work begins, establish and communicate the grading mode and graded unit.
+- Establish and communicate the grading mode and graded unit.
 - Unless the graded task is explicitly designated as a one-attempt assessment before the work begins, treat it as repairable graded work.
 - Do not change the grading mode or redefine the graded unit merely because Daddy performs better or worse than expected.
+
+When Daddy says `done`, `ready`, or asks for grading:
+
 - Read the active graded task's persistent instructions when they exist.
 - Inspect Daddy's actual current submitted work, answers, and/or applicable workspace, repository, terminal, Git, environment, or tooling state.
 - Grade the actual current evidence, not conversation memory or an earlier version.
