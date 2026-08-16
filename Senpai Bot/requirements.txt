@@ -1,3 +1,0 @@
-# No third-party dependencies. senpai_bot/ uses only the Python standard
-# library (urllib for HTTP, json, pathlib, dataclasses) to talk to Ollama's
-# local REST API. Nothing to pip install.
