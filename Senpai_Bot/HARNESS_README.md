@@ -6,11 +6,12 @@ that in `persona_system_prompt.md`.
 
 ## What it does
 
-- Reads `README.md`, `rules.md`, and `SECURITY.md` in full and injects them
-  verbatim into the system prompt at the start of every fresh session
-  (`senpai_bot/context.py`), so the model actually has the real current
-  contract text rather than a paraphrase.
-- Reads `overall_grades.md` at session start if it exists.
+- Uses compact context by default so the persona and latest chat message fit
+  inside ordinary local-model context windows. The model reads current
+  repository files on demand through its tools.
+- Supports `OLLAMA_CONTEXT_MODE=full` for models with enough context and
+  RAM/VRAM to inject `README.md`, `rules.md`, `SECURITY.md`, and
+  `overall_grades.md` verbatim at session start.
 - Gives the model three tools it can call mid-conversation, sandboxed to
   this repository folder (`senpai_bot/tools.py`):
   - `read_file(path)` -- inspect any current file (stage grades, learner
@@ -18,7 +19,7 @@ that in `persona_system_prompt.md`.
   - `list_dir(path)` -- see what exists
   - `write_file(path, content)` -- create/update tutor-owned training-state
     files. Refuses to touch `README.md`, `rules.md`, `SECURITY.md`, or
-    `gitignore.txt`.
+    `.gitignore`.
 - Persists the conversation to `senpai_bot/state.json` (gitignored) so
   closing the terminal doesn't lose the session. `/reset` clears it.
 - Talks to Ollama's local `/api/chat` REST endpoint over plain
@@ -40,23 +41,34 @@ the model you run it against.
    ollama pull llama3.1
    ```
 
-2. Copy the env template and fill in the model name:
+2. Copy the env template and fill in the model name. In Windows PowerShell:
 
-   ```bash
-   cp senpai_bot/.env.example senpai_bot/.env
+   ```powershell
+   Copy-Item senpai_bot/.env.example senpai_bot/.env
    ```
 
    Edit `senpai_bot/.env` and set `OLLAMA_MODEL=llama3.1` (or whichever
-   model you pulled).
+   exact name appears in `ollama list`). Keep `OLLAMA_CONTEXT_MODE=compact`
+   unless your chosen model and hardware can comfortably handle the full
+   contract prompt.
 
 3. Write your system prompt / persona content into
    `persona_system_prompt.md`.
 
-4. Run it:
+4. Run the CLI:
 
    ```bash
    python main.py
    ```
+
+   Or start the local web studio:
+
+   ```powershell
+   python start_studio.py
+   ```
+
+   Then open `http://localhost:8000`. The web Reset button clears both the
+   visible chat and the persisted server-side session.
 
 ## Notes
 
@@ -66,5 +78,4 @@ the model you run it against.
   text injected at session start plus whatever you paste into the chat.
 - Tool calls are logged to stderr as they happen (`[tool call] ...`) so you
   can see what the model actually read or wrote.
-- `senpai_bot/.env` and `senpai_bot/state.json` are already in
-  `gitignore.txt`.
+- `senpai_bot/.env` and `senpai_bot/state.json` are already in `.gitignore`.

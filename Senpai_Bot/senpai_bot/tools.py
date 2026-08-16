@@ -13,10 +13,11 @@ records, weakness tracking, challenge instructions) from the contract itself.
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import sys
 
-PROTECTED_FILES = {"README.md", "rules.md", "SECURITY.md", "gitignore.txt"}
+PROTECTED_FILES = {"README.md", "rules.md", "SECURITY.md", ".gitignore"}
 
 
 class ToolError(RuntimeError):

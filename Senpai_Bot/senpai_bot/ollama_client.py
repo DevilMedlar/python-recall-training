@@ -13,10 +13,17 @@ class OllamaError(RuntimeError):
 
 
 class OllamaClient:
-    def __init__(self, host: str, model: str, timeout: float = 120.0) -> None:
+    def __init__(
+        self,
+        host: str,
+        model: str,
+        timeout: float = 120.0,
+        num_ctx: int | None = None,
+    ) -> None:
         self.host = host.rstrip("/")
         self.model = model
         self.timeout = timeout
+        self.num_ctx = num_ctx
 
     def chat(
         self,
@@ -32,6 +39,8 @@ class OllamaClient:
             "messages": messages,
             "stream": False,
         }
+        if self.num_ctx is not None:
+            payload["options"] = {"num_ctx": self.num_ctx}
         if tools:
             payload["tools"] = tools
 
@@ -60,7 +69,7 @@ class OllamaClient:
 
         message = parsed.get("message")
         if not message:
-            return {"role": "assistant", "content": ""}
+            raise OllamaError("Ollama returned no assistant message.")
         return message
 
     def list_models(self) -> list[str]:

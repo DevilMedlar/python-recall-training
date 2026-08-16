@@ -59,7 +59,12 @@ def main() -> None:
             print(f"Config problem: {p}", file=sys.stderr)
         sys.exit(1)
 
-    client = OllamaClient(cfg.ollama_host, cfg.model, cfg.request_timeout)
+    client = OllamaClient(
+        cfg.ollama_host,
+        cfg.model,
+        cfg.request_timeout,
+        num_ctx=cfg.num_ctx,
+    )
     tools = WorkspaceTools(cfg.repo_root)
 
     try:
@@ -76,12 +81,19 @@ def main() -> None:
 
     messages = state.load_messages(cfg.state_file)
     persona_prompt = _read_persona_prompt(cfg)
-    system_content = build_startup_context(cfg.repo_root, persona_prompt)
-
-    if not messages:
-        messages = [{"role": "system", "content": system_content}]
-    elif messages[0].get("role") == "system":
-        messages[0]["content"] = system_content
+    system_content = build_startup_context(
+        cfg.repo_root,
+        persona_prompt,
+        context_mode=cfg.context_mode,
+    )
+    messages, reset_history = state.prepare_messages(
+        messages,
+        system_content,
+        cfg.max_history_messages,
+    )
+    if reset_history:
+        state.save_messages(cfg.state_file, messages)
+        print("[session reset because the system context changed or history was too large]")
 
     print(f"Senpai Bot harness -- model: {cfg.model} -- host: {cfg.ollama_host}")
     print("Commands: /reset (clear session), /quit (exit)\n")
