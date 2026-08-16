@@ -1,8 +1,0 @@
-# Core Senpai Bot dependencies (Standard Library Only)
-# talking to Ollama's local REST API.
-
-# Senpai Studio dependencies (Web Interface)
-fastapi
-uvicorn
-jinja2
-pylint
