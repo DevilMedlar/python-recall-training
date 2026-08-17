@@ -5,10 +5,10 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from PySide6.QtCore import QDir, QProcess, QThreadPool, Qt, QUrl
+from PySide6.QtCore import QDir, QThreadPool, QTimer, Qt, QUrl
 from PySide6.QtGui import QAction, QCloseEvent, QDesktopServices, QIcon, QKeySequence, QShortcut, QTextCursor
 from PySide6.QtWidgets import (
-    QApplication, QComboBox, QFileDialog, QFileSystemModel, QHBoxLayout, QInputDialog, QLabel, QMainWindow,
+    QComboBox, QFileDialog, QFileSystemModel, QHBoxLayout, QInputDialog, QLabel, QMainWindow,
     QMenu, QMessageBox, QPlainTextEdit, QPushButton, QSplitter, QTabWidget,
     QTextBrowser, QToolBar, QTreeView, QVBoxLayout, QWidget,
 )
@@ -18,7 +18,7 @@ from ..chat import ChatSession
 from ..contract import ContractStore
 from ..ollama import OllamaManager
 from ..settings import Settings
-from ..update import check_for_update, download_verified_installer
+from ..update import check_for_update
 from ..workers import Task
 from .editor import CodeEditor
 from .terminal import TerminalPanel
@@ -35,6 +35,9 @@ class MainWindow(QMainWindow):
         self.thread_pool = QThreadPool.globalInstance()
         self._assistant_buffer = ""
         self._busy = False
+        self._available_models: set[str] = set()
+        self._update_check_in_progress = False
+        self._runtime_shutdown = False
         self.setWindowTitle("Senpai_Bot")
         self.setWindowIcon(QIcon(str(icon_path)))
         self.resize(1500, 920)
@@ -45,7 +48,8 @@ class MainWindow(QMainWindow):
         if settings.workspace and Path(settings.workspace).is_dir():
             self.open_workspace(Path(settings.workspace))
         self._start_runtime()
-        self._start_update_check()
+        if self.settings.check_updates_on_launch:
+            self._start_update_check()
 
     def _build_ui(self) -> None:
         root = QSplitter(Qt.Horizontal)
@@ -183,9 +187,14 @@ class MainWindow(QMainWindow):
         view_menu.addAction(terminal_action)
 
         help_menu = self.menuBar().addMenu("&Help")
-        update_action = QAction("Check for updates…", self)
-        update_action.triggered.connect(lambda: self._start_update_check(announce_current=True))
-        help_menu.addAction(update_action)
+        self.update_action = QAction("Check for updates…", self)
+        self.update_action.triggered.connect(lambda: self._start_update_check(announce_current=True))
+        help_menu.addAction(self.update_action)
+        self.update_on_launch_action = QAction("Check for updates on launch", self)
+        self.update_on_launch_action.setCheckable(True)
+        self.update_on_launch_action.setChecked(self.settings.check_updates_on_launch)
+        self.update_on_launch_action.toggled.connect(self._set_update_checks_on_launch)
+        help_menu.addAction(self.update_on_launch_action)
 
     def _build_toolbar(self) -> None:
         toolbar = QToolBar("Main", self)
@@ -216,7 +225,6 @@ class MainWindow(QMainWindow):
         task.signals.status.connect(self.runtime_status.setText)
         task.signals.result.connect(self._models_ready)
         task.signals.error.connect(self._runtime_error)
-        task.signals.finished.connect(lambda: self.send_button.setEnabled(self.ollama.is_ready()))
         self.send_button.setEnabled(False)
         self.thread_pool.start(task)
 
@@ -224,15 +232,12 @@ class MainWindow(QMainWindow):
         signals.status.emit("Starting Ollama quietly…")
         self.ollama.start_hidden()
         models = self.ollama.installed_models()
-        if not models:
-            signals.status.emit(f"No local models found; downloading {self.settings.model}…")
-            self.ollama.ensure_model(signals.status.emit)
-            models = self.ollama.installed_models()
-        signals.status.emit("Local AI ready")
+        signals.status.emit("Local Ollama ready")
         return sorted(models, key=str.casefold)
 
     def _runtime_error(self, message: str) -> None:
         self.runtime_status.setText("Local AI unavailable")
+        self.send_button.setEnabled(False)
         if "not installed" in message.lower() or "path" in message.lower():
             choice = QMessageBox.question(
                 self,
@@ -249,6 +254,7 @@ class MainWindow(QMainWindow):
     def _models_ready(self, models: object) -> None:
         if not isinstance(models, list):
             return
+        self._available_models = set(models)
         current = self.settings.model
         selected = current if current in models else (models[0] if models else current)
         self.model_combo.blockSignals(True)
@@ -258,10 +264,34 @@ class MainWindow(QMainWindow):
             self.model_combo.addItem(current)
         self.model_combo.setCurrentText(selected)
         self.model_combo.blockSignals(False)
+        if not models:
+            self.send_button.setEnabled(False)
+            self.runtime_status.setText("No local model installed · chat disabled")
+            if not self.settings.model_setup_prompted:
+                self.settings.model_setup_prompted = True
+                self.settings.save(self.settings_path)
+                QTimer.singleShot(0, self._offer_default_model_download)
+            return
+        self.send_button.setEnabled(True)
         if selected != current:
             self.select_model(selected)
         else:
             self.runtime_status.setText(f"Local AI ready · {selected}")
+
+    def _offer_default_model_download(self) -> None:
+        if self._available_models:
+            return
+        choice = QMessageBox.question(
+            self,
+            "Local model required",
+            f"Senpai chat needs a local Ollama model.\n\n"
+            f"Download {self.settings.model} now? Model downloads can require several GB, and "
+            "nothing will be downloaded unless you choose Yes.",
+            QMessageBox.Yes | QMessageBox.No,
+            QMessageBox.No,
+        )
+        if choice == QMessageBox.Yes:
+            self._begin_model_pull(self.settings.model)
 
     def select_model(self, model: str) -> None:
         if not model or model == self.settings.model:
@@ -303,7 +333,11 @@ class MainWindow(QMainWindow):
         )
         if choice != QMessageBox.Yes:
             return
+        self._begin_model_pull(model)
+
+    def _begin_model_pull(self, model: str) -> None:
         self.pull_model_button.setEnabled(False)
+        self.runtime_status.setText(f"Preparing to download {model}…")
         task = Task(self._pull_model_task, model)
         task.signals.status.connect(self.runtime_status.setText)
         task.signals.error.connect(lambda message: QMessageBox.critical(self, "Model download failed", message))
@@ -317,11 +351,24 @@ class MainWindow(QMainWindow):
     def _model_pulled(self, model: str) -> None:
         if self.model_combo.findText(model) < 0:
             self.model_combo.addItem(model)
+        self.settings.model = model
+        self.ollama.model = model
+        self.settings.save(self.settings_path)
         self.refresh_models()
         self.model_combo.setCurrentText(model)
         self.runtime_status.setText(f"Model ready · {model}")
 
+    def _set_update_checks_on_launch(self, enabled: bool) -> None:
+        self.settings.check_updates_on_launch = enabled
+        self.settings.save(self.settings_path)
+
     def _start_update_check(self, announce_current: bool = False) -> None:
+        if self._update_check_in_progress:
+            if announce_current:
+                self.statusBar().showMessage("An update check is already running", 3000)
+            return
+        self._update_check_in_progress = True
+        self.update_action.setEnabled(False)
         if announce_current:
             self.runtime_status.setText("Checking for Senpai_Bot updates…")
         task = Task(self._check_update_task)
@@ -330,7 +377,12 @@ class MainWindow(QMainWindow):
         )
         if announce_current:
             task.signals.error.connect(self._show_update_check_error)
+        task.signals.finished.connect(self._update_check_finished)
         self.thread_pool.start(task)
+
+    def _update_check_finished(self) -> None:
+        self._update_check_in_progress = False
+        self.update_action.setEnabled(True)
 
     @staticmethod
     def _check_update_task(signals):
@@ -343,28 +395,19 @@ class MainWindow(QMainWindow):
                 QMessageBox.information(
                     self,
                     "No update available",
-                    f"Senpai_Bot {__version__} is the latest published version.",
+                    f"No newer approved release is available for Senpai_Bot {__version__}.",
                 )
             return
         version = update.get("version", "")
         notes = update.get("notes", "")
-        if update.get("installer_url") and update.get("checksum_url"):
-            choice = QMessageBox.question(
-                self,
-                "Senpai_Bot update available",
-                f"Version {version} is available.\n\n{notes}\n\nDownload, verify, and install it now?",
-                QMessageBox.Yes | QMessageBox.No,
-                QMessageBox.Yes,
-            )
-            if choice == QMessageBox.Yes:
-                self._download_update(update)
-            return
         choice = QMessageBox.question(
             self,
             "Senpai_Bot update available",
-            f"Version {version} is available, but no automatic installer was attached.\n\nOpen its GitHub page?",
+            f"Version {version} is available.\n\n{notes}\n\n"
+            "Automatic installer download and execution are disabled until publisher-signature "
+            "verification is implemented. Open the official GitHub release page?",
             QMessageBox.Open | QMessageBox.Cancel,
-            QMessageBox.Open,
+            QMessageBox.Cancel,
         )
         if choice == QMessageBox.Open:
             QDesktopServices.openUrl(QUrl(update["url"]))
@@ -376,34 +419,6 @@ class MainWindow(QMainWindow):
             "Could not check for updates",
             f"Senpai_Bot could not reach GitHub. Your current version is {__version__}.\n\n{message}",
         )
-
-    def _download_update(self, update: dict[str, str]) -> None:
-        task = Task(self._download_update_task, update)
-        task.signals.status.connect(self.runtime_status.setText)
-        task.signals.error.connect(lambda message: QMessageBox.critical(self, "Update failed", message))
-        task.signals.result.connect(self._install_downloaded_update)
-        self.thread_pool.start(task)
-
-    @staticmethod
-    def _download_update_task(signals, update: dict[str, str]):
-        return download_verified_installer(update, signals.status.emit)
-
-    def _install_downloaded_update(self, installer: object) -> None:
-        if not isinstance(installer, Path) or not installer.is_file():
-            QMessageBox.critical(self, "Update failed", "The verified installer could not be found.")
-            return
-        if not self._close_all_editors():
-            self.runtime_status.setText("Update postponed · unsaved editor remains open")
-            return
-        self.settings.save(self.settings_path)
-        self.terminal.stop()
-        arguments = ["/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART", "/CLOSEAPPLICATIONS"]
-        result = QProcess.startDetached(str(installer), arguments)
-        started = result[0] if isinstance(result, tuple) else bool(result)
-        if not started:
-            QMessageBox.critical(self, "Update failed", "Windows could not start the verified installer.")
-            return
-        QApplication.quit()
 
     def choose_workspace(self) -> None:
         chosen = QFileDialog.getExistingDirectory(self, "Open workspace")
@@ -718,7 +733,7 @@ class MainWindow(QMainWindow):
         if self._assistant_buffer:
             self.chat_session.record(user_text, self._assistant_buffer)
         self._busy = False
-        self.send_button.setEnabled(True)
+        self.send_button.setEnabled(bool(self._available_models) and self.ollama.is_ready())
 
     def clear_chat(self) -> None:
         self.chat_session.clear()
@@ -733,10 +748,17 @@ class MainWindow(QMainWindow):
                 return False
         return True
 
+    def shutdown_runtime(self) -> None:
+        if self._runtime_shutdown:
+            return
+        self._runtime_shutdown = True
+        self.terminal.stop()
+        self.ollama.stop_owned()
+
     def closeEvent(self, event: QCloseEvent) -> None:
         if not self._close_all_editors():
             event.ignore()
             return
         self.settings.save(self.settings_path)
-        self.terminal.stop()
+        self.shutdown_runtime()
         event.accept()

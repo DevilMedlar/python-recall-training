@@ -2,8 +2,9 @@
 
 Senpai_Bot is a native Windows desktop IDE and local AI tutor. The application preserves
 `README.md`, `rules.md`, and `SECURITY.md` as its authoritative contract, starts Ollama without
-a visible terminal, checks for `llama3.1:latest`, and exposes a file explorer, tabbed Python
-editor, run/output panel, and streaming chat.
+a visible terminal, discovers installed local models, and exposes a file explorer, tabbed Python
+editor, run/output panel, and streaming chat. It suggests `llama3.1:latest` only through an
+explicit, default-deny download prompt when no local model is installed.
 
 ## Runtime prerequisites
 
@@ -11,9 +12,10 @@ editor, run/output panel, and streaming chat.
 - [Ollama for Windows](https://ollama.com/download/windows)
 - Enough disk/RAM for `llama3.1:latest`
 
-Ollama is intentionally a separately installed dependency. Senpai_Bot locates the official
-`ollama.exe`, launches `ollama serve` with no console window when needed, and pulls the model
-through Ollama's local API. It does not download or execute opaque installers.
+Ollama is intentionally a separately installed dependency. Senpai_Bot locates `ollama.exe`,
+launches `ollama serve` with no console window when needed, binds it to `127.0.0.1:11434`, and
+disables Ollama cloud features for the process it starts. Model pulls use the local API only after
+an explicit user confirmation. It does not download or execute opaque installers.
 
 ## Run from source
 
@@ -49,12 +51,10 @@ prompt plus verbatim sections selected from the contract for the current request
 repeating roughly 205 KB on every exchange while keeping the source contract authoritative.
 No application-level response filter or persona rewriter is installed.
 
-At launch, version 0.0.4 and newer query the repository's latest GitHub Release in a background
-thread. The check remains silent when current or offline. When a newer semantic version exists,
-the app asks for confirmation, downloads the versioned installer and its SHA-256 sidecar from
-approved GitHub HTTPS hosts, verifies the checksum, and launches Inno Setup silently. Unsaved
-editors are guarded before the app exits, and the installer relaunches Senpai_Bot when complete.
-The Help menu also exposes an on-demand check that confirms when the installed version is current.
+Update checks on launch default to off and can be changed from the Help menu. The Help menu retains
+an explicit on-demand check against the repository's latest GitHub Release. A newer semantic
+version can open only the exact `DevilMedlar/python-recall-training` release page. Installer
+download and execution have been removed until publisher-signature verification is implemented.
 Version 0.0.4 is development source only. No public application release or public release workflow
 is installed. The obsolete `update.json` channel has been removed, so installed 0.0.3 copies cannot
 be directed to an unpublished development build. A future distribution channel must be explicitly
@@ -69,7 +69,12 @@ Visual Studio Code feature parity.
 The initial editor tab is the bundled `WHATS_NEW.md` release brief. Chat includes an Ollama model
 picker populated from the local `/api/tags` endpoint, a refresh action, and an explicit pull flow.
 If the configured model is unavailable but other local models exist, the app selects an installed
-model instead of forcing a `llama3.1:latest` download. If no models exist, it bootstraps the current
-default through Ollama. Ollama itself remains separately maintained because its Windows installer
-tracks hardware/runtime compatibility; model weights are deliberately not duplicated inside every
-Senpai_Bot application update.
+model instead of forcing a `llama3.1:latest` download. If no models exist, chat remains disabled
+until the user explicitly approves the suggested model or chooses Pull model. Ollama itself remains
+separately maintained because its Windows installer tracks hardware/runtime compatibility; model
+weights are deliberately not duplicated inside every Senpai_Bot application update. Cloud-suffixed
+Ollama models are excluded from discovery and rejected by the pull and chat paths.
+
+Only one Senpai_Bot application instance can run per user session. A second launch exits after an
+already-running notice. When Senpai_Bot starts its own Ollama server, that exact owned process is
+stopped on application exit; a server that was already running is left untouched.

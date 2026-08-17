@@ -1,18 +1,16 @@
-# Senpai_Bot 0.0.4 — Automatic Updates
+# Senpai_Bot 0.0.4 — Safety Baseline
 
 Welcome to the first substantial Senpai_Bot IDE build.
 
 > Development preview: no public application-release channel is enabled.
 
-## Automatic application updates
+## Application updates
 
-- Senpai_Bot checks the latest published GitHub Release during launch.
-- A newer version presents a one-click update confirmation.
-- The installer and its companion SHA-256 file download directly from the GitHub Release.
-- Senpai_Bot verifies the complete installer before Windows is allowed to run it.
-- The verified installer updates the application silently and reopens Senpai_Bot.
-- Offline startup remains unaffected, and an update is never installed without confirmation.
-- **Help → Check for updates…** provides an immediate visible status whenever you want to test it.
+- Update checks on launch are off by default and can be toggled from the Help menu.
+- **Help → Check for updates…** remains available for an explicit manual check.
+- Only the exact `DevilMedlar/python-recall-training` GitHub Release page is accepted.
+- Installer download and execution are disabled until publisher-signature verification exists.
+- No public application release or automated release workflow is enabled.
 
 ## New features
 
@@ -24,7 +22,7 @@ Welcome to the first substantial Senpai_Bot IDE build.
 - IDE toolbar, common editing shortcuts, cursor position, encoding, and indentation status.
 - Ollama model picker that discovers locally installed models.
 - Model refresh and explicit model-pull controls with visible progress.
-- Launch-time and on-demand application update checks through verified GitHub Releases.
+- A native one-instance application guard that rejects a second launch with a clear notice.
 
 ## Fixes
 
@@ -35,6 +33,9 @@ Welcome to the first substantial Senpai_Bot IDE build.
 - Application, installer, and package versions are checked for consistency.
 - The obsolete update manifest was removed so development source cannot be mistaken for a
   published application release.
+- Chat is locked to `127.0.0.1:11434`; saved settings cannot redirect it to a remote endpoint.
+- Missing models are never downloaded silently and chat stays disabled until a model is approved.
+- Ollama is stopped on exit only when the current Senpai_Bot process launched it.
 
 ## Dependencies and models
 

@@ -5,13 +5,22 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 
+LOCAL_OLLAMA_URL = "http://127.0.0.1:11434"
+
+
 @dataclass
 class Settings:
     model: str = "llama3.1:latest"
-    ollama_url: str = "http://127.0.0.1:11434"
     temperature: float = 0.8
     max_history_messages: int = 24
     workspace: str = ""
+    check_updates_on_launch: bool = False
+    model_setup_prompted: bool = False
+
+    @property
+    def ollama_url(self) -> str:
+        """Return the only AI endpoint Senpai_Bot is permitted to use."""
+        return LOCAL_OLLAMA_URL
 
     @classmethod
     def load(cls, path: Path) -> "Settings":
