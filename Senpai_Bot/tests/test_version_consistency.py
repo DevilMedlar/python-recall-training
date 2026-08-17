@@ -18,3 +18,9 @@ def test_all_release_versions_match():
     assert {project["project"]["version"], manifest["version"], installer_version.group(1), __version__} == {
         "0.0.3"
     }
+
+
+def test_whats_new_is_bundled_by_pyinstaller():
+    spec = (ROOT / "Senpai_Bot.spec").read_text(encoding="utf-8")
+    assert 'root / "WHATS_NEW.md"' in spec
+    assert (ROOT / "WHATS_NEW.md").is_file()

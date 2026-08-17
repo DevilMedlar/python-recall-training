@@ -9,6 +9,7 @@ a = Analysis(
         (str(root / "README.md"), "."),
         (str(root / "SECURITY.md"), "."),
         (str(root / "rules.md"), "."),
+        (str(root / "WHATS_NEW.md"), "."),
         (str(root / "assets" / "senpai_bot.ico"), "assets"),
     ],
     hiddenimports=[],

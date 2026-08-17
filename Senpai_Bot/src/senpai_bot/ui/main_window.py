@@ -8,7 +8,7 @@ from pathlib import Path
 from PySide6.QtCore import QDir, QThreadPool, Qt, QUrl
 from PySide6.QtGui import QAction, QCloseEvent, QDesktopServices, QIcon, QKeySequence, QShortcut, QTextCursor
 from PySide6.QtWidgets import (
-    QFileDialog, QFileSystemModel, QHBoxLayout, QInputDialog, QLabel, QMainWindow,
+    QComboBox, QFileDialog, QFileSystemModel, QHBoxLayout, QInputDialog, QLabel, QMainWindow,
     QMenu, QMessageBox, QPlainTextEdit, QPushButton, QSplitter, QTabWidget,
     QTextBrowser, QToolBar, QTreeView, QVBoxLayout, QWidget,
 )
@@ -41,7 +41,7 @@ class MainWindow(QMainWindow):
         self._build_ui()
         self._build_menu()
         self._build_toolbar()
-        self.new_file()
+        self.open_whats_new()
         if settings.workspace and Path(settings.workspace).is_dir():
             self.open_workspace(Path(settings.workspace))
         self._start_runtime()
@@ -99,6 +99,19 @@ class MainWindow(QMainWindow):
 
         chat_panel = QWidget()
         chat_layout = QVBoxLayout(chat_panel)
+        model_controls = QHBoxLayout()
+        model_controls.addWidget(QLabel("MODEL"))
+        self.model_combo = QComboBox()
+        self.model_combo.setMinimumWidth(180)
+        self.model_combo.addItem(self.settings.model)
+        self.model_combo.currentTextChanged.connect(self.select_model)
+        self.refresh_models_button = QPushButton("Refresh")
+        self.pull_model_button = QPushButton("Pull model…")
+        self.refresh_models_button.clicked.connect(self.refresh_models)
+        self.pull_model_button.clicked.connect(self.pull_model)
+        model_controls.addWidget(self.model_combo, 1)
+        model_controls.addWidget(self.refresh_models_button)
+        model_controls.addWidget(self.pull_model_button)
         self.runtime_status = QLabel("Starting local AI…")
         self.chat_view = QTextBrowser()
         self.chat_input = QPlainTextEdit()
@@ -114,6 +127,7 @@ class MainWindow(QMainWindow):
         controls.addWidget(self.clear_chat_button)
         controls.addStretch()
         controls.addWidget(self.send_button)
+        chat_layout.addLayout(model_controls)
         chat_layout.addWidget(self.runtime_status)
         chat_layout.addWidget(self.chat_view)
         chat_layout.addWidget(self.chat_input)
@@ -195,6 +209,7 @@ class MainWindow(QMainWindow):
     def _start_runtime(self) -> None:
         task = Task(self._prepare_ollama)
         task.signals.status.connect(self.runtime_status.setText)
+        task.signals.result.connect(self._models_ready)
         task.signals.error.connect(self._runtime_error)
         task.signals.finished.connect(lambda: self.send_button.setEnabled(self.ollama.is_ready()))
         self.send_button.setEnabled(False)
@@ -203,13 +218,103 @@ class MainWindow(QMainWindow):
     def _prepare_ollama(self, signals):
         signals.status.emit("Starting Ollama quietly…")
         self.ollama.start_hidden()
-        signals.status.emit(f"Checking {self.settings.model}…")
-        self.ollama.ensure_model(signals.status.emit)
-        signals.status.emit(f"Local AI ready · {self.settings.model}")
+        models = self.ollama.installed_models()
+        if not models:
+            signals.status.emit(f"No local models found; downloading {self.settings.model}…")
+            self.ollama.ensure_model(signals.status.emit)
+            models = self.ollama.installed_models()
+        signals.status.emit("Local AI ready")
+        return sorted(models, key=str.casefold)
 
     def _runtime_error(self, message: str) -> None:
         self.runtime_status.setText("Local AI unavailable")
+        if "not installed" in message.lower() or "path" in message.lower():
+            choice = QMessageBox.question(
+                self,
+                "Ollama is required",
+                f"{message}\n\nOpen the official Ollama for Windows download page?",
+                QMessageBox.Open | QMessageBox.Cancel,
+                QMessageBox.Open,
+            )
+            if choice == QMessageBox.Open:
+                QDesktopServices.openUrl(QUrl("https://ollama.com/download/windows"))
+            return
         QMessageBox.critical(self, "Senpai_Bot could not start Ollama", message)
+
+    def _models_ready(self, models: object) -> None:
+        if not isinstance(models, list):
+            return
+        current = self.settings.model
+        selected = current if current in models else (models[0] if models else current)
+        self.model_combo.blockSignals(True)
+        self.model_combo.clear()
+        self.model_combo.addItems(models)
+        if not models:
+            self.model_combo.addItem(current)
+        self.model_combo.setCurrentText(selected)
+        self.model_combo.blockSignals(False)
+        if selected != current:
+            self.select_model(selected)
+        else:
+            self.runtime_status.setText(f"Local AI ready · {selected}")
+
+    def select_model(self, model: str) -> None:
+        if not model or model == self.settings.model:
+            return
+        self.settings.model = model
+        self.ollama.model = model
+        self.settings.save(self.settings_path)
+        self.chat_session.clear()
+        self.chat_view.append(f"<p><i>Model changed to {html.escape(model)}. New chat context started.</i></p>")
+        self.runtime_status.setText(f"Local AI ready · {model}")
+
+    def refresh_models(self) -> None:
+        self.refresh_models_button.setEnabled(False)
+        task = Task(self._refresh_models_task)
+        task.signals.result.connect(self._models_ready)
+        task.signals.error.connect(lambda message: self.runtime_status.setText(f"Model refresh failed: {message}"))
+        task.signals.finished.connect(lambda: self.refresh_models_button.setEnabled(True))
+        self.thread_pool.start(task)
+
+    def _refresh_models_task(self, signals):
+        return sorted(self.ollama.installed_models(), key=str.casefold)
+
+    def pull_model(self) -> None:
+        model, accepted = QInputDialog.getText(
+            self,
+            "Pull Ollama model",
+            "Exact model name (models may require several GB):",
+            text="",
+        )
+        model = model.strip()
+        if not accepted or not model:
+            return
+        choice = QMessageBox.question(
+            self,
+            "Download model",
+            f"Download {model} through the local Ollama service?\n\nModel downloads can be very large.",
+            QMessageBox.Yes | QMessageBox.Cancel,
+            QMessageBox.Cancel,
+        )
+        if choice != QMessageBox.Yes:
+            return
+        self.pull_model_button.setEnabled(False)
+        task = Task(self._pull_model_task, model)
+        task.signals.status.connect(self.runtime_status.setText)
+        task.signals.error.connect(lambda message: QMessageBox.critical(self, "Model download failed", message))
+        task.signals.result.connect(lambda _value, selected=model: self._model_pulled(selected))
+        task.signals.finished.connect(lambda: self.pull_model_button.setEnabled(True))
+        self.thread_pool.start(task)
+
+    def _pull_model_task(self, signals, model: str):
+        self.ollama.pull_model(model, signals.status.emit)
+
+    def _model_pulled(self, model: str) -> None:
+        if self.model_combo.findText(model) < 0:
+            self.model_combo.addItem(model)
+        self.refresh_models()
+        self.model_combo.setCurrentText(model)
+        self.runtime_status.setText(f"Model ready · {model}")
 
     def _start_update_check(self) -> None:
         task = Task(self._check_update_task)
@@ -381,6 +486,18 @@ class MainWindow(QMainWindow):
         chosen, _ = QFileDialog.getOpenFileName(self, "Open file", filter="Python (*.py);;All files (*)")
         if chosen:
             self.open_file(Path(chosen))
+
+    def open_whats_new(self) -> None:
+        path = self.contract.root / "WHATS_NEW.md"
+        if not path.is_file():
+            self.new_file()
+            return
+        editor = CodeEditor(path)
+        editor.load(path)
+        editor.setReadOnly(True)
+        editor.cursor_location_changed.connect(self._update_cursor_status)
+        self.tabs.addTab(editor, "WHATS_NEW.md")
+        self.tabs.setCurrentWidget(editor)
 
     def new_file(self) -> None:
         editor = CodeEditor()

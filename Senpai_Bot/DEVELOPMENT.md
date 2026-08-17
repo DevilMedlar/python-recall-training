@@ -59,3 +59,11 @@ highlighting, an explorer toolbar and guarded context actions, a persistent inte
 session with command history, terminal/output/problems tabs, common editing shortcuts, a main
 toolbar, and cursor/encoding status indicators. It is an IDE foundation, not a claim of full
 Visual Studio Code feature parity.
+
+The initial editor tab is the bundled `WHATS_NEW.md` release brief. Chat includes an Ollama model
+picker populated from the local `/api/tags` endpoint, a refresh action, and an explicit pull flow.
+If the configured model is unavailable but other local models exist, the app selects an installed
+model instead of forcing a `llama3.1:latest` download. If no models exist, it bootstraps the current
+default through Ollama. Ollama itself remains separately maintained because its Windows installer
+tracks hardware/runtime compatibility; model weights are deliberately not duplicated inside every
+Senpai_Bot application update.

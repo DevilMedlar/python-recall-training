@@ -64,10 +64,15 @@ class OllamaManager:
         models = self.installed_models()
         if self.model in models or self.model.removesuffix(":latest") in models:
             return
+        self.pull_model(self.model, progress)
+
+    def pull_model(self, model: str, progress: Callable[[str], None] | None = None) -> None:
+        if not model or any(character.isspace() for character in model):
+            raise OllamaError("Enter a valid Ollama model name without spaces.")
         with httpx.stream(
             "POST",
             f"{self.base_url}/api/pull",
-            json={"name": self.model, "stream": True},
+            json={"name": model, "stream": True},
             timeout=None,
         ) as response:
             response.raise_for_status()
