@@ -32,7 +32,9 @@ Welcome to the first substantial Senpai_Bot IDE build.
 - Unsaved editor tabs are protected when closing the tab or application.
 - Renaming an open file updates its editor tab path.
 - The installer now prevents concurrent duplicate setup instances.
-- Application, installer, package, and update-manifest versions are checked for consistency.
+- Application, installer, and package versions are checked for consistency.
+- The obsolete update manifest was removed so development source cannot be mistaken for a
+  published application release.
 
 ## Dependencies and models
 

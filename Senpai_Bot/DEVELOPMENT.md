@@ -55,9 +55,10 @@ the app asks for confirmation, downloads the versioned installer and its SHA-256
 approved GitHub HTTPS hosts, verifies the checksum, and launches Inno Setup silently. Unsaved
 editors are guarded before the app exits, and the installer relaunches Senpai_Bot when complete.
 The Help menu also exposes an on-demand check that confirms when the installed version is current.
-The legacy `update.json` manifest intentionally remains at version 0.0.3 so existing installations
-stay quiet while 0.0.4 is development source. No public release workflow is installed. A future
-distribution channel must be explicitly approved before it is enabled.
+Version 0.0.4 is development source only. No public application release or public release workflow
+is installed. The obsolete `update.json` channel has been removed, so installed 0.0.3 copies cannot
+be directed to an unpublished development build. A future distribution channel must be explicitly
+approved before it is enabled.
 
 Version 0.0.3 adds the first IDE-core interface: a numbered Python editor with current-line
 highlighting, an explorer toolbar and guarded context actions, a persistent integrated PowerShell

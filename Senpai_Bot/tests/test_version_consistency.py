@@ -1,4 +1,3 @@
-import json
 import re
 import tomllib
 from pathlib import Path
@@ -9,15 +8,12 @@ from senpai_bot import __version__
 ROOT = Path(__file__).parents[1]
 
 
-def test_all_release_versions_match():
+def test_application_versions_match():
     project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
-    manifest = json.loads((ROOT / "update.json").read_text(encoding="utf-8"))
     installer = (ROOT / "installer" / "Senpai_Bot.iss").read_text(encoding="utf-8")
     installer_version = re.search(r'#define MyAppVersion "([^"]+)"', installer)
     assert installer_version is not None
     assert {project["project"]["version"], installer_version.group(1), __version__} == {"0.0.4"}
-    # Keep installed 0.0.3 copies quiet until a distribution channel is explicitly approved.
-    assert manifest["version"] == "0.0.3"
 
 
 def test_whats_new_is_bundled_by_pyinstaller():
