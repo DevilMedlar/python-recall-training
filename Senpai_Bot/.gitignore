@@ -6,3 +6,13 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
+
+# Local secrets and user data
+.env
+.env.*
+!.env.example
+settings.json
+state.json
+chat_history*.json
+*.local.json
+*.log
