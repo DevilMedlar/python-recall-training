@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import html
-import shutil
 import subprocess
 from pathlib import Path
 
@@ -16,27 +15,45 @@ from PySide6.QtWidgets import (
 from .. import __version__
 from ..chat import ChatSession
 from ..contract import ContractStore
+from ..dependencies import detect_python
 from ..ollama import OllamaManager
+from ..ownership import OwnershipManifest
 from ..settings import Settings
 from ..update import check_for_update
 from ..workers import Task
 from .editor import CodeEditor
+from .setup_dialog import SetupDialog
 from .terminal import TerminalPanel
 
 
 class MainWindow(QMainWindow):
-    def __init__(self, contract: ContractStore, settings: Settings, settings_path: Path, icon_path: Path):
+    def __init__(
+        self,
+        contract: ContractStore,
+        settings: Settings,
+        settings_path: Path,
+        manifest: OwnershipManifest,
+        data_path: Path,
+        icon_path: Path,
+    ):
         super().__init__()
         self.contract = contract
         self.settings = settings
         self.settings_path = settings_path
-        self.ollama = OllamaManager(settings.ollama_url, settings.model)
+        self.manifest = manifest
+        self.data_path = data_path
+        self.ollama = OllamaManager(
+            settings.ollama_url,
+            settings.model,
+            settings.ollama_executable,
+        )
         self.chat_session = ChatSession(contract, settings.max_history_messages)
         self.thread_pool = QThreadPool.globalInstance()
         self._assistant_buffer = ""
         self._busy = False
         self._available_models: set[str] = set()
         self._update_check_in_progress = False
+        self._runtime_start_in_progress = False
         self._runtime_shutdown = False
         self.setWindowTitle("Senpai_Bot")
         self.setWindowIcon(QIcon(str(icon_path)))
@@ -47,9 +64,7 @@ class MainWindow(QMainWindow):
         self.open_whats_new()
         if settings.workspace and Path(settings.workspace).is_dir():
             self.open_workspace(Path(settings.workspace))
-        self._start_runtime()
-        if self.settings.check_updates_on_launch:
-            self._start_update_check()
+        QTimer.singleShot(0, self._initial_setup)
 
     def _build_ui(self) -> None:
         root = QSplitter(Qt.Horizontal)
@@ -110,9 +125,9 @@ class MainWindow(QMainWindow):
         self.model_combo.addItem(self.settings.model)
         self.model_combo.currentTextChanged.connect(self.select_model)
         self.refresh_models_button = QPushButton("Refresh")
-        self.pull_model_button = QPushButton("Pull model…")
+        self.pull_model_button = QPushButton("Models & setup…")
         self.refresh_models_button.clicked.connect(self.refresh_models)
-        self.pull_model_button.clicked.connect(self.pull_model)
+        self.pull_model_button.clicked.connect(self.open_setup_dialog)
         model_controls.addWidget(self.model_combo, 1)
         model_controls.addWidget(self.refresh_models_button)
         model_controls.addWidget(self.pull_model_button)
@@ -186,6 +201,12 @@ class MainWindow(QMainWindow):
         terminal_action.triggered.connect(self.focus_terminal)
         view_menu.addAction(terminal_action)
 
+        tools_menu = self.menuBar().addMenu("&Tools")
+        setup_action = QAction("Setup & Dependencies…", self)
+        setup_action.setShortcut("Ctrl+Shift+D")
+        setup_action.triggered.connect(self.open_setup_dialog)
+        tools_menu.addAction(setup_action)
+
         help_menu = self.menuBar().addMenu("&Help")
         self.update_action = QAction("Check for updates…", self)
         self.update_action.triggered.connect(lambda: self._start_update_check(announce_current=True))
@@ -220,13 +241,47 @@ class MainWindow(QMainWindow):
         self.bottom_tabs.setCurrentWidget(self.terminal)
         self.terminal.input.setFocus()
 
+    def _initial_setup(self) -> None:
+        if not self.settings.setup_wizard_seen:
+            self.open_setup_dialog(first_run=True)
+        else:
+            self._start_runtime()
+        if self.settings.check_updates_on_launch:
+            self._start_update_check()
+
+    def _reload_dependency_settings(self) -> None:
+        self.ollama.executable = self.settings.ollama_executable
+        self.ollama.model = self.settings.model
+
+    def open_setup_dialog(self, _checked: bool = False, first_run: bool = False) -> None:
+        dialog = SetupDialog(
+            settings=self.settings,
+            settings_path=self.settings_path,
+            manifest=self.manifest,
+            data_path=self.data_path,
+            ollama_manager=self.ollama,
+            first_run=first_run,
+            parent=self,
+        )
+        dialog.environment_changed.connect(self._reload_dependency_settings)
+        dialog.exec()
+        self._reload_dependency_settings()
+        self._start_runtime()
+
     def _start_runtime(self) -> None:
+        if self._runtime_start_in_progress or self._runtime_shutdown:
+            return
+        self._runtime_start_in_progress = True
         task = Task(self._prepare_ollama)
         task.signals.status.connect(self.runtime_status.setText)
         task.signals.result.connect(self._models_ready)
         task.signals.error.connect(self._runtime_error)
+        task.signals.finished.connect(self._runtime_start_finished)
         self.send_button.setEnabled(False)
         self.thread_pool.start(task)
+
+    def _runtime_start_finished(self) -> None:
+        self._runtime_start_in_progress = False
 
     def _prepare_ollama(self, signals):
         signals.status.emit("Starting Ollama quietly…")
@@ -236,20 +291,9 @@ class MainWindow(QMainWindow):
         return sorted(models, key=str.casefold)
 
     def _runtime_error(self, message: str) -> None:
-        self.runtime_status.setText("Local AI unavailable")
+        self.runtime_status.setText("Local AI unavailable · Tools → Setup & Dependencies")
         self.send_button.setEnabled(False)
-        if "not installed" in message.lower() or "path" in message.lower():
-            choice = QMessageBox.question(
-                self,
-                "Ollama is required",
-                f"{message}\n\nOpen the official Ollama for Windows download page?",
-                QMessageBox.Open | QMessageBox.Cancel,
-                QMessageBox.Open,
-            )
-            if choice == QMessageBox.Open:
-                QDesktopServices.openUrl(QUrl("https://ollama.com/download/windows"))
-            return
-        QMessageBox.critical(self, "Senpai_Bot could not start Ollama", message)
+        self.statusBar().showMessage(message, 8000)
 
     def _models_ready(self, models: object) -> None:
         if not isinstance(models, list):
@@ -266,32 +310,15 @@ class MainWindow(QMainWindow):
         self.model_combo.blockSignals(False)
         if not models:
             self.send_button.setEnabled(False)
-            self.runtime_status.setText("No local model installed · chat disabled")
-            if not self.settings.model_setup_prompted:
-                self.settings.model_setup_prompted = True
-                self.settings.save(self.settings_path)
-                QTimer.singleShot(0, self._offer_default_model_download)
+            self.runtime_status.setText(
+                "No local model installed · chat disabled · Tools → Setup & Dependencies"
+            )
             return
         self.send_button.setEnabled(True)
         if selected != current:
             self.select_model(selected)
         else:
             self.runtime_status.setText(f"Local AI ready · {selected}")
-
-    def _offer_default_model_download(self) -> None:
-        if self._available_models:
-            return
-        choice = QMessageBox.question(
-            self,
-            "Local model required",
-            f"Senpai chat needs a local Ollama model.\n\n"
-            f"Download {self.settings.model} now? Model downloads can require several GB, and "
-            "nothing will be downloaded unless you choose Yes.",
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.No,
-        )
-        if choice == QMessageBox.Yes:
-            self._begin_model_pull(self.settings.model)
 
     def select_model(self, model: str) -> None:
         if not model or model == self.settings.model:
@@ -313,50 +340,6 @@ class MainWindow(QMainWindow):
 
     def _refresh_models_task(self, signals):
         return sorted(self.ollama.installed_models(), key=str.casefold)
-
-    def pull_model(self) -> None:
-        model, accepted = QInputDialog.getText(
-            self,
-            "Pull Ollama model",
-            "Exact model name (models may require several GB):",
-            text="",
-        )
-        model = model.strip()
-        if not accepted or not model:
-            return
-        choice = QMessageBox.question(
-            self,
-            "Download model",
-            f"Download {model} through the local Ollama service?\n\nModel downloads can be very large.",
-            QMessageBox.Yes | QMessageBox.Cancel,
-            QMessageBox.Cancel,
-        )
-        if choice != QMessageBox.Yes:
-            return
-        self._begin_model_pull(model)
-
-    def _begin_model_pull(self, model: str) -> None:
-        self.pull_model_button.setEnabled(False)
-        self.runtime_status.setText(f"Preparing to download {model}…")
-        task = Task(self._pull_model_task, model)
-        task.signals.status.connect(self.runtime_status.setText)
-        task.signals.error.connect(lambda message: QMessageBox.critical(self, "Model download failed", message))
-        task.signals.result.connect(lambda _value, selected=model: self._model_pulled(selected))
-        task.signals.finished.connect(lambda: self.pull_model_button.setEnabled(True))
-        self.thread_pool.start(task)
-
-    def _pull_model_task(self, signals, model: str):
-        self.ollama.pull_model(model, signals.status.emit)
-
-    def _model_pulled(self, model: str) -> None:
-        if self.model_combo.findText(model) < 0:
-            self.model_combo.addItem(model)
-        self.settings.model = model
-        self.ollama.model = model
-        self.settings.save(self.settings_path)
-        self.refresh_models()
-        self.model_combo.setCurrentText(model)
-        self.runtime_status.setText(f"Model ready · {model}")
 
     def _set_update_checks_on_launch(self, enabled: bool) -> None:
         self.settings.check_updates_on_launch = enabled
@@ -673,8 +656,22 @@ class MainWindow(QMainWindow):
             return
         if not self.save_current() or editor.path is None:
             return
-        interpreter = shutil.which("python") or shutil.which("python3")
-        command = [interpreter, str(editor.path)] if interpreter else ["py", "-3", str(editor.path)]
+        python = detect_python(self.settings.python_executable)
+        if not python.ready:
+            choice = QMessageBox.question(
+                self,
+                "Python runtime required",
+                f"{python.detail}\n\nOpen Setup & Dependencies now?",
+                QMessageBox.Open | QMessageBox.Cancel,
+                QMessageBox.Open,
+            )
+            if choice == QMessageBox.Open:
+                self.open_setup_dialog()
+            return
+        if self.settings.python_executable != python.path:
+            self.settings.python_executable = python.path
+            self.settings.save(self.settings_path)
+        command = [python.path, str(editor.path)]
         self.output.appendPlainText("> " + " ".join(command))
         self.bottom_tabs.setCurrentWidget(self.output)
         task = Task(self._run_python_task, command, editor.path.parent)
