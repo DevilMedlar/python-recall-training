@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.0.3",
   "url": "https://github.com/DevilMedlar/python-recall-training/tree/main/Senpai_Bot",
-  "notes": "Adds writable untitled editor tabs and launch-time update checks."
+  "notes": "Adds the first full IDE-core interface, integrated terminal, line numbers, and explorer actions."
 }

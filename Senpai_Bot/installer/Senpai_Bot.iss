@@ -1,5 +1,5 @@
 #define MyAppName "Senpai_Bot"
-#define MyAppVersion "0.1.1"
+#define MyAppVersion "0.0.3"
 #define MyAppPublisher "DevilMedlar"
 #define MyAppExeName "Senpai_Bot.exe"
 
@@ -17,6 +17,9 @@ Compression=lzma2
 SolidCompression=yes
 WizardStyle=modern
 PrivilegesRequired=lowest
+SetupMutex=Senpai_Bot_Setup_Mutex
+CloseApplications=yes
+RestartApplications=no
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 

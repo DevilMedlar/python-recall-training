@@ -8,9 +8,9 @@ from pathlib import Path
 from PySide6.QtCore import QDir, QThreadPool, Qt, QUrl
 from PySide6.QtGui import QAction, QCloseEvent, QDesktopServices, QIcon, QKeySequence, QShortcut, QTextCursor
 from PySide6.QtWidgets import (
-    QFileDialog, QFileSystemModel, QHBoxLayout, QLabel, QMainWindow, QMessageBox,
-    QPlainTextEdit, QPushButton, QSplitter, QTabWidget, QTextBrowser, QTreeView,
-    QVBoxLayout, QWidget,
+    QFileDialog, QFileSystemModel, QHBoxLayout, QInputDialog, QLabel, QMainWindow,
+    QMenu, QMessageBox, QPlainTextEdit, QPushButton, QSplitter, QTabWidget,
+    QTextBrowser, QToolBar, QTreeView, QVBoxLayout, QWidget,
 )
 
 from .. import __version__
@@ -21,6 +21,7 @@ from ..settings import Settings
 from ..update import check_for_update
 from ..workers import Task
 from .editor import CodeEditor
+from .terminal import TerminalPanel
 
 
 class MainWindow(QMainWindow):
@@ -39,6 +40,7 @@ class MainWindow(QMainWindow):
         self.resize(1500, 920)
         self._build_ui()
         self._build_menu()
+        self._build_toolbar()
         self.new_file()
         if settings.workspace and Path(settings.workspace).is_dir():
             self.open_workspace(Path(settings.workspace))
@@ -52,8 +54,28 @@ class MainWindow(QMainWindow):
         self.tree = QTreeView()
         self.tree.setModel(self.file_model)
         self.tree.doubleClicked.connect(self._tree_open)
+        self.tree.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.tree.customContextMenuRequested.connect(self._show_explorer_menu)
         for column in range(1, 4):
             self.tree.hideColumn(column)
+
+        explorer = QWidget()
+        explorer_layout = QVBoxLayout(explorer)
+        explorer_layout.setContentsMargins(4, 4, 4, 4)
+        explorer_header = QHBoxLayout()
+        explorer_header.addWidget(QLabel("EXPLORER"))
+        explorer_header.addStretch()
+        open_folder_button = QPushButton("Open folder")
+        new_file_button = QPushButton("+ File")
+        new_folder_button = QPushButton("+ Folder")
+        open_folder_button.clicked.connect(self.choose_workspace)
+        new_file_button.clicked.connect(self.create_explorer_file)
+        new_folder_button.clicked.connect(self.create_explorer_folder)
+        explorer_header.addWidget(open_folder_button)
+        explorer_header.addWidget(new_file_button)
+        explorer_header.addWidget(new_folder_button)
+        explorer_layout.addLayout(explorer_header)
+        explorer_layout.addWidget(self.tree)
 
         center = QSplitter(Qt.Vertical)
         self.tabs = QTabWidget()
@@ -62,8 +84,17 @@ class MainWindow(QMainWindow):
         self.output = QPlainTextEdit()
         self.output.setReadOnly(True)
         self.output.setMaximumBlockCount(4000)
+        terminal_root = Path(self.settings.workspace) if self.settings.workspace else Path.home()
+        self.terminal = TerminalPanel(terminal_root)
+        self.problems = QPlainTextEdit()
+        self.problems.setReadOnly(True)
+        self.problems.setPlainText("No problems detected. Static diagnostics will appear here in a later release.")
+        self.bottom_tabs = QTabWidget()
+        self.bottom_tabs.addTab(self.terminal, "TERMINAL")
+        self.bottom_tabs.addTab(self.output, "OUTPUT")
+        self.bottom_tabs.addTab(self.problems, "PROBLEMS")
         center.addWidget(self.tabs)
-        center.addWidget(self.output)
+        center.addWidget(self.bottom_tabs)
         center.setSizes([700, 180])
 
         chat_panel = QWidget()
@@ -88,12 +119,16 @@ class MainWindow(QMainWindow):
         chat_layout.addWidget(self.chat_input)
         chat_layout.addLayout(controls)
 
-        root.addWidget(self.tree)
+        root.addWidget(explorer)
         root.addWidget(center)
         root.addWidget(chat_panel)
         root.setSizes([230, 800, 470])
         self.setCentralWidget(root)
         self.statusBar().showMessage("Ready")
+        self.cursor_status = QLabel("Ln 1, Col 1")
+        self.encoding_status = QLabel("UTF-8  ·  Spaces: 4  ·  Python")
+        self.statusBar().addPermanentWidget(self.cursor_status)
+        self.statusBar().addPermanentWidget(self.encoding_status)
 
     def _build_menu(self) -> None:
         file_menu = self.menuBar().addMenu("&File")
@@ -112,6 +147,50 @@ class MainWindow(QMainWindow):
         run_action.setShortcut("F5")
         run_action.triggered.connect(self.run_current)
         self.menuBar().addAction(run_action)
+
+        edit_menu = self.menuBar().addMenu("&Edit")
+        for label, shortcut, method in (
+            ("Undo", "Ctrl+Z", "undo"),
+            ("Redo", "Ctrl+Y", "redo"),
+            ("Cut", "Ctrl+X", "cut"),
+            ("Copy", "Ctrl+C", "copy"),
+            ("Paste", "Ctrl+V", "paste"),
+            ("Select all", "Ctrl+A", "selectAll"),
+        ):
+            action = QAction(label, self)
+            action.setShortcut(shortcut)
+            action.triggered.connect(lambda _checked=False, name=method: self._editor_command(name))
+            edit_menu.addAction(action)
+
+        view_menu = self.menuBar().addMenu("&View")
+        terminal_action = QAction("Focus terminal", self)
+        terminal_action.setShortcut("Ctrl+`")
+        terminal_action.triggered.connect(self.focus_terminal)
+        view_menu.addAction(terminal_action)
+
+    def _build_toolbar(self) -> None:
+        toolbar = QToolBar("Main", self)
+        toolbar.setMovable(False)
+        self.addToolBar(toolbar)
+        for label, callback in (
+            ("New", self.new_file),
+            ("Open Folder", self.choose_workspace),
+            ("Save", self.save_current),
+            ("▶ Run", self.run_current),
+            (">_ Terminal", self.focus_terminal),
+        ):
+            action = QAction(label, self)
+            action.triggered.connect(callback)
+            toolbar.addAction(action)
+
+    def _editor_command(self, method: str) -> None:
+        editor = self.current_editor()
+        if editor:
+            getattr(editor, method)()
+
+    def focus_terminal(self) -> None:
+        self.bottom_tabs.setCurrentWidget(self.terminal)
+        self.terminal.input.setFocus()
 
     def _start_runtime(self) -> None:
         task = Task(self._prepare_ollama)
@@ -166,7 +245,137 @@ class MainWindow(QMainWindow):
         self.tree.setRootIndex(index)
         self.settings.workspace = str(path)
         self.settings.save(self.settings_path)
+        self.terminal.set_working_directory(path)
         self.statusBar().showMessage(f"Workspace: {path}")
+
+    def workspace_root(self) -> Path | None:
+        path = Path(self.settings.workspace) if self.settings.workspace else None
+        return path if path and path.is_dir() else None
+
+    def selected_explorer_path(self) -> Path | None:
+        index = self.tree.currentIndex()
+        if not index.isValid():
+            return None
+        return Path(self.file_model.filePath(index))
+
+    def explorer_target_directory(self) -> Path | None:
+        selected = self.selected_explorer_path()
+        if selected:
+            return selected if selected.is_dir() else selected.parent
+        return self.workspace_root()
+
+    def _require_explorer_directory(self) -> Path | None:
+        directory = self.explorer_target_directory()
+        if directory is None:
+            QMessageBox.information(self, "Open a folder", "Open a workspace folder before creating files or folders.")
+        return directory
+
+    @staticmethod
+    def _valid_child_name(name: str) -> bool:
+        return bool(name) and Path(name).name == name and name not in {".", ".."}
+
+    def create_explorer_file(self) -> None:
+        directory = self._require_explorer_directory()
+        if directory is None:
+            return
+        name, accepted = QInputDialog.getText(self, "New file", "File name:", text="untitled.py")
+        if not accepted:
+            return
+        if not self._valid_child_name(name):
+            QMessageBox.warning(self, "Invalid file name", "Enter one file name without path separators.")
+            return
+        destination = directory / name
+        if destination.exists():
+            QMessageBox.warning(self, "Already exists", f"{destination.name} already exists.")
+            return
+        destination.write_text("", encoding="utf-8")
+        self.open_file(destination)
+
+    def create_explorer_folder(self) -> None:
+        directory = self._require_explorer_directory()
+        if directory is None:
+            return
+        name, accepted = QInputDialog.getText(self, "New folder", "Folder name:")
+        if not accepted:
+            return
+        if not self._valid_child_name(name):
+            QMessageBox.warning(self, "Invalid folder name", "Enter one folder name without path separators.")
+            return
+        destination = directory / name
+        if destination.exists():
+            QMessageBox.warning(self, "Already exists", f"{destination.name} already exists.")
+            return
+        destination.mkdir()
+
+    def rename_explorer_item(self) -> None:
+        source = self.selected_explorer_path()
+        if source is None:
+            return
+        name, accepted = QInputDialog.getText(self, "Rename", "New name:", text=source.name)
+        if not accepted or name == source.name:
+            return
+        if not self._valid_child_name(name):
+            QMessageBox.warning(self, "Invalid name", "Enter one name without path separators.")
+            return
+        destination = source.with_name(name)
+        if destination.exists():
+            QMessageBox.warning(self, "Already exists", f"{destination.name} already exists.")
+            return
+        source_was_dir = source.is_dir()
+        source.rename(destination)
+        for index in range(self.tabs.count()):
+            editor = self.tabs.widget(index)
+            if not isinstance(editor, CodeEditor) or editor.path is None:
+                continue
+            if editor.path == source:
+                editor.path = destination
+                self._update_editor_title(editor)
+            elif source_was_dir and editor.path.is_relative_to(source):
+                editor.path = destination / editor.path.relative_to(source)
+                self._update_editor_title(editor)
+
+    def delete_explorer_item(self) -> None:
+        target = self.selected_explorer_path()
+        if target is None or target == self.workspace_root():
+            return
+        for index in range(self.tabs.count()):
+            editor = self.tabs.widget(index)
+            if not isinstance(editor, CodeEditor) or editor.path is None:
+                continue
+            affected = editor.path == target or (target.is_dir() and editor.path.is_relative_to(target))
+            if affected and editor.document().isModified():
+                QMessageBox.warning(
+                    self,
+                    "Unsaved file is open",
+                    f"Save or close {editor.path.name} before deleting {target.name}.",
+                )
+                return
+        choice = QMessageBox.warning(
+            self,
+            "Delete permanently",
+            f"Permanently delete {target.name}?\n\nThis does not use the Recycle Bin.",
+            QMessageBox.Yes | QMessageBox.Cancel,
+            QMessageBox.Cancel,
+        )
+        if choice != QMessageBox.Yes:
+            return
+        try:
+            if target.is_dir():
+                target.rmdir()
+            else:
+                target.unlink()
+        except OSError as exc:
+            QMessageBox.critical(self, "Could not delete", str(exc))
+
+    def _show_explorer_menu(self, position) -> None:
+        menu = QMenu(self)
+        menu.addAction("New file", self.create_explorer_file)
+        menu.addAction("New folder", self.create_explorer_folder)
+        if self.selected_explorer_path() is not None:
+            menu.addSeparator()
+            menu.addAction("Rename", self.rename_explorer_item)
+            menu.addAction("Delete", self.delete_explorer_item)
+        menu.exec(self.tree.viewport().mapToGlobal(position))
 
     def choose_file(self) -> None:
         chosen, _ = QFileDialog.getOpenFileName(self, "Open file", filter="Python (*.py);;All files (*)")
@@ -175,6 +384,7 @@ class MainWindow(QMainWindow):
 
     def new_file(self) -> None:
         editor = CodeEditor()
+        editor.cursor_location_changed.connect(self._update_cursor_status)
         editor.document().modificationChanged.connect(
             lambda _modified, current=editor: self._update_editor_title(current)
         )
@@ -225,6 +435,7 @@ class MainWindow(QMainWindow):
                 return
         editor = CodeEditor(path)
         editor.load(path)
+        editor.cursor_location_changed.connect(self._update_cursor_status)
         editor.document().modificationChanged.connect(
             lambda _modified, current=editor: self._update_editor_title(current)
         )
@@ -234,6 +445,9 @@ class MainWindow(QMainWindow):
     def current_editor(self) -> CodeEditor | None:
         widget = self.tabs.currentWidget()
         return widget if isinstance(widget, CodeEditor) else None
+
+    def _update_cursor_status(self, line: int, column: int) -> None:
+        self.cursor_status.setText(f"Ln {line}, Col {column}")
 
     def save_current(self) -> bool:
         editor = self.current_editor()
@@ -260,12 +474,12 @@ class MainWindow(QMainWindow):
         editor = self.current_editor()
         if not editor:
             return
-        self.save_current()
-        if editor.path is None:
+        if not self.save_current() or editor.path is None:
             return
         interpreter = shutil.which("python") or shutil.which("python3")
         command = [interpreter, str(editor.path)] if interpreter else ["py", "-3", str(editor.path)]
         self.output.appendPlainText("> " + " ".join(command))
+        self.bottom_tabs.setCurrentWidget(self.output)
         task = Task(self._run_python_task, command, editor.path.parent)
         task.signals.result.connect(self._show_run_result)
         task.signals.error.connect(lambda message: self.output.appendPlainText(message + "\n"))
@@ -330,5 +544,12 @@ class MainWindow(QMainWindow):
         self.chat_view.append("<p><i>New local session started.</i></p>")
 
     def closeEvent(self, event: QCloseEvent) -> None:
+        for index in range(self.tabs.count() - 1, -1, -1):
+            count = self.tabs.count()
+            self.close_editor(index)
+            if self.tabs.count() == count:
+                event.ignore()
+                return
         self.settings.save(self.settings_path)
+        self.terminal.stop()
         event.accept()

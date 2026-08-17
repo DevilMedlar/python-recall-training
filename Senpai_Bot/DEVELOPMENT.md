@@ -53,3 +53,9 @@ At launch, the app checks the repository's small `update.json` manifest in a bac
 It remains silent when current or offline. A newer semantic version produces an opt-in dialog
 that opens only an approved HTTPS GitHub page; the app never downloads or executes an update
 without the user's involvement.
+
+Version 0.0.3 adds the first IDE-core interface: a numbered Python editor with current-line
+highlighting, an explorer toolbar and guarded context actions, a persistent integrated PowerShell
+session with command history, terminal/output/problems tabs, common editing shortcuts, a main
+toolbar, and cursor/encoding status indicators. It is an IDE foundation, not a claim of full
+Visual Studio Code feature parity.

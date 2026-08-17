@@ -13,7 +13,11 @@ from .ui.main_window import MainWindow
 STYLE = """
 QWidget { background: #171923; color: #e8e9f2; }
 QMenuBar, QMenu, QStatusBar { background: #11131b; }
+QToolBar { background: #151821; border-bottom: 1px solid #323647; spacing: 6px; padding: 4px; }
 QPlainTextEdit, QTextBrowser, QTreeView { background: #10121a; border: 1px solid #323647; }
+QLineEdit { background: #10121a; border: 1px solid #454a60; border-radius: 3px; padding: 7px; }
+QTreeView::item { padding: 3px; }
+QTreeView::item:selected { background: #373d55; }
 QTabWidget::pane { border: 1px solid #323647; }
 QTabBar::tab { background: #222534; padding: 8px 14px; }
 QTabBar::tab:selected { background: #712d91; }

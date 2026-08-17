@@ -1,3 +1,3 @@
 """Senpai_Bot desktop application."""
 
-__version__ = "0.1.1"
+__version__ = "0.0.3"
