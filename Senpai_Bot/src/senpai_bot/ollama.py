@@ -20,7 +20,7 @@ class OllamaError(RuntimeError):
 
 
 class OllamaManager:
-    def __init__(self, base_url: str, model: str):
+    def __init__(self, base_url: str, model: str, executable: str = ""):
         normalized_url = base_url.rstrip("/")
         if normalized_url != LOCAL_OLLAMA_URL:
             raise OllamaError(
@@ -29,6 +29,7 @@ class OllamaManager:
             )
         self.base_url = normalized_url
         self.model = model
+        self.executable = executable
         self._owned_process: subprocess.Popen[bytes] | None = None
 
     def _client(self, timeout: float | None) -> httpx.Client:
@@ -48,7 +49,8 @@ class OllamaManager:
     def start_hidden(self, timeout: float = 20) -> bool:
         if self.is_ready():
             return False
-        executable = shutil.which("ollama")
+        configured = self.executable.strip()
+        executable = configured if configured and os.path.isfile(configured) else shutil.which("ollama")
         if not executable:
             raise OllamaError("Ollama is not installed or is not available on PATH.")
         flags = 0
