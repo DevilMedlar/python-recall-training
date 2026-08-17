@@ -10,12 +10,14 @@ LOCAL_OLLAMA_URL = "http://127.0.0.1:11434"
 
 @dataclass
 class Settings:
-    model: str = "llama3.1:latest"
+    model: str = "llama3.1:8b"
     temperature: float = 0.8
     max_history_messages: int = 24
     workspace: str = ""
     check_updates_on_launch: bool = False
-    model_setup_prompted: bool = False
+    setup_wizard_seen: bool = False
+    python_executable: str = ""
+    ollama_executable: str = ""
 
     @property
     def ollama_url(self) -> str:
