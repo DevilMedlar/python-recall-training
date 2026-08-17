@@ -1,0 +1,1 @@
+"""Dependency ownership manifest."""
