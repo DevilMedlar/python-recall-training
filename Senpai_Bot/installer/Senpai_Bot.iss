@@ -1,5 +1,5 @@
 #define MyAppName "Senpai_Bot"
-#define MyAppVersion "0.1.0"
+#define MyAppVersion "0.1.1"
 #define MyAppPublisher "DevilMedlar"
 #define MyAppExeName "Senpai_Bot.exe"
 

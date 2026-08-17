@@ -48,3 +48,8 @@ The three Markdown files remain unmodified. Every turn receives a bounded person
 prompt plus verbatim sections selected from the contract for the current request. This avoids
 repeating roughly 205 KB on every exchange while keeping the source contract authoritative.
 No application-level response filter or persona rewriter is installed.
+
+At launch, the app checks the repository's small `update.json` manifest in a background thread.
+It remains silent when current or offline. A newer semantic version produces an opt-in dialog
+that opens only an approved HTTPS GitHub page; the app never downloads or executes an update
+without the user's involvement.

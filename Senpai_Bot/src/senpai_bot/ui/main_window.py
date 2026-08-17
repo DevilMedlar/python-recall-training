@@ -5,18 +5,20 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from PySide6.QtCore import QDir, QThreadPool, Qt
-from PySide6.QtGui import QAction, QCloseEvent, QIcon, QKeySequence, QShortcut, QTextCursor
+from PySide6.QtCore import QDir, QThreadPool, Qt, QUrl
+from PySide6.QtGui import QAction, QCloseEvent, QDesktopServices, QIcon, QKeySequence, QShortcut, QTextCursor
 from PySide6.QtWidgets import (
     QFileDialog, QFileSystemModel, QHBoxLayout, QLabel, QMainWindow, QMessageBox,
     QPlainTextEdit, QPushButton, QSplitter, QTabWidget, QTextBrowser, QTreeView,
     QVBoxLayout, QWidget,
 )
 
+from .. import __version__
 from ..chat import ChatSession
 from ..contract import ContractStore
 from ..ollama import OllamaManager
 from ..settings import Settings
+from ..update import check_for_update
 from ..workers import Task
 from .editor import CodeEditor
 
@@ -37,9 +39,11 @@ class MainWindow(QMainWindow):
         self.resize(1500, 920)
         self._build_ui()
         self._build_menu()
+        self.new_file()
         if settings.workspace and Path(settings.workspace).is_dir():
             self.open_workspace(Path(settings.workspace))
         self._start_runtime()
+        self._start_update_check()
 
     def _build_ui(self) -> None:
         root = QSplitter(Qt.Horizontal)
@@ -54,7 +58,7 @@ class MainWindow(QMainWindow):
         center = QSplitter(Qt.Vertical)
         self.tabs = QTabWidget()
         self.tabs.setTabsClosable(True)
-        self.tabs.tabCloseRequested.connect(self.tabs.removeTab)
+        self.tabs.tabCloseRequested.connect(self.close_editor)
         self.output = QPlainTextEdit()
         self.output.setReadOnly(True)
         self.output.setMaximumBlockCount(4000)
@@ -94,6 +98,7 @@ class MainWindow(QMainWindow):
     def _build_menu(self) -> None:
         file_menu = self.menuBar().addMenu("&File")
         for label, shortcut, callback in (
+            ("New file", "Ctrl+N", self.new_file),
             ("Open workspace…", "Ctrl+K, Ctrl+O", self.choose_workspace),
             ("Open file…", "Ctrl+O", self.choose_file),
             ("Save", "Ctrl+S", self.save_current),
@@ -127,6 +132,30 @@ class MainWindow(QMainWindow):
         self.runtime_status.setText("Local AI unavailable")
         QMessageBox.critical(self, "Senpai_Bot could not start Ollama", message)
 
+    def _start_update_check(self) -> None:
+        task = Task(self._check_update_task)
+        task.signals.result.connect(self._show_available_update)
+        self.thread_pool.start(task)
+
+    @staticmethod
+    def _check_update_task(signals):
+        return check_for_update(__version__)
+
+    def _show_available_update(self, update: object) -> None:
+        if not isinstance(update, dict):
+            return
+        version = update.get("version", "")
+        notes = update.get("notes", "")
+        choice = QMessageBox.question(
+            self,
+            "Senpai_Bot update available",
+            f"Version {version} is available.\n\n{notes}\n\nOpen the verified GitHub update page?",
+            QMessageBox.Open | QMessageBox.Cancel,
+            QMessageBox.Open,
+        )
+        if choice == QMessageBox.Open:
+            QDesktopServices.openUrl(QUrl(update["url"]))
+
     def choose_workspace(self) -> None:
         chosen = QFileDialog.getExistingDirectory(self, "Open workspace")
         if chosen:
@@ -144,6 +173,45 @@ class MainWindow(QMainWindow):
         if chosen:
             self.open_file(Path(chosen))
 
+    def new_file(self) -> None:
+        editor = CodeEditor()
+        editor.document().modificationChanged.connect(
+            lambda _modified, current=editor: self._update_editor_title(current)
+        )
+        index = self.tabs.addTab(editor, "Untitled.py")
+        self.tabs.setCurrentIndex(index)
+        editor.setFocus()
+
+    def _update_editor_title(self, editor: CodeEditor) -> None:
+        index = self.tabs.indexOf(editor)
+        if index < 0:
+            return
+        name = editor.path.name if editor.path else "Untitled.py"
+        marker = "● " if editor.document().isModified() else ""
+        self.tabs.setTabText(index, marker + name)
+
+    def close_editor(self, index: int) -> None:
+        editor = self.tabs.widget(index)
+        if not isinstance(editor, CodeEditor):
+            self.tabs.removeTab(index)
+            return
+        if editor.document().isModified():
+            name = editor.path.name if editor.path else "Untitled.py"
+            choice = QMessageBox.warning(
+                self,
+                "Unsaved changes",
+                f"Save changes to {name}?",
+                QMessageBox.Save | QMessageBox.Discard | QMessageBox.Cancel,
+                QMessageBox.Save,
+            )
+            if choice == QMessageBox.Cancel:
+                return
+            if choice == QMessageBox.Save:
+                self.tabs.setCurrentIndex(index)
+                if not self.save_current():
+                    return
+        self.tabs.removeTab(index)
+
     def _tree_open(self, index) -> None:
         path = Path(self.file_model.filePath(index))
         if path.is_file():
@@ -157,6 +225,9 @@ class MainWindow(QMainWindow):
                 return
         editor = CodeEditor(path)
         editor.load(path)
+        editor.document().modificationChanged.connect(
+            lambda _modified, current=editor: self._update_editor_title(current)
+        )
         self.tabs.addTab(editor, path.name)
         self.tabs.setCurrentWidget(editor)
 
@@ -164,24 +235,26 @@ class MainWindow(QMainWindow):
         widget = self.tabs.currentWidget()
         return widget if isinstance(widget, CodeEditor) else None
 
-    def save_current(self) -> None:
+    def save_current(self) -> bool:
         editor = self.current_editor()
         if not editor:
-            return
+            return False
         if editor.path is None:
-            self.save_current_as()
-            return
+            return self.save_current_as()
         editor.save()
-        self.tabs.setTabText(self.tabs.currentIndex(), editor.path.name)
+        self._update_editor_title(editor)
+        return True
 
-    def save_current_as(self) -> None:
+    def save_current_as(self) -> bool:
         editor = self.current_editor()
         if not editor:
-            return
+            return False
         chosen, _ = QFileDialog.getSaveFileName(self, "Save file", filter="Python (*.py);;All files (*)")
-        if chosen:
-            path = editor.save(Path(chosen))
-            self.tabs.setTabText(self.tabs.currentIndex(), path.name)
+        if not chosen:
+            return False
+        editor.save(Path(chosen))
+        self._update_editor_title(editor)
+        return True
 
     def run_current(self) -> None:
         editor = self.current_editor()
