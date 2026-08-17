@@ -21,7 +21,13 @@ Welcome to the first substantial Senpai_Bot IDE build.
 - Editor, Terminal, Output, and Problems surfaces in one desktop workspace.
 - IDE toolbar, common editing shortcuts, cursor position, encoding, and indentation status.
 - Ollama model picker that discovers locally installed models.
-- Model refresh and explicit model-pull controls with visible progress.
+- A first-run **Setup & Dependencies** scan for Python, Ollama, the local service, installed
+  models, and available disk space.
+- Explicit, default-No installation choices for exact official Python and Ollama packages, with
+  official manual-install links and a permanent **Tools → Setup & Dependencies…** rescan.
+- A reviewed model list with exact tags, publisher/license details, approximate download sizes,
+  advanced exact-name entry, and an official Ollama library link.
+- An ownership manifest recording only dependencies and models Senpai successfully installed.
 - A native one-instance application guard that rejects a second launch with a clear notice.
 
 ## Fixes
@@ -29,7 +35,10 @@ Welcome to the first substantial Senpai_Bot IDE build.
 - The editor now opens into useful release information instead of a blank untitled tab.
 - Unsaved editor tabs are protected when closing the tab or application.
 - Renaming an open file updates its editor tab path.
-- The installer now prevents concurrent duplicate setup instances.
+- The installer now prevents concurrent duplicate setup instances, never asks Windows to restart
+  Senpai after replacing files, and never launches Senpai from a silent installation.
+- The finish-page launch option is explicit and unchecked, preventing the installer from opening
+  extra application windows after setup completes.
 - Application, installer, and package versions are checked for consistency.
 - The obsolete update manifest was removed so development source cannot be mistaken for a
   published application release.
@@ -39,16 +48,19 @@ Welcome to the first substantial Senpai_Bot IDE build.
 
 ## Dependencies and models
 
-Senpai_Bot already bundles its Python and Qt application dependencies. Ollama remains a separately
-maintained local inference runtime so it can stay compatible with GPU drivers and new model formats.
-Model weights are managed by Ollama instead of being copied into every Senpai_Bot installer.
+Senpai_Bot already bundles the Python interpreter and Qt libraries needed to open the application.
+A separate Python 3.11+ interpreter is needed only for **Run Python File**. Ollama remains a
+separately maintained local inference runtime so it can stay compatible with GPU drivers and new
+model formats. Model weights are managed by Ollama instead of being copied into every Senpai_Bot
+installer.
 
-Use the model controls above chat to select any model already installed in Ollama or explicitly pull
-another model. Model quality, speed, context size, memory use, and contract-following ability vary.
+The setup window can install exact official packages only after a Yes confirmation, or you can skip
+every install and use the official manual links. Model quality, speed, context size, memory use, and
+contract-following ability vary.
 
 ## Getting started
 
 1. Select **Open Folder** and choose the folder where you want to write Python projects.
 2. Use **+ File**, the Explorer context menu, or **Ctrl+N** to create code.
-3. Select an installed Ollama model above chat.
+3. Open **Tools → Setup & Dependencies…** to install, rescan, start Ollama, or choose a model.
 4. Use **Ctrl+`** to focus the integrated terminal and **F5** to run the active Python file.
