@@ -4,8 +4,10 @@ import sys
 
 from PySide6.QtWidgets import QApplication, QMessageBox
 
+from . import __version__
 from .contract import ContractStore
 from .instance import SingleInstance
+from .ownership import OwnershipManifest
 from .paths import bundle_root, contract_dir, data_dir
 from .settings import Settings
 from .ui.main_window import MainWindow
@@ -54,9 +56,18 @@ def main() -> int:
         QMessageBox.critical(None, "Senpai_Bot contract error", str(exc))
         instance.close()
         return 1
-    settings_path = data_dir() / "settings.json"
+    app_data = data_dir()
+    settings_path = app_data / "settings.json"
     settings = Settings.load(settings_path)
-    window = MainWindow(contract, settings, settings_path, bundle_root() / "assets" / "senpai_bot.ico")
+    manifest = OwnershipManifest.load(app_data / "ownership.json", __version__)
+    window = MainWindow(
+        contract,
+        settings,
+        settings_path,
+        manifest,
+        app_data,
+        bundle_root() / "assets" / "senpai_bot.ico",
+    )
     app.aboutToQuit.connect(window.shutdown_runtime)
     app.aboutToQuit.connect(instance.close)
     window.show()
