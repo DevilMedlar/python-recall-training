@@ -2,6 +2,8 @@
 
 Welcome to the first substantial Senpai_Bot IDE build.
 
+> Development preview: no public application-release channel is enabled.
+
 ## Automatic application updates
 
 - Senpai_Bot checks the latest published GitHub Release during launch.
