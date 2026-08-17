@@ -5,10 +5,10 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from PySide6.QtCore import QDir, QThreadPool, Qt, QUrl
+from PySide6.QtCore import QDir, QProcess, QThreadPool, Qt, QUrl
 from PySide6.QtGui import QAction, QCloseEvent, QDesktopServices, QIcon, QKeySequence, QShortcut, QTextCursor
 from PySide6.QtWidgets import (
-    QComboBox, QFileDialog, QFileSystemModel, QHBoxLayout, QInputDialog, QLabel, QMainWindow,
+    QApplication, QComboBox, QFileDialog, QFileSystemModel, QHBoxLayout, QInputDialog, QLabel, QMainWindow,
     QMenu, QMessageBox, QPlainTextEdit, QPushButton, QSplitter, QTabWidget,
     QTextBrowser, QToolBar, QTreeView, QVBoxLayout, QWidget,
 )
@@ -18,7 +18,7 @@ from ..chat import ChatSession
 from ..contract import ContractStore
 from ..ollama import OllamaManager
 from ..settings import Settings
-from ..update import check_for_update
+from ..update import check_for_update, download_verified_installer
 from ..workers import Task
 from .editor import CodeEditor
 from .terminal import TerminalPanel
@@ -182,6 +182,11 @@ class MainWindow(QMainWindow):
         terminal_action.triggered.connect(self.focus_terminal)
         view_menu.addAction(terminal_action)
 
+        help_menu = self.menuBar().addMenu("&Help")
+        update_action = QAction("Check for updates…", self)
+        update_action.triggered.connect(lambda: self._start_update_check(announce_current=True))
+        help_menu.addAction(update_action)
+
     def _build_toolbar(self) -> None:
         toolbar = QToolBar("Main", self)
         toolbar.setMovable(False)
@@ -316,29 +321,89 @@ class MainWindow(QMainWindow):
         self.model_combo.setCurrentText(model)
         self.runtime_status.setText(f"Model ready · {model}")
 
-    def _start_update_check(self) -> None:
+    def _start_update_check(self, announce_current: bool = False) -> None:
+        if announce_current:
+            self.runtime_status.setText("Checking for Senpai_Bot updates…")
         task = Task(self._check_update_task)
-        task.signals.result.connect(self._show_available_update)
+        task.signals.result.connect(
+            lambda update, announce=announce_current: self._show_available_update(update, announce)
+        )
+        if announce_current:
+            task.signals.error.connect(self._show_update_check_error)
         self.thread_pool.start(task)
 
     @staticmethod
     def _check_update_task(signals):
         return check_for_update(__version__)
 
-    def _show_available_update(self, update: object) -> None:
+    def _show_available_update(self, update: object, announce_current: bool = False) -> None:
         if not isinstance(update, dict):
+            if announce_current:
+                self.runtime_status.setText(f"Senpai_Bot {__version__} is up to date")
+                QMessageBox.information(
+                    self,
+                    "No update available",
+                    f"Senpai_Bot {__version__} is the latest published version.",
+                )
             return
         version = update.get("version", "")
         notes = update.get("notes", "")
+        if update.get("installer_url") and update.get("checksum_url"):
+            choice = QMessageBox.question(
+                self,
+                "Senpai_Bot update available",
+                f"Version {version} is available.\n\n{notes}\n\nDownload, verify, and install it now?",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.Yes,
+            )
+            if choice == QMessageBox.Yes:
+                self._download_update(update)
+            return
         choice = QMessageBox.question(
             self,
             "Senpai_Bot update available",
-            f"Version {version} is available.\n\n{notes}\n\nOpen the verified GitHub update page?",
+            f"Version {version} is available, but no automatic installer was attached.\n\nOpen its GitHub page?",
             QMessageBox.Open | QMessageBox.Cancel,
             QMessageBox.Open,
         )
         if choice == QMessageBox.Open:
             QDesktopServices.openUrl(QUrl(update["url"]))
+
+    def _show_update_check_error(self, message: str) -> None:
+        self.runtime_status.setText("Update check unavailable")
+        QMessageBox.warning(
+            self,
+            "Could not check for updates",
+            f"Senpai_Bot could not reach GitHub. Your current version is {__version__}.\n\n{message}",
+        )
+
+    def _download_update(self, update: dict[str, str]) -> None:
+        task = Task(self._download_update_task, update)
+        task.signals.status.connect(self.runtime_status.setText)
+        task.signals.error.connect(lambda message: QMessageBox.critical(self, "Update failed", message))
+        task.signals.result.connect(self._install_downloaded_update)
+        self.thread_pool.start(task)
+
+    @staticmethod
+    def _download_update_task(signals, update: dict[str, str]):
+        return download_verified_installer(update, signals.status.emit)
+
+    def _install_downloaded_update(self, installer: object) -> None:
+        if not isinstance(installer, Path) or not installer.is_file():
+            QMessageBox.critical(self, "Update failed", "The verified installer could not be found.")
+            return
+        if not self._close_all_editors():
+            self.runtime_status.setText("Update postponed · unsaved editor remains open")
+            return
+        self.settings.save(self.settings_path)
+        self.terminal.stop()
+        arguments = ["/VERYSILENT", "/SUPPRESSMSGBOXES", "/NORESTART", "/CLOSEAPPLICATIONS"]
+        result = QProcess.startDetached(str(installer), arguments)
+        started = result[0] if isinstance(result, tuple) else bool(result)
+        if not started:
+            QMessageBox.critical(self, "Update failed", "Windows could not start the verified installer.")
+            return
+        QApplication.quit()
 
     def choose_workspace(self) -> None:
         chosen = QFileDialog.getExistingDirectory(self, "Open workspace")
@@ -660,13 +725,18 @@ class MainWindow(QMainWindow):
         self.chat_view.clear()
         self.chat_view.append("<p><i>New local session started.</i></p>")
 
-    def closeEvent(self, event: QCloseEvent) -> None:
+    def _close_all_editors(self) -> bool:
         for index in range(self.tabs.count() - 1, -1, -1):
             count = self.tabs.count()
             self.close_editor(index)
             if self.tabs.count() == count:
-                event.ignore()
-                return
+                return False
+        return True
+
+    def closeEvent(self, event: QCloseEvent) -> None:
+        if not self._close_all_editors():
+            event.ignore()
+            return
         self.settings.save(self.settings_path)
         self.terminal.stop()
         event.accept()

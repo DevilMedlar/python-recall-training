@@ -1,6 +1,16 @@
-# Senpai_Bot 0.0.3 — IDE Core
+# Senpai_Bot 0.0.4 — Automatic Updates
 
 Welcome to the first substantial Senpai_Bot IDE build.
+
+## Automatic application updates
+
+- Senpai_Bot checks the latest published GitHub Release during launch.
+- A newer version presents a one-click update confirmation.
+- The installer and its companion SHA-256 file download directly from the GitHub Release.
+- Senpai_Bot verifies the complete installer before Windows is allowed to run it.
+- The verified installer updates the application silently and reopens Senpai_Bot.
+- Offline startup remains unaffected, and an update is never installed without confirmation.
+- **Help → Check for updates…** provides an immediate visible status whenever you want to test it.
 
 ## New features
 
@@ -12,7 +22,7 @@ Welcome to the first substantial Senpai_Bot IDE build.
 - IDE toolbar, common editing shortcuts, cursor position, encoding, and indentation status.
 - Ollama model picker that discovers locally installed models.
 - Model refresh and explicit model-pull controls with visible progress.
-- Launch-time application update checks through a restricted HTTPS GitHub manifest.
+- Launch-time and on-demand application update checks through verified GitHub Releases.
 
 ## Fixes
 

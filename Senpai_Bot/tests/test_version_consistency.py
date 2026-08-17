@@ -16,7 +16,7 @@ def test_all_release_versions_match():
     installer_version = re.search(r'#define MyAppVersion "([^"]+)"', installer)
     assert installer_version is not None
     assert {project["project"]["version"], manifest["version"], installer_version.group(1), __version__} == {
-        "0.0.3"
+        "0.0.4"
     }
 
 

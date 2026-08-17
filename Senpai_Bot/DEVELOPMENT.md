@@ -49,10 +49,19 @@ prompt plus verbatim sections selected from the contract for the current request
 repeating roughly 205 KB on every exchange while keeping the source contract authoritative.
 No application-level response filter or persona rewriter is installed.
 
-At launch, the app checks the repository's small `update.json` manifest in a background thread.
-It remains silent when current or offline. A newer semantic version produces an opt-in dialog
-that opens only an approved HTTPS GitHub page; the app never downloads or executes an update
-without the user's involvement.
+At launch, version 0.0.4 and newer query the repository's latest GitHub Release in a background
+thread. The check remains silent when current or offline. When a newer semantic version exists,
+the app asks for confirmation, downloads the versioned installer and its SHA-256 sidecar from
+approved GitHub HTTPS hosts, verifies the checksum, and launches Inno Setup silently. Unsaved
+editors are guarded before the app exits, and the installer relaunches Senpai_Bot when complete.
+The Help menu also exposes an on-demand check that confirms when the installed version is current.
+The older `update.json` manifest remains as a one-time bridge so version 0.0.3 can direct users to
+the 0.0.4 release page.
+
+Pushing a commit to `main` does not automatically replace an existing release. To publish an app
+update, change every version field together and push the new version to `main`. The Windows release
+workflow runs the tests, builds the installer, writes a SHA-256 sidecar, and publishes both files as
+an immutable GitHub Release. If that version tag already exists, the workflow safely skips it.
 
 Version 0.0.3 adds the first IDE-core interface: a numbered Python editor with current-line
 highlighting, an explorer toolbar and guarded context actions, a persistent integrated PowerShell

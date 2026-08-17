@@ -1,5 +1,5 @@
 #define MyAppName "Senpai_Bot"
-#define MyAppVersion "0.0.3"
+#define MyAppVersion "0.0.4"
 #define MyAppPublisher "DevilMedlar"
 #define MyAppExeName "Senpai_Bot.exe"
 
@@ -19,7 +19,7 @@ WizardStyle=modern
 PrivilegesRequired=lowest
 SetupMutex=Senpai_Bot_Setup_Mutex
 CloseApplications=yes
-RestartApplications=no
+RestartApplications=yes
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 
@@ -34,4 +34,4 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 Name: "desktopicon"; Description: "Create a &desktop shortcut"; GroupDescription: "Additional shortcuts:"; Flags: unchecked
 
 [Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "Launch {#MyAppName}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\{#MyAppExeName}"; Description: "Launch {#MyAppName}"; Flags: nowait runasoriginaluser
